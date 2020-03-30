@@ -37,3 +37,8 @@ Route::get('/teacher-signup', function () {
     return view('teacher-signup');
 });
 
+
+Route::get('/student-signup', function () {
+    return view('student-signup');
+});
+

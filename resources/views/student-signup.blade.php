@@ -38,8 +38,8 @@
             <div class="card card-primary">
               <div class="card-header">
                 <div class="row">
-                  <i class="fa fas fa-chalkboard-teacher mr-3"></i>
-                  <h3 class="card-title">Inscription Enseignant</h3>
+                  <i class="fa fas fa-user-graduate mr-3"></i>
+                  <h3 class="card-title">Inscription Etudiant</h3>
                   
                 </div>
                 
@@ -68,11 +68,36 @@
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputNuméro">Numéro de sécurité sociale</label>
+                    <label for="exampleInputNuméro">Numéro de la carte d'etudiant</label>
                     <input type="text" class="form-control" id="exampleInputNuméro" placeholder="Entrer numéro">
                   </div>
-
                   
+                  <label for="exampleInputPromotion">Promotion</label>
+
+
+
+                 <div class="col-sm-6">
+                      <!-- radio -->
+                      <div class="form-group">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="radio1">
+                          <label class="form-check-label">L2</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="radio1">
+                          <label class="form-check-label">L3</label>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                 
+
+              
+                </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
