@@ -32,3 +32,8 @@ Route::get('/enseignants', function () {
 Route::get('/admins', function () {
     return view('admins');
 });
+
+Route::get('/teacher-signup', function () {
+    return view('teacher-signup');
+});
+
