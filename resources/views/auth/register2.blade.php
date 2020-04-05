@@ -5,9 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register Student') }}</div>
+                <div class="card-header">{{ __('Register Enseignant') }}</div>
 
-                <div class="card-body">
+                <div class="card-body" id="hiddens">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -40,17 +40,26 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="nstudent" class="col-md-4 col-form-label text-md-right">{{ __('nstudent') }}</label>
+                            <label for="nteacher" class="col-md-4 col-form-label text-md-right">{{ __('nteacher') }}</label>
 
                             <div class="col-md-6">
-                                <input id="nstudent" type="text" class="form-control @error('nstudent') is-invalid @enderror" name="nstudent" value="{{ old('nstudent') }}" required autocomplete="nstudent" >
+                                <input id="nteacher" type="text" class="form-control @error('nteacher') is-invalid @enderror" name="nteacher" value="{{ old('nteacher') }}" required autocomplete="nteacher" >
 
-                                @error('nstudent')
+                                @error('nteacher')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
+                        </div>
+
+                        <div class="form-group row"> 
+                            
+
+                            
+                                <input id="nstudent" type="hidden" class="form-control @error('nstudent') is-invalid @enderror" name="nstudent" value="0" required autocomplete="nstudent" >
+
+                                
                         </div>
 
                         <div class="form-group row">

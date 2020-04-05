@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,4 +42,15 @@ Route::get('/teacher-signup', function () {
 Route::get('/student-signup', function () {
     return view('student-signup');
 });
+
+Route::get('/test', function () {
+    dd(Auth::guard('teacher')->attempt(['name' => 'Lahcene', 'password'=>'crazydz14l']));
+});
+
+Route::get('/register2', function () {
+    return view('Auth.register2');
+});
+
+
+
 

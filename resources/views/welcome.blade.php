@@ -80,6 +80,10 @@
             @endif
 
             <div class="content">
+
+              <div id="app">
+                    <example-component></example-component>                    
+                </div>
                 <div class="title m-b-md">
                     Laravel
                 </div>
@@ -96,5 +100,6 @@
                 </div>
             </div>
         </div>
+        <script src="/js/app.js"></script>
     </body>
 </html>
