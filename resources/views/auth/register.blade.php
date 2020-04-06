@@ -5,9 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register Student') }}</div>
+                <div class="card-header">{{ __('Inscription Etudiant') }}</div>
 
-                <div class="card-body">
+                <div class="card-body" id="hiddens">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -40,12 +40,54 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="nstudent" class="col-md-4 col-form-label text-md-right">{{ __('nstudent') }}</label>
+                            <label for="nstudent" class="col-md-4 col-form-label text-md-right">{{ __('N° carte') }}</label>
 
                             <div class="col-md-6">
                                 <input id="nstudent" type="text" class="form-control @error('nstudent') is-invalid @enderror" name="nstudent" value="{{ old('nstudent') }}" required autocomplete="nstudent" >
 
                                 @error('nstudent')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="specialite" class="col-md-4 col-form-label text-md-right">{{ __('Promo') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="specialite" type="text" class="form-control @error('specialite') is-invalid @enderror" name="specialite" value="{{ old('specialite') }}" required autocomplete="specialite" >
+
+                                @error('specialite')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row" v-show="seen">
+                            <label for="nteacher" class="col-md-4 col-form-label text-md-right">{{ __('n teacher') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="nteacher" type="text" class="form-control @error('nteacher') is-invalid @enderror" name="nteacher" value="0" required autocomplete="nteacher" >
+
+                                @error('nteacher')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row" v-show="seen">
+                            <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('role') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value=3 required autocomplete="role" >
+
+                                @error('role')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register Enseignant') }}</div>
+                <div class="card-header">{{ __('Inscription Enseignant') }}</div>
 
                 <div class="card-body" id="hiddens">
                     <form method="POST" action="{{ route('register') }}">
@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="nteacher" class="col-md-4 col-form-label text-md-right">{{ __('nteacher') }}</label>
+                            <label for="nteacher" class="col-md-4 col-form-label text-md-right">{{ __('N° sécurité sociale') }}</label>
 
                             <div class="col-md-6">
                                 <input id="nteacher" type="text" class="form-control @error('nteacher') is-invalid @enderror" name="nteacher" value="{{ old('nteacher') }}" required autocomplete="nteacher" >
@@ -53,14 +53,24 @@
                             </div>
                         </div>
 
-                        <div class="form-group row"> 
+                        <div class="form-group row" v-show="seen"> 
                             
-
-                            
-                                <input id="nstudent" type="hidden" class="form-control @error('nstudent') is-invalid @enderror" name="nstudent" value="0" required autocomplete="nstudent" >
-
-                                
+                                <input id="nstudent" type="text" class="form-control @error('nstudent') is-invalid @enderror" name="nstudent" value="0" required autocomplete="nstudent" >
+     
                         </div>
+
+                        <div class="form-group row" v-show="seen"> 
+                            
+                                <input id="specialite" type="text" class="form-control @error('specialite') is-invalid @enderror" name="specialite" value="0" required autocomplete="specialite" >
+     
+                        </div>
+
+                        <div class="form-group row" v-show="seen"> 
+                            
+                            <input id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value=2 required autocomplete="role" >
+ 
+                        </div>
+
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>

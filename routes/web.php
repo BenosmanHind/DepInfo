@@ -47,8 +47,8 @@ Route::get('/test', function () {
     dd(Auth::guard('teacher')->attempt(['name' => 'Lahcene', 'password'=>'crazydz14l']));
 });
 
-Route::get('/register2', function () {
-    return view('Auth.register2');
+Route::get('/registerteacher', function () {
+    return view('Auth.registerteacher');
 });
 
 

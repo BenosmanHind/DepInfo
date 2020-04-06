@@ -56,6 +56,7 @@ class RegisterController extends Controller
             'nstudent' => ['string'],
             'nteacher' => ['string'],
             'role' => ['string'],
+            'specialite' => ['string'],
         ]);
     }
 
@@ -73,6 +74,8 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'nstudent' => $data['nstudent'],
             'nteacher' => $data['nteacher'],
+            'specialite' => $data['specialite'],
+            'role' => $data['role'],
          
         ]);
     }
