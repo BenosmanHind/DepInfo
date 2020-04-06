@@ -22,9 +22,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/etudiants', function () {
-    return view('etudiants');
-});
 
 Route::get('/enseignants', function () {
     return view('enseignants');
@@ -47,9 +44,15 @@ Route::get('/test', function () {
     dd(Auth::guard('teacher')->attempt(['name' => 'Lahcene', 'password'=>'crazydz14l']));
 });
 
+
+
 Route::get('/registerteacher', function () {
     return view('Auth.registerteacher');
 });
+
+Route::get('/etudiants', 'EtudiantController@index')->name('etudiants');
+
+
 
 
 

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<section class="content-header">
+<section class="content-header m-4">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
@@ -20,7 +20,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Responsive Hover Table</h3>
+                <h3 class="card-title">Vous trouverez ci-joint la table des étudiants</h3>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -38,41 +38,45 @@
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>User</th>
+                      <th>Nom & prénom</th>
                       <th>Date</th>
-                      <th>Status</th>
-                      <th>Reason</th>
+                      <th>Statu</th>
+                      <th>Spécialité</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
+                   @foreach ($etuds as $etud)
                     <tr>
-                      <td>183</td>
-                      <td>John Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-success">Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                      <td>{{$etud->id}}</td>
+                      <td>{{$etud->name}}</td>
+                      <td>{{$etud->updated_at}}</td>
+
+                      <td >
+                        @if ($etud->accept == 0)
+                             <h5><span class="Left badge badge-warning ">En attent</span></h5>
+                        @else  <h5><span class="Left badge badge-success ">Approuvé</span></h5>
+                        @endif
+                           
+                          
+                      </td>
+                      <td>{{$etud->specialite}}</td>
+                      <td class="">
+                          <a href="" class="btn btn-success btn-circle">
+                            <i class="fas fa-check"> </i>
+                          </a>
+                          <a href="" class="btn btn-warning btn-circle">
+                            <i class="fas fa-pencil-alt"> </i>
+                          </a>
+                          <a href="" class="btn btn-danger btn-circle">
+                            <i class="fas fa-trash"> </i>
+                          </a>
+
+                      </td>
                     </tr>
-                    <tr>
-                      <td>219</td>
-                      <td>Alexander Pierce</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-warning">Pending</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>657</td>
-                      <td>Bob Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-primary">Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>175</td>
-                      <td>Mike Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-danger">Denied</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
+                    @endforeach
+                    
+                   
                   </tbody>
                 </table>
               </div>
