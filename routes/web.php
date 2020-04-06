@@ -23,9 +23,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/enseignants', function () {
-    return view('enseignants');
-});
+
 
 Route::get('/admins', function () {
     return view('admins');
@@ -53,6 +51,7 @@ Route::get('/registerteacher', function () {
 Route::get('/etudiants', 'EtudiantController@index')->name('etudiants');
 
 
+Route::get('/enseignants', 'EnseignantController@index')->name('enseignants');
 
 
 

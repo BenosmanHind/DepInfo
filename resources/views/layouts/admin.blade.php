@@ -404,13 +404,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
+                <a href="{{ url('admins') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Admins</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
+                <a href="{{ url('enseignants') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Enseignants</p>
                 </a>
