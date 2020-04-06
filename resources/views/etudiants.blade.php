@@ -62,6 +62,9 @@
                       </td>
                       <td>{{$etud->specialite}}</td>
                       <td class="">
+                          <form action="{{url('etudiants/'.$etud->id)}}" method="post">
+                          {{csrf_field()}}
+                          {{method_field('DELETE')}}
                           <a href="" class="btn btn-success btn-circle">
                             <i class="fas fa-check"> </i>
                           </a>
@@ -71,7 +74,7 @@
                           <a href="" class="btn btn-danger btn-circle">
                             <i class="fas fa-trash"> </i>
                           </a>
-
+                          </form>
                       </td>
                     </tr>
                     @endforeach

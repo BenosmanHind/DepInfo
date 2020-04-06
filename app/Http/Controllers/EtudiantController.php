@@ -15,4 +15,15 @@ class EtudiantController extends Controller
 
     }
     
+    public function destory(Request $request,$id){
+
+           $etud=User::find($id);
+           $etud->delete();
+
+         return redirect('etudiants');
+
+
+    }
+
+
 }

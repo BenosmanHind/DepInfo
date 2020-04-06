@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('nteacher');
             $table->string('specialite');
             $table->integer('role');
+            $table->timestamp('deleted_at')->nullable();
             $table->string('accept')->default('0');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
