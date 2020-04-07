@@ -60,5 +60,6 @@ Route::get('/enseignants', 'EnseignantController@index')->name('enseignants');
 Route::get('etudiants/{id}','EtudiantController@destory');
 
 
+Route::get('enseignants/{id}','EnseignantController@destory');
 
 

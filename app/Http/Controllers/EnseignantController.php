@@ -14,4 +14,17 @@ class EnseignantController extends Controller
 
     }
     
+
+
+    public function destory($id){
+
+           
+           $ensg= User::find($id);
+           $ensg->delete();
+
+          return redirect('enseignants');
+
+
+    }
+
 }

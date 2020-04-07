@@ -64,7 +64,10 @@
                       </td>
                      
                       <td class="">
-                         
+
+                          <form action="{{url('enseignants/'.$ensg->id)}}" method="post">
+                          {{csrf_field()}}
+                          {{method_field('DELETE')}} 
                           <a href="" class="btn btn-success btn-circle">
                             <i class="fas fa-check"> </i>
                           </a>
@@ -72,10 +75,10 @@
                             <i class="fas fa-pencil-alt"> </i>
                           </a>
 
-                          <a href="" class="btn btn-danger btn-circle">
+                          <a href="{{url('enseignants/'.$ensg->id)}}" class="btn btn-danger btn-circle">
                             <i class="fas fa-trash"> </i>
                           </a>
-
+                          </form>
                       </td>
                     </tr>
                      @endforeach
