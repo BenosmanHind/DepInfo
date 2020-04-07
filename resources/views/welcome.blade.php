@@ -73,7 +73,7 @@
                         <a href="{{ route('login') }}">Login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ url('/choose') }}">Register</a>
                         @endif
                     @endauth
                 </div>
@@ -81,9 +81,7 @@
 
             <div class="content">
 
-              <div id="app">
-                    <example-component></example-component>                    
-                </div>
+              
                 <div class="title m-b-md">
                     Laravel
                 </div>

@@ -29,6 +29,10 @@ Route::get('/admins', function () {
     return view('admins');
 });
 
+Route::get('/choose', function () {
+    return view('choose');
+});
+
 Route::get('/teacher-signup', function () {
     return view('teacher-signup');
 });
@@ -52,6 +56,8 @@ Route::get('/etudiants', 'EtudiantController@index')->name('etudiants');
 
 
 Route::get('/enseignants', 'EnseignantController@index')->name('enseignants');
+
+Route::get('etudiants/{id}','EtudiantController@destory');
 
 
 
