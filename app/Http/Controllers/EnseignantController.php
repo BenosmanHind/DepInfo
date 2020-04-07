@@ -8,6 +8,11 @@ Use App\User;
 class EnseignantController extends Controller
 {
     //
+    public function __construct()
+{
+      $this->middleware('auth');
+
+}
     public function index(){
         $list_enseignants = User::where('role', 2)->get();
         return view('enseignants',['ensg'=>$list_enseignants]);
