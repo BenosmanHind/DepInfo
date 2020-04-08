@@ -46,14 +46,14 @@
                     </tr>
                   </thead>
                   <tbody>
-                   @foreach ($adms as $adms)
+                   @foreach ($adms as $adm)
                     <tr>
                       <td>{{$adm->id}}</td>
                       <td>{{$adm->name}}</td>
                       <td>{{$adm->updated_at}}</td>
 
                       <td >
-                        @if ($adms->accept == 0)
+                        @if ($adm->accept == 0)
                              <h5><span class="Left badge badge-warning ">En attent</span></h5>
                         @else  <h5><span class="Left badge badge-success ">Approuvé</span></h5>
                         @endif
@@ -63,14 +63,14 @@
                       
                       <td class="">
                           
-                          <form action="{{url('admins/'.$adms->id)}}" method="post">
+                          <form action="{{url('admins/'.$adm->id)}}" method="post">
                           {{csrf_field()}}
                           {{method_field('DELETE')}}
                           <a href="" class="btn btn-success btn-circle">
                             <i class="fas fa-check"> </i>
                           </a>
                           
-                           <a href="{{url('adms/'.$adms->id)}}" class="btn btn-danger btn-circle">
+                           <a href="{{url('adm/'.$adm->id)}}" class="btn btn-danger btn-circle">
                             <i class="fas fa-trash"> </i>
                           </a>
                           

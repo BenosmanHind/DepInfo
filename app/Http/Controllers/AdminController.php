@@ -13,15 +13,15 @@ class AdminController extends Controller
 }
     public function index(){
         $list_admins = User::where('role', 1)->get();
-        return view('admins',['adms'=>$list_admins]);
+        return view('admins',['adm'=>$list_admins]);
 
     }
     
     public function destory($id){
 
            
-           $adms= User::find($id);
-           $adms->delete();
+           $adm= User::find($id);
+           $adm->delete();
 
           return redirect('admins');
 
