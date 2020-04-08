@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<section class="content-header">
+<section class="content-header m-4">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
@@ -10,7 +10,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">admins</li>
+              <li class="breadcrumb-item active">Admin</li>
             </ol>
           </div>
         </div>
@@ -20,7 +20,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Responsive Hover Table</h3>
+                <h3 class="card-title">Vous trouverez ci-joint la table des admin</h3>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -38,41 +38,48 @@
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>User</th>
+                      <th>Nom & prénom</th>
                       <th>Date</th>
-                      <th>Status</th>
-                      <th>Reason</th>
+                      <th>Statu</th>
+                      
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
+                   @foreach ($adms as $adms)
                     <tr>
-                      <td>183</td>
-                      <td>John Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-success">Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                      <td>{{$adm->id}}</td>
+                      <td>{{$adm->name}}</td>
+                      <td>{{$adm->updated_at}}</td>
+
+                      <td >
+                        @if ($adms->accept == 0)
+                             <h5><span class="Left badge badge-warning ">En attent</span></h5>
+                        @else  <h5><span class="Left badge badge-success ">Approuvé</span></h5>
+                        @endif
+                           
+                          
+                      </td>
+                      
+                      <td class="">
+                          
+                          <form action="{{url('admins/'.$adms->id)}}" method="post">
+                          {{csrf_field()}}
+                          {{method_field('DELETE')}}
+                          <a href="" class="btn btn-success btn-circle">
+                            <i class="fas fa-check"> </i>
+                          </a>
+                          
+                           <a href="{{url('adms/'.$adms->id)}}" class="btn btn-danger btn-circle">
+                            <i class="fas fa-trash"> </i>
+                          </a>
+                          
+                          </form>
+                      </td>
                     </tr>
-                    <tr>
-                      <td>219</td>
-                      <td>Alexander Pierce</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-warning">Pending</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>657</td>
-                      <td>Bob Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-primary">Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>175</td>
-                      <td>Mike Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-danger">Denied</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
+                    @endforeach
+                    
+                   
                   </tbody>
                 </table>
               </div>
