@@ -70,7 +70,7 @@
                             <i class="fas fa-check"> </i>
                           </a>
                           
-                           <a href="{{url('adm/'.$adm->id)}}" class="btn btn-danger btn-circle">
+                           <a href="{{url('admins/'.$adm->id)}}" class="btn btn-danger btn-circle">
                             <i class="fas fa-trash"> </i>
                           </a>
                           
