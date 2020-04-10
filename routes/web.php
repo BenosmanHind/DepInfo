@@ -53,14 +53,21 @@ Route::get('/registerteacher', function () {
     return view('Auth.registerteacher');
 });
 
-Route::get('/etudiants', 'EtudiantController@index')->name('etudiants');
+
+Route::get('/dashbord/etudiant/home', function () {
+    return view('Dashbord.Etudiant.home');
+});
 
 
+//routes Enseignants
 Route::get('/enseignants', 'EnseignantController@index')->name('enseignants');
-
-Route::get('etudiants/{id}','EtudiantController@destory');
-
-
 Route::get('enseignants/{id}','EnseignantController@destory');
 
+//routes Etudiants
+Route::get('/etudiants', 'EtudiantController@index')->name('etudiants');
+Route::get('etudiants/{id}','EtudiantController@destory');
 
+//Routes Admines
+
+Route::get('/admins', 'AdminController@index')->name('admins');
+Route::get('admins/{id}','AdminController@destory');
