@@ -58,6 +58,10 @@ Route::get('/dashbord/etudiant/home', function () {
     return view('Dashbord.Etudiant.home');
 });
 
+Route::get('/dashbord/enseignant/home', function () {
+    return view('Dashbord.Enseignant.home');
+});
+
 
 //routes Enseignants
 Route::get('/enseignants', 'EnseignantController@index')->name('enseignants');

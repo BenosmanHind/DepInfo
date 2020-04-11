@@ -197,7 +197,7 @@
               <li class="nav-item">
                 <a href="./index2.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Contacter Scolarité</p>
+                  <p>Contacter L'admin</p>
                 </a>
               </li>
               
@@ -205,6 +205,15 @@
           </li>
           
           <li class="nav-header">EXAMPLES</li>
+
+           <li class="nav-item">
+            <a href="pages/gallery.html" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Mon Emploi Du Temps
+              </p>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="pages/calendar.html" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
@@ -236,6 +245,15 @@
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Mes Modules
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="pages/gallery.html" class="nav-link">
+              <i class="nav-icon fas fa-chart-bar"></i>
+              <p>
+              Le Réglement Intérieur
               </p>
             </a>
           </li>

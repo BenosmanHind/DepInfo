@@ -68,9 +68,7 @@
                           <a href="" class="btn btn-success btn-circle">
                             <i class="fas fa-check"> </i>
                           </a>
-                          <a href="" class="btn btn-warning btn-circle">
-                            <i class="fas fa-pencil-alt"> </i>
-                          </a>
+                          
                            <a href="{{url('etudiants/'.$etud->id)}}" class="btn btn-danger btn-circle">
                             <i class="fas fa-trash"> </i>
                           </a>
