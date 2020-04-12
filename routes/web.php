@@ -75,3 +75,11 @@ Route::get('etudiants/{id}','EtudiantController@destory');
 
 Route::get('/admins', 'AdminController@index')->name('admins');
 Route::get('admins/{id}','AdminController@destory');
+
+//route de confirmation si le compte a été accpté
+
+Route::get('/isAccept', function () {
+    return view('isAccept');
+});
+
+
