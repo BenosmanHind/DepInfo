@@ -70,18 +70,24 @@
                           <form action="{{url('enseignants/'.$ensg->id)}}" method="post">
                           {{csrf_field()}}
                           {{method_field('DELETE')}} 
-                          <a href="" class="btn btn-success btn-circle">
-                            <i class="fas fa-check"> </i>
-                          </a>
-                         
 
-                          <a href="{{url('enseignants/'.$ensg->id)}}" class="btn btn-danger btn-circle">
+                           @if($ensg->accept == 0)
+                          <a href="{{url('enseignants/'.$ensg->id)}}"  onclick="return confirm('Vous voulez vraiment approuver?')" class="btn btn-success btn-circle ">
+                            <i class="fas fa-check"> </i>
+                          </a> 
+                          @else  <a href="{{url('enseignants/'.$ensg->id)}}"  onclick="return confirm('Vous voulez vraiment approuver?')" class="btn btn-success btn-circle disabled ">
+                            <i class="fas fa-check"> </i>
+                          </a> 
+                          @endif
+                          
+                           <a href="{{url('enseignants/'.$ensg->id)}}"  onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger btn-circle">
                             <i class="fas fa-trash"> </i>
                           </a>
                           </form>
                       </td>
                     </tr>
-                     @endforeach
+                    @endforeach
+                     
                     
                   </tbody>
                 </table>

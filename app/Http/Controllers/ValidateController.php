@@ -20,10 +20,12 @@ class ValidateController extends Controller
         $user->update(['accept'=> '1']); 
         return redirect('/etudiants');
     }
-
-
-
-
-
-
+ 
+   
+ public function accept2($id){
+        $user = User::find($id);
+        $user->update(['accept'=> '1']); 
+        return redirect('/enseignants');
+    }
+     
 }
