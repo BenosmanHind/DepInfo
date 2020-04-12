@@ -72,7 +72,7 @@
                           {{method_field('DELETE')}} 
 
                            @if($ensg->accept == 0)
-                          <a href="{{url('enseignants/'.$ensg->id)}}"  onclick="return confirm('Vous voulez vraiment approuver?')" class="btn btn-success btn-circle ">
+                          <a href="{{url('enseignants/validate/'.$ensg->id)}}"  onclick="return confirm('Vous voulez vraiment approuver?')" class="btn btn-success btn-circle ">
                             <i class="fas fa-check"> </i>
                           </a> 
                           @else  <a href="{{url('enseignants/'.$ensg->id)}}"  onclick="return confirm('Vous voulez vraiment approuver?')" class="btn btn-success btn-circle disabled ">

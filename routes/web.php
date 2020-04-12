@@ -65,7 +65,7 @@ Route::get('/dashbord/enseignant/home', function () {
 
 //routes Enseignants
 Route::get('/enseignants', 'EnseignantController@index')->name('enseignants');
-Route::get('enseignants/{id}','ValidateController@accept2');
+Route::get('enseignants/validate/{id}','ValidateController@accept2');
 Route::get('enseignants/{id}','EnseignantController@destory');
 
 
