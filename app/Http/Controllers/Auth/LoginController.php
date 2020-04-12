@@ -44,9 +44,11 @@ class LoginController extends Controller
             Auth()->logout();
             return '/isAccept';
          }
+
          else {
             $role =0;
             $role = Auth::user()->role;  
+           
 
             switch ($role) {
                 case 2:

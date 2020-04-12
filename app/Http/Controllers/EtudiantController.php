@@ -18,6 +18,9 @@ class EtudiantController extends Controller
         return view('etudiants',['etuds'=>$list_etudiants]);
 
     }
+
+
+    
     
     public function destory($id){
 

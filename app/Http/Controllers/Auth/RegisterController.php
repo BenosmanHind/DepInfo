@@ -8,7 +8,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Facades\Auth;
 class RegisterController extends Controller
 {
     /*
@@ -29,13 +29,50 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    //protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
+
+       public function redirectTo(){
+        
+        //User role
+        $validate ="";
+        $validate = Auth::user()->accept; 
+         if($validate == 0 ){
+            Auth()->logout();
+            return '/isAccept';
+         }
+
+         else {
+            $role =0;
+            $role = Auth::user()->role;  
+            dd($role);
+
+            switch ($role) {
+                case 2:
+                        return '/dashbord/enseignant/home';
+                    break;
+                case 3:
+                        return '/dashbord/etudiant/home';
+                    break; 
+                default:
+                        return '/home'; 
+                    break;
+            }
+
+
+                   
+         }
+         
+      
+        
+        
+    
+    }
     public function __construct()
     {
         $this->middleware('guest');

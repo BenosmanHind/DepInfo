@@ -67,11 +67,17 @@
                           <form action="{{url('etudiants/'.$etud->id)}}" method="post">
                           {{csrf_field()}}
                           {{method_field('DELETE')}}
-                          <a href="" class="btn btn-success btn-circle">
+                            
+                          @if($etud->accept == 0)
+                          <a href="{{url('validate/'.$etud->id)}}"  onclick="return confirm('Vous voulez vraiment approuver?')" class="btn btn-success btn-circle ">
                             <i class="fas fa-check"> </i>
-                          </a>
+                          </a> 
+                          @else  <a href="{{url('validate/'.$etud->id)}}"  onclick="return confirm('Vous voulez vraiment approuver?')" class="btn btn-success btn-circle disabled ">
+                            <i class="fas fa-check"> </i>
+                          </a> 
+                          @endif
                           
-                           <a href="{{url('etudiants/'.$etud->id)}}" class="btn btn-danger btn-circle">
+                           <a href="{{url('etudiants/'.$etud->id)}}"  onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger btn-circle">
                             <i class="fas fa-trash"> </i>
                           </a>
                           </form>

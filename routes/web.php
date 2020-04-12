@@ -71,10 +71,14 @@ Route::get('enseignants/{id}','EnseignantController@destory');
 Route::get('/etudiants', 'EtudiantController@index')->name('etudiants');
 Route::get('etudiants/{id}','EtudiantController@destory');
 
+
+
+
 //Routes Admines
 
 Route::get('/admins', 'AdminController@index')->name('admins');
 Route::get('admins/{id}','AdminController@destory');
+Route::get('validate/{id}','ValidateController@accept');
 
 //route de confirmation si le compte a été accpté
 
