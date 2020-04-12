@@ -39,6 +39,7 @@
                     <tr>
                       <th>ID</th>
                       <th>Nom & prénom</th>
+                      <th>N° Sécurité sociale</th>
                       <th>Date</th>
                       <th>Statu</th>
                       
@@ -52,7 +53,8 @@
                     <tr>
                       <td>{{$ensg->id}}</td>
                       <td>{{$ensg->name}}</td>
-                      <td>{{$ensg->updated_at}}</td>
+                      <td>{{$ensg->nteacher}}</td>
+                      <td>{{$ensg->created_at}}</td>
 
                       <td >
                         @if ($ensg->accept == 0)

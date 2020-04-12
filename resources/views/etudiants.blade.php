@@ -39,6 +39,7 @@
                     <tr>
                       <th>ID</th>
                       <th>Nom & prénom</th>
+                      <th>N° carte </th>
                       <th>Date</th>
                       <th>Statu</th>
                       <th>Spécialité</th>
@@ -50,7 +51,8 @@
                     <tr>
                       <td>{{$etud->id}}</td>
                       <td>{{$etud->name}}</td>
-                      <td>{{$etud->updated_at}}</td>
+                      <td>{{$etud->nstudent}}</td>
+                      <td>{{$etud->created_at}}</td>
 
                       <td >
                         @if ($etud->accept == 0)
