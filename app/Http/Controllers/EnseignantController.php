@@ -28,8 +28,7 @@ class EnseignantController extends Controller
            $ensg->delete();
 
           return redirect('enseignants');
-
-
+          
     }
 
 }
