@@ -5,10 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-danger text-white">{{ __('Erreur Access') }}</div>
+                <div class="card-header bg-success text-white">{{ __('Enregistrement avec succes') }}</div>
 
                 <div class="card-body">
-                   Votre compte n'a pas encore été accepté
+                   Vous allez attendre la confirmation de votre compte !
                       
                            
                     </form>

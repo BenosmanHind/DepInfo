@@ -44,7 +44,7 @@ class RegisterController extends Controller
         $validate = Auth::user()->accept; 
          if($validate == 0 ){
             Auth()->logout();
-            return '/isAccept';
+            return '/isRegister';
          }
 
          else {
