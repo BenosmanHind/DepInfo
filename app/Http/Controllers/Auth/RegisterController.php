@@ -53,6 +53,8 @@ class RegisterController extends Controller
             dd($role);
 
             switch ($role) {
+                case 1:
+                       return '/admins';
                 case 2:
                         return '/dashbord/enseignant/home';
                     break;

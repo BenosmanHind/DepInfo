@@ -9,6 +9,11 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
+              
+
+            <li class="breadcrumb-item"><a href="{{url('registerAdmin')}}">Ajouter Admin</a></li>
+                
+
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">Admin</li>
             </ol>
@@ -66,11 +71,17 @@
                           <form action="{{url('admins/'.$adm->id)}}" method="post">
                           {{csrf_field()}}
                           {{method_field('DELETE')}}
-                          <a href="" class="btn btn-success btn-circle">
+
+                         @if($adm->accept == 0)
+                          <a href="{{url('admins/validate/'.$adm->id)}}"  onclick="return confirm('Vous voulez vraiment approuver?')" class="btn btn-success btn-circle ">
                             <i class="fas fa-check"> </i>
-                          </a>
+                          </a> 
+                          @else  <a href="{{url('admins/'.$adm->id)}}"  onclick="return confirm('Vous voulez vraiment approuver?')" class="btn btn-success btn-circle disabled ">
+                            <i class="fas fa-check"> </i>
+                          </a> 
+                          @endif
                           
-                           <a href="{{url('admins/'.$adm->id)}}" class="btn btn-danger btn-circle">
+                           <a href="{{url('admins/'.$adm->id)}}" onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger btn-circle">
                             <i class="fas fa-trash"> </i>
                           </a>
                           

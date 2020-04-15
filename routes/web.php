@@ -48,6 +48,11 @@ Route::get('/test', function () {
 });
 
 
+Route::get('/registerAdmin', function () {
+    return view('Auth.registerAdmin');
+});
+
+
 
 Route::get('/registerteacher', function () {
     return view('Auth.registerteacher');
