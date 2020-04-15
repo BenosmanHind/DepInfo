@@ -11,7 +11,7 @@
             <ol class="breadcrumb float-sm-right">
               
 
-            <li class="breadcrumb-item"><a href="{{url('registerAdmin')}}">Ajouter Admin</a></li>
+            
                 
 
               <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -24,15 +24,17 @@
       <div class="row">
           <div class="col-12">
             <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Vous trouverez ci-joint la table des admin</h3>
-
-                <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
+              <div class="card-header ">
+                <h3 class="card-title">Vous trouverez ci-joint la table des admin </h3>
+                
+              
+                <div class="card-tools " >
+                
+                  <div class="input-group input-group-sm" >
                     <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 
                     <div class="input-group-append">
-                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                      <button type="submit" class="btn btn-default " style="height: 32px;"><i class="fas fa-search"></i></button>
                     </div>
                   </div>
                 </div>
