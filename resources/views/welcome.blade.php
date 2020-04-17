@@ -151,8 +151,8 @@
                             <i class="flaticon-school"></i>
                         </div>
                         <div class="service_info">
-                            <h4>Scholarship</h4>
-                            <p>Available</p>
+                            <h4>Bourse D'études</h4>
+                            <p>Disponible</p>
                         </div>
                     </div>
                 </div>
@@ -162,8 +162,8 @@
                             <i class="flaticon-error"></i>
                         </div>
                         <div class="service_info">
-                            <h4>Scholarship</h4>
-                            <p>Available</p>
+                            <h4>Bourse D'études</h4>
+                            <p>Disponible</p>
                         </div>
                     </div>
                 </div>
@@ -173,8 +173,8 @@
                             <i class="flaticon-book"></i>
                         </div>
                         <div class="service_info">
-                            <h4>Scholarship</h4>
-                            <p>Available</p>
+                            <h4>Bourse D'études</h4>
+                            <p>Disponible</p>
                         </div>
                     </div>
                 </div>
@@ -189,7 +189,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section_title text-center">
-                        <h3>Popular Program</h3>
+                        <h3>Programme populaire</h3>
                     </div>
                 </div>
             </div>
@@ -436,7 +436,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-10">
                     <div class="section_title text-center mb-70">
-                        <h3 class="mb-45">Recent Event</h3>
+                        <h3 class="mb-45">Événement Récent</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                 </div>
@@ -542,7 +542,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-10">
                     <div class="section_title text-center mb-70">
-                        <h3 class="mb-45">Recent News</h3>
+                        <h3 class="mb-45">Les Nouveautés</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                 </div>
