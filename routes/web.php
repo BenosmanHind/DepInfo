@@ -86,6 +86,8 @@ Route::get('etudiants/{id}','EtudiantController@destory');
 Route::get('/admins', 'AdminController@index')->name('admins');
 Route::get('admins/{id}','AdminController@destory');
 Route::get('validate/{id}','ValidateController@accept');
+Route::get('/events','EventController@index');
+
 
 
 //route de confirmation si le compte a été accpté
@@ -97,5 +99,6 @@ Route::get('/isAccept', function () {
 Route::get('/isRegister', function () {
     return view('isRegister');
 });
+
 
 

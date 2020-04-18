@@ -201,6 +201,12 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="{{ url('events') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Gérer Events</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{ url('admins') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Gérer articles</p>

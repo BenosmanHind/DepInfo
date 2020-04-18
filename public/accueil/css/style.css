@@ -26,6 +26,15 @@ body {
   font-style: normal;
 }
 
+
+.hind{
+  color: #009DFF;
+}
+
+
+.ti-heart{
+  color: #f44a40;
+}
 /* line 12, ../../Arafath/CL/january 2020/243.Education/HTML/scss/theme-default.scss */
 .img {
   max-width: 100%;
@@ -2930,7 +2939,7 @@ h3 {
   left: 0;
   bottom: 0;
   background: #ebb830;
-  padding: 12px 40px;
+  
   display: inline-block;
   z-index: 9;
   font-size: 13px;
@@ -6531,6 +6540,21 @@ h6 {
   /* Firefox 18- */
   font-size: 13px;
   color: #777;
+}
+
+.active{
+  
+  color: #fff;
+  
+}
+
+.header-area .main-header-area .main-menu ul li a:hover{
+  color: #68C5D8;
+}
+  
+
+.textd{
+  color: #fff;
 }
 
 /*============ End Blog Single Styles  =============*/
