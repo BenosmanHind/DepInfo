@@ -207,11 +207,20 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('admins') }}" class="nav-link">
+                <a href="{{ url('article') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Gérer articles</p>
                 </a>
               </li>
+
+              
+              <li class="nav-item">
+                <a href="{{ url('bourse') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Gérer bourses</p>
+                </a>
+              </li>
+
               
               
             </ul>

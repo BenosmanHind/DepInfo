@@ -87,7 +87,8 @@ Route::get('/admins', 'AdminController@index')->name('admins');
 Route::get('admins/{id}','AdminController@destory');
 Route::get('validate/{id}','ValidateController@accept');
 Route::get('/events','EventController@index');
-
+Route::get('/article','ArticleController@index');
+Route::get('/bourse','BourseController@index');
 
 
 //route de confirmation si le compte a été accpté
