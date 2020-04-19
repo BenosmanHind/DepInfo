@@ -21,4 +21,17 @@ class ArticleController extends Controller
           return view('articles',['articles'=>$list_articles]);
   
       }
+
+
+
+        public function destory($id){
+
+           
+           $article= User::find($id);
+           $article->delete();
+
+          return redirect('articles');
+
+
+    }
 }

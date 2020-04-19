@@ -64,7 +64,7 @@
                             <i class="fas fa-edit"> </i>
                           </a> 
                             
-                           <a href="{{url('etudiants/'.$event->id)}}"  onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger btn-circle">
+                           <a href="{{url('events/'.$event->id)}}"  onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger btn-circle">
                             <i class="fas fa-trash"> </i>
                           </a>
                           </form>

@@ -5,12 +5,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Les Bourses</h1>
+            <h1>Les Articles</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Bourses</li>
+              <li class="breadcrumb-item active">Articles</li>
             </ol>
           </div>
         </div>
@@ -20,7 +20,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Vous trouverez ci-joint la table des bourses</h3>
+                <h3 class="card-title">Vous trouverez ci-joint la table des articles</h3>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -39,32 +39,26 @@
                     <tr>
                       <th>ID</th>
                       <th>Titre</th>
-                      <th>Lieu </th>
-                      <th>Spécialité</th>
-                      <th>Année Universitaire</th>
                       
                     </tr>
                   </thead>
                   <tbody>
-                   @foreach ($bourses as $bourse)
+                   @foreach ($articles as $article)
                     <tr>
-                      <td>{{$bourse->id}}</td>
-                      <td>{{$bourse->title}}</td>
-                      <td>{{$bourse->lieu}}</td>
-                      <td>{{$bourse->spécialité}}</td>
-                      <td>{{$bourse->année universitaire}}</td>
-
+                      <td>{{$article->id}}</td>
+                      <td>{{$article->title}}</td>
+                      
                       <td class="">
-                          <form action="{{url('bourse/'.$bourse->id)}}" method="post">
+                          <form action="{{url('/article'.$article->id)}}" method="post">
                           {{csrf_field()}}
                           {{method_field('DELETE')}}
                             
                      
-                          <a href="{{url('validate/'.$bourse->id)}}"  class="btn btn-warning btn-circle ">
+                          <a href="{{url('validate/'.$article->id)}}"  class="btn btn-warning btn-circle ">
                             <i class="fas fa-edit"> </i>
                           </a> 
                             
-                           <a href="{{url('bourse/'.$bourse->id)}}"  onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger btn-circle">
+                           <a href="{{url('/articles'.$article->id)}}"  onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger btn-circle">
                             <i class="fas fa-trash"> </i>
                           </a>
                           </form>

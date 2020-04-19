@@ -89,7 +89,9 @@ Route::get('validate/{id}','ValidateController@accept');
 Route::get('/events','EventController@index');
 Route::get('/article','ArticleController@index');
 Route::get('/bourse','BourseController@index');
-
+Route::get('events/{id}','EventController@destory');
+Route::get('bourses/{id}','BourseController@destory');
+Route::get('articles/{id}','ArticleController@destory');
 
 //route de confirmation si le compte a été accpté
 

@@ -22,4 +22,17 @@ class BourseController extends Controller
           return view('bourses',['bourses'=>$list_bourses]);
   
       }
+
+
+      public function destory($id){
+
+           
+           $bourse= User::find($id);
+           $bourse->delete();
+
+          return redirect('bourses');
+
+
+    }
+
 }

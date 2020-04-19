@@ -20,4 +20,16 @@ class EventController extends Controller
           return view('events',['events'=>$list_events]);
   
       }
+
+
+        public function destory($id){
+
+           
+           $event= User::find($id);
+           $event->delete();
+
+          return redirect('events');
+
+
+    }
 }
