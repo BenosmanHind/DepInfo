@@ -46,8 +46,12 @@ class EventController extends Controller
 
     public function destory($id){
 
-           
 
+
+    $event=Event::find($id);
+    $event->delete();
+    
+    return redirect ('events');           
 
     }
 }

@@ -26,6 +26,7 @@
             <div class="card">
               <div class="card-header ">
                 <h3 class="card-title">Vous trouverez ci-joint la table des admin </h3>
+                 <a class="btn btn-success float-right" href="{{url('addadmin')}}"> <i class="fas fa-plus mr-2"></i> Ajouter</a>
                 
               
                 <div class="card-tools " >

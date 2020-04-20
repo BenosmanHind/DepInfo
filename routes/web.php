@@ -46,12 +46,6 @@ Route::get('/test', function () {
 });
 
 
-Route::get('/registerAdmin', function () {
-    return view('Auth.registerAdmin');
-});
-
-
-
 Route::get('/registerteacher', function () {
     return view('Auth.registerteacher');
 });
@@ -88,9 +82,11 @@ Route::get('validate/{id}','ValidateController@accept');
 Route::get('/article','ArticleController@index');
 Route::get('/bourse','BourseController@index');
 
-Route::get('bourses/{id}','BourseController@destory');
-Route::get('articles/{id}','ArticleController@destory');
 
+
+Route::get('/addadmin', function () {
+    return view('addadmin');
+});
 //route de confirmation si le compte a été accpté
 
 Route::get('/isAccept', function () {

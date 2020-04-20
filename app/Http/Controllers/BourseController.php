@@ -24,15 +24,5 @@ class BourseController extends Controller
       }
 
 
-      public function destory($id){
-
-           
-           $bourse= User::find($id);
-           $bourse->delete();
-
-          return redirect('bourses');
-
-
-    }
 
 }

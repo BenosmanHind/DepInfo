@@ -22,6 +22,7 @@ class CreateEventsTable extends Migration
             $table->date('date');
             $table->string('heure');
             $table->timestamps();
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

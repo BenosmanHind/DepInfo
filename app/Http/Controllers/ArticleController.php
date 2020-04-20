@@ -24,14 +24,5 @@ class ArticleController extends Controller
 
 
 
-        public function destory($id){
-
-           
-           $article= User::find($id);
-           $article->delete();
-
-          return redirect('articles');
-
-
-    }
+       
 }
