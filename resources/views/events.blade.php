@@ -56,7 +56,7 @@
                       <td>{{$event->heure}}</td>
 
                       <td class="">
-                          <form action="{{url('etudiants/'.$event->id)}}" method="post">
+                          <form action="{{url('events/'.$event->id)}}" method="post">
                           {{csrf_field()}}
                           {{method_field('DELETE')}}
                             
