@@ -21,10 +21,11 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Vous trouverez ci-joint la table des evenements</h3>
+                <a class="btn btn-success float-right" href="{{url('addevent')}}"> <i class="fas fa-plus mr-2"></i> Ajouter</a>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                    <input type="text" name="table_search" class="form-control " placeholder="Search">
 
                     <div class="input-group-append">
                       <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>

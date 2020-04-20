@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
+use App\Http\Requests\EventRequest;
 
 class EventController extends Controller
 {
@@ -21,14 +22,31 @@ class EventController extends Controller
   
       }
 
+      public function store(EventRequest $request){
+        $event = new Event();
 
-        public function destory($id){
+        $event->title = $request->input('title');
+        $event->lieu = $request->input('lieu');
+        $event->description = $request->input('description');
+        $event->heure = $request->input('heure');
+        $event->date = $request->input('date');
+        $event->save();
+
+        return redirect('events');
+
+
+      }
+
+      public function update(){
+        //
+
+      }
+
+
+
+    public function destory($id){
 
            
-           $event= User::find($id);
-           $event->delete();
-
-          return redirect('events');
 
 
     }

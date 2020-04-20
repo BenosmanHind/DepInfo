@@ -189,6 +189,9 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-10">
+                    @foreach ($events as $event)
+                    
+                    
                     <div class="single_event d-flex align-items-center">
                         <div class="date text-center">
                             <span>02</span>
@@ -196,35 +199,14 @@
                         </div>
                         <div class="event_info">
                             <a href="event_details.html">
-                                <h4>Evenement Google I/O 2020 </h4>
+                                <h4>{{$event->title}}</h4>
                              </a>
-                            <p><span> <i class="flaticon-clock"></i> 10:30 pm</span> <span> <i class="flaticon-calendar"></i> 21Nov 2020 </span> <span> <i class="flaticon-placeholder"></i> AH Oditoriam</span> </p>
+                            <p><span> <i class="flaticon-clock"></i> {{$event->heure}}</span> <span> <i class="flaticon-calendar"></i> {{$event->date}} </span> <span> <i class="flaticon-placeholder"></i> {{$event->lieu}}</span> </p>
                         </div>
                     </div>
-                    <div class="single_event d-flex align-items-center">
-                        <div class="date text-center">
-                            <span>03</span>
-                            <p>Juin, 2020</p>
-                        </div>
-                        <div class="event_info">
-                            <a href="event_details.html">
-                                <h4>Conférence Machine Learning</h4>
-                             </a>
-                            <p><span> <i class="flaticon-clock"></i> 10:30 pm</span> <span> <i class="flaticon-calendar"></i> 21Nov 2020 </span> <span> <i class="flaticon-placeholder"></i> AH Oditoriam</span> </p>
-                        </div>
-                    </div>
-                    <div class="single_event d-flex align-items-center">
-                        <div class="date text-center">
-                            <span>10</span>
-                            <p>Mai, 2020</p>
-                        </div>
-                        <div class="event_info">
-                            <a href="event_details.html">
-                                <h4>Hackathon UABT 2020</h4>
-                             </a>
-                            <p><span> <i class="flaticon-clock"></i> 10:30 pm</span> <span> <i class="flaticon-calendar"></i> 21Nov 2020 </span> <span> <i class="flaticon-placeholder"></i> AH Oditoriam</span> </p>
-                        </div>
-                    </div>
+                    @endforeach
+    
+                  
                 </div>
             </div>
         </div>

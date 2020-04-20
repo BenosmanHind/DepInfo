@@ -14,15 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/student', 'StudentController@index')->name('student');
+//Route::get('/student', 'StudentController@index')->name('student');
 
 
 
@@ -86,10 +84,10 @@ Route::get('etudiants/{id}','EtudiantController@destory');
 Route::get('/admins', 'AdminController@index')->name('admins');
 Route::get('admins/{id}','AdminController@destory');
 Route::get('validate/{id}','ValidateController@accept');
-Route::get('/events','EventController@index');
+
 Route::get('/article','ArticleController@index');
 Route::get('/bourse','BourseController@index');
-Route::get('events/{id}','EventController@destory');
+
 Route::get('bourses/{id}','BourseController@destory');
 Route::get('articles/{id}','ArticleController@destory');
 
@@ -104,4 +102,15 @@ Route::get('/isRegister', function () {
 });
 
 
+//Events Route
+
+Route::resource('events', 'EventController');
+Route::get('/addevent', function () {
+    return view('addevent');
+});
+
+
+//Aceuil Route 
+
+Route::get('/','AccueilController@index');
 
