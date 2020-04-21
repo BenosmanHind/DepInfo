@@ -17,7 +17,7 @@
       </div>
 
       
-          <div class="container-fluid col-md-8 pt-5">
+          <div class="container-fluid col-md-8 pt-5 "  id="app">
       
           
             <!-- general form elements -->
@@ -27,7 +27,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-            <form role="form"  method="POST" action="{{route('register')}} ">
+              <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data" class="user">
                 @csrf
                 <div class="card-body" id="hiddens">
 
