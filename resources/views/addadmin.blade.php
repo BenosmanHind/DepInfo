@@ -27,7 +27,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data" class="user">
+              <form method="POST" action="{{ url('admins/add') }}" enctype="multipart/form-data" class="user">
                 @csrf
                 <div class="card-body" id="hiddens">
 
@@ -82,62 +82,7 @@
                         </div>
 
 
-                  <div class="form-group" v-show="seen">
-                            <label for="nteacher">{{ __('n teacher') }}</label>
-
-                            <div>
-
-                                <input id="nteacher" type="text" class="form-control @error('nteacher') is-invalid @enderror" name="nteacher" value="0" required autocomplete="nteacher" >
-
-                                @error('nteacher')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                    <div class="form-group" v-show="seen">
-                            <label for="nteacher">{{ __('n student') }}</label>
-
-                            <div>
-                              
-                                <input id="nstudent" type="text" class="form-control @error('nstudent') is-invalid @enderror" name="student" value="0" required autocomplete="nstudent" >
-
-                                @error('nstudent')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group" v-show="seen">
-                            <label for="specialite">{{ __('Promo') }}</label>
-
-                            <div>
-                                <input id="specialite" type="text" class="form-control @error('specialite') is-invalid @enderror" name="specialite" value="0" required autocomplete="specialite" >
-
-                                @error('specialite')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="form-group" v-show="seen">
-                            <label for="role">{{ __('role') }}</label>
-
-                            <div>
-                                <input id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value=1 required autocomplete="role" >
-
-                                @error('role')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                
                    <div class="card-footer">
                   <button type="submit" class="btn btn-success pl-4 pr-4">Créer</button>
                 </div>

@@ -82,6 +82,8 @@ Route::get('validate/{id}','ValidateController@accept');
 Route::get('/article','ArticleController@index');
 Route::get('/bourse','BourseController@index');
 
+Route::post('admins/add','AdminController@store');
+
 
 
 Route::get('/addadmin', function () {

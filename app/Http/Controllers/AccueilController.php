@@ -9,8 +9,6 @@ class AccueilController extends Controller
 {
     public function index(){
 
-        
-
         $list_events = Event::all();
          
         return view('welcome',['events'=>$list_events]);

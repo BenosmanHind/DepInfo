@@ -56,6 +56,7 @@
                       <td>{{$event->heure}}</td>
 
                       <td class="">
+                        
                           <form action="{{url('events/'.$event->id)}}" method="post">
                           {{csrf_field()}}
                           {{method_field('DELETE')}}
@@ -65,9 +66,9 @@
                             <i class="fas fa-edit"> </i>
                           </a> 
                             
-                           <a href="{{url('events/'.$event->id)}}"  onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger btn-circle">
+                          <button type="submit" class="btn btn-danger btn-circle" onclick="return confirm('Vous voulez vraiment supprimer?')"> 
                             <i class="fas fa-trash"> </i>
-                          </a>
+                        </a></button>
                           </form>
                       </td>
                     </tr>

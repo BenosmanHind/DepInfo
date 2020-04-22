@@ -54,9 +54,12 @@
                     </tr>
                   </thead>
                   <tbody>
+                    
+                    <?php $i = 1; ?>
+                    
                    @foreach ($adms as $adm)
                     <tr>
-                      <td>{{$adm->id}}</td>
+                    <td>{{$i++}}</td>
                       <td>{{$adm->name}}</td>
                       <td>{{$adm->updated_at}}</td>
 
@@ -75,14 +78,9 @@
                           {{csrf_field()}}
                           {{method_field('DELETE')}}
 
-                         @if($adm->accept == 0)
-                          <a href="{{url('admins/validate/'.$adm->id)}}"  onclick="return confirm('Vous voulez vraiment approuver?')" class="btn btn-success btn-circle ">
-                            <i class="fas fa-check"> </i>
-                          </a> 
-                          @else  <a href="{{url('admins/'.$adm->id)}}"  onclick="return confirm('Vous voulez vraiment approuver?')" class="btn btn-success btn-circle disabled ">
-                            <i class="fas fa-check"> </i>
-                          </a> 
-                          @endif
+                         
+
+                
                           
                            <a href="{{url('admins/'.$adm->id)}}" onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger btn-circle">
                             <i class="fas fa-trash"> </i>
