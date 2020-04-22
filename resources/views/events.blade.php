@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+
 <section class="content-header m-4">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -62,7 +63,7 @@
                           {{method_field('DELETE')}}
                             
                      
-                          <a href="{{url('validate/'.$event->id)}}"  class="btn btn-warning btn-circle ">
+                          <a href="{{route('events.edit' ,['event' => $event->id])}}"  class="btn btn-warning btn-circle ">
                             <i class="fas fa-edit"> </i>
                           </a> 
                             

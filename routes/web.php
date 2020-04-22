@@ -103,6 +103,8 @@ Route::get('/isRegister', function () {
 //Events Route
 
 Route::resource('events', 'EventController');
+
+
 Route::get('/addevent', function () {
     return view('addevent');
 });

@@ -302,6 +302,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
+    @include('flash-mesage')
    @yield('content')
   </div>
   <!-- /.content-wrapper -->
@@ -355,6 +356,14 @@
 <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('dist/js/demo.js') }}"></script>
+
+<script>
+
+  $(document).ready(function(){
+        $(".alert").delay(2000).slideUp(300);
+  });
+
+  </script>
 
 </body>
 </html>
