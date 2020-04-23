@@ -12,6 +12,9 @@ class AccueilController extends Controller
         $list_events = Event::all();
          
         return view('welcome',['events'=>$list_events]);
+        $list_articles = Article::all();
+         
+        return view('welcome',['articles'=>$list_articles]);
        
     }
 }
