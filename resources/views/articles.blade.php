@@ -21,6 +21,7 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Vous trouverez ci-joint la table des articles</h3>
+                <a class="btn btn-success float-right" href="{{url('addarticles')}}"> <i class="fas fa-plus mr-2"></i> Ajouter</a>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -54,13 +55,13 @@
                           {{method_field('DELETE')}}
                             
                      
-                          <a href="{{url('validate/'.$article->id)}}"  class="btn btn-warning btn-circle ">
+                             <a href="{{route('articles.edit' ,['article' => $article->id])}}"  class="btn btn-warning btn-circle ">
                             <i class="fas fa-edit"> </i>
                           </a> 
                             
-                           <a href="{{url('/articles'.$article->id)}}"  onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger btn-circle">
+                          <button type="submit" class="btn btn-danger btn-circle" onclick="return confirm('Vous voulez vraiment supprimer?')"> 
                             <i class="fas fa-trash"> </i>
-                          </a>
+                        </a></button>
                           </form>
                       </td>
                     </tr>

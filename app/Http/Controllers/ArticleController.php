@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Article;
+use App\Http\Requests\ArticleRequest;
+
 
 class ArticleController extends Controller
 {
@@ -24,14 +26,14 @@ class ArticleController extends Controller
 
 
 
-       public function store(EventRequest $request){
-        $event = new Event();
+       public function store(ArticleRequest $request){
+        $article = new Article();
 
         $article->title = $request->input('title');
        
         $article->description = $request->input('description');
         
-        $event->save();
+        $article->save();
 
 
         return redirect()->route('articles.index')
@@ -45,19 +47,19 @@ class ArticleController extends Controller
 
 
       public function edit($id){
-        $event = Event::find($id);
-        return view('editArticles',['article'=>$article]);
+        $article = Article::find($id);
+        return view('editeArticles',['article'=>$article]);
 
       }
 
       public function update(Request $request , $id){
-        $article = Event::find($id);
+        $article = Article::find($id);
 
         $article->title = $request->input('title');
        
         $article->description = $request->input('description');
       
-        $event->save();
+        $article->save();
         return redirect('articles');
 
       }
@@ -68,7 +70,7 @@ class ArticleController extends Controller
 
 
     
-    $article=Event::find($id);
+    $article=Article::find($id);
     $article->delete();
     
     return redirect ('articles');           

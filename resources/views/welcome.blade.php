@@ -183,7 +183,7 @@
                 <div class="col-lg-8 col-md-10">
                     <div class="section_title text-center mb-70">
                         <h3 class="mb-45">Événement Récent</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      
                     </div>
                 </div>
             </div>
@@ -269,54 +269,39 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-10">
+
+                    
                     <div class="section_title text-center mb-70">
                         <h3 class="mb-45">Les Articles</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
+                     @foreach ($articles as $article)
                     <div class="single__news">
                         <div class="thumb">
                             <a href="single-blog.html">
                                 <img src="img/news/1.png" alt="">
                             </a>
+
                             <span class="badge ">Group Study</span>
                         </div>
                         <div class="news_info">
                             <a href="single-blog.html">
-                                <h4>Les enseignants chercheurs de laboratoire biologie moléculaire </h4>
+                                <h4> {{$article->title}} </h4>
                             </a>
-                            <p class="d-flex align-items-center"> <span><i class="flaticon-calendar-1"></i> May 10, 2020</span> 
-                            
-                            <span> <i class="flaticon-comment"></i> 01 comments</span>
-                            </p>
+                           
                         </div>
                     </div>
+                    
                 </div>
-                <div class="col-md-6">
-                    <div class="single__news">
-                        <div class="thumb">
-                            <a href="single-blog.html">
-                                <img src="img/news/2.png" alt="">
-                            </a>
-                            <span class="badge bandge_2">Hall Life</span>
-                        </div>
-                        <div class="news_info">
-                            <a href="single-blog.html">
-                                <h4>Appel à projets COVID-19</h4>
-                            </a>
-                            <p class="d-flex align-items-center"> <span><i class="flaticon-calendar-1"></i> May 10, 2020</span> 
-                            
-                            <span> <i class="flaticon-comment"></i> 01 comments</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
+
     <!-- recent_news_area_end  -->
 
     <!-- footer start -->

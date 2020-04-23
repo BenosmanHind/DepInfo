@@ -18,7 +18,7 @@ class CreateArticlesTable extends Migration
             $table->string('title');
             $table->mediumText('description');
              
-            $table->timestamp();
+            $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
         });
     }

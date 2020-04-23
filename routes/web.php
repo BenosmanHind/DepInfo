@@ -108,6 +108,7 @@ Route::resource('events', 'EventController');
 Route::get('/addevent', function () {
     return view('addevent');
 });
+
 //Articles Route
 
 Route::resource('articles', 'ArticleController');
@@ -116,6 +117,8 @@ Route::resource('articles', 'ArticleController');
 Route::get('/addarticles', function () {
     return view('addarticles');
 });
+
+
 //Aceuil Route 
 
 Route::get('/','AccueilController@index');
