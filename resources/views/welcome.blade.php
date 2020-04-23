@@ -448,7 +448,7 @@
     <script src="{{asset('accueil/js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('accueil/js/isotope.pkgd.min.js')}}"></script>
     <script src="{{asset('accueil/js/ajax-form.js')}}"></script>
-    <script src="{{asset('accueil/js/waypoints.min.js')}}"</script>
+    <script src="{{asset('accueil/js/waypoints.min.js')}}"></script>
     <script src="{{asset('accueil/js/jquery.counterup.min.js')}}"></script>
     <script src="{{asset('accueil/js/imagesloaded.pkgd.min.js')}}"></script>
     <script src="{{asset('accueil/js/scrollIt.js')}}"></script>

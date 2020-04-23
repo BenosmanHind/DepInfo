@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Ajouter un evenement</h1>
+            <h1>Ajouter un article</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -48,51 +48,11 @@
                   </div>
 
 
-                  <div class="form-group">
-                    <label for="exampleInputTitre">Lieu</label>
-                    <div >
-                        
-                        <input id="lieu" placeholder="Lieu de l'Articles" type="text" class="form-control @error('lieu') is-invalid @enderror" name="lieu"  required >
-
-                        @error('lieu')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                  </div>
-
+                 
+                 
 
                  
 
-                  <div class="form-group">
-                    <label for="exampleInputTitre">Date</label>
-                    <div >
-                        
-                        <input id="date" placeholder="Lieu de l'Articles" type="date" class="form-control @error('date') is-invalid @enderror" name="date"  required >
-
-                        @error('date')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                  </div>
-
-
-                  <div class="form-group">
-                    <label for="exampleInputTitre">Heure</label>
-                    <div >
-                        
-                        <input id="heure" placeholder="Nom de l'Articles" type="time" class="form-control @error('heure') is-invalid @enderror" name="heure"  required >
-
-                        @error('heure')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                  </div>
 
                   <div class="form-group">
                     <label for="exampleInputTitre">Description</label>
