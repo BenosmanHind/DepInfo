@@ -14,15 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/student', 'StudentController@index')->name('student');
+//Route::get('/student', 'StudentController@index')->name('student');
 
 
 
@@ -46,7 +44,6 @@ Route::get('/student-signup', function () {
 Route::get('/test', function () {
     dd(Auth::guard('teacher')->attempt(['name' => 'Lahcene', 'password'=>'crazydz14l']));
 });
-
 
 
 Route::get('/registerteacher', function () {
@@ -82,7 +79,16 @@ Route::get('/admins', 'AdminController@index')->name('admins');
 Route::get('admins/{id}','AdminController@destory');
 Route::get('validate/{id}','ValidateController@accept');
 
+Route::get('/article','ArticleController@index');
+Route::get('/bourse','BourseController@index');
 
+Route::post('admins/add','AdminController@store');
+
+
+
+Route::get('/addadmin', function () {
+    return view('addadmin');
+});
 //route de confirmation si le compte a été accpté
 
 Route::get('/isAccept', function () {
@@ -93,4 +99,27 @@ Route::get('/isRegister', function () {
     return view('isRegister');
 });
 
+
+//Events Route
+
+Route::resource('events', 'EventController');
+
+
+Route::get('/addevent', function () {
+    return view('addevent');
+});
+
+//Articles Route
+
+Route::resource('articles', 'ArticleController');
+
+
+Route::get('/addarticles', function () {
+    return view('addarticles');
+});
+
+
+//Aceuil Route 
+
+Route::get('/','AccueilController@index');
 

@@ -9,6 +9,8 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
 class RegisterController extends Controller
 {
     /*
@@ -37,6 +39,8 @@ class RegisterController extends Controller
      * @return void
      */
 
+    
+
        public function redirectTo(){
         
         //User role
@@ -53,6 +57,8 @@ class RegisterController extends Controller
             dd($role);
 
             switch ($role) {
+                case 1:
+                       return '/admins';
                 case 2:
                         return '/dashbord/enseignant/home';
                     break;
@@ -69,10 +75,11 @@ class RegisterController extends Controller
          }
          
       
-        
-        
+          
     
     }
+
+   
     public function __construct()
     {
         $this->middleware('guest');

@@ -9,6 +9,11 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
+              
+
+            
+                
+
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">Admin</li>
             </ol>
@@ -19,15 +24,18 @@
       <div class="row">
           <div class="col-12">
             <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Vous trouverez ci-joint la table des admin</h3>
-
-                <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
+              <div class="card-header ">
+                <h3 class="card-title">Vous trouverez ci-joint la table des admin </h3>
+                 <a class="btn btn-success float-right" href="{{url('addadmin')}}"> <i class="fas fa-plus mr-2"></i> Ajouter</a>
+                
+              
+                <div class="card-tools " >
+                
+                  <div class="input-group input-group-sm" >
                     <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 
                     <div class="input-group-append">
-                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                      <button type="submit" class="btn btn-default " style="height: 32px;"><i class="fas fa-search"></i></button>
                     </div>
                   </div>
                 </div>
@@ -46,9 +54,12 @@
                     </tr>
                   </thead>
                   <tbody>
+                    
+                    <?php $i = 1; ?>
+                    
                    @foreach ($adms as $adm)
                     <tr>
-                      <td>{{$adm->id}}</td>
+                    <td>{{$i++}}</td>
                       <td>{{$adm->name}}</td>
                       <td>{{$adm->updated_at}}</td>
 
@@ -66,11 +77,12 @@
                           <form action="{{url('admins/'.$adm->id)}}" method="post">
                           {{csrf_field()}}
                           {{method_field('DELETE')}}
-                          <a href="" class="btn btn-success btn-circle">
-                            <i class="fas fa-check"> </i>
-                          </a>
+
+                         
+
+                
                           
-                           <a href="{{url('admins/'.$adm->id)}}" class="btn btn-danger btn-circle">
+                           <a href="{{url('admins/'.$adm->id)}}" onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger btn-circle">
                             <i class="fas fa-trash"> </i>
                           </a>
                           

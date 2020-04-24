@@ -17,7 +17,8 @@
   <!-- JQVMap -->
   <link rel="stylesheet" href="{{ asset('plugins/jqvmap/jqvmap.min.css') }}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('dist/css/adminlte.css') }}">
+
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
   <!-- Daterange picker -->
@@ -161,6 +162,9 @@
           
           <li class="nav-header">Fonctionalités</li>
 
+
+      
+
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
@@ -198,11 +202,26 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ url('admins') }}" class="nav-link">
+                <a href="{{ url('events') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Gérer Events</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('articles') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Gérer articles</p>
                 </a>
               </li>
+
+              
+              <li class="nav-item">
+                <a href="{{ url('bourse') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Gérer bourses</p>
+                </a>
+              </li>
+
               
               
             </ul>
@@ -283,6 +302,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
+    @include('flash-mesage')
    @yield('content')
   </div>
   <!-- /.content-wrapper -->
@@ -301,7 +321,7 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-<script src="/js/app.js"></script>
+<script src="{{asset('/js/app.js')}}"></script>
 <!-- jQuery -->
 <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -336,6 +356,14 @@
 <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('dist/js/demo.js') }}"></script>
+
+<script>
+
+  $(document).ready(function(){
+        $(".alert").delay(2000).slideUp(300);
+  });
+
+  </script>
 
 </body>
 </html>
