@@ -22,7 +22,7 @@ class EventController extends Controller
   
       }
 
-
+    
 
 
       public function store(EventRequest $request){
