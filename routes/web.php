@@ -123,3 +123,8 @@ Route::get('/addarticles', function () {
 
 Route::get('/','AccueilController@index');
 
+Route::resource('bourses', 'BourseController');
+
+Route::get('/addbourses',function(){
+    return view('addbourse');
+});

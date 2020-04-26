@@ -139,7 +139,7 @@
                             <i class="flaticon-school"></i>
                         </div>
                         <div class="service_info">
-                            <h4>Bourse </h4>
+                            <h4>Bourses </h4>
                             <p>Disponible</p>
                         </div>
                     </div>
