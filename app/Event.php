@@ -11,4 +11,13 @@ class Event extends Model
     use SoftDeletes;
 
     protected $dates =['deleted_at'];
+
+
+    public function media()
+{
+    return $this->hasMany('APP\Media');
 }
+
+
+}
+

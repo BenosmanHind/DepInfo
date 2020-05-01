@@ -8,11 +8,7 @@ use App\Http\Requests\EventRequest;
 
 class EventController extends Controller
 {
-    public function __construct(){
-
-        $this->middleware('auth');
-  
-       }
+   
   
   
   
@@ -77,4 +73,10 @@ class EventController extends Controller
     return redirect ('events');           
 
     }
+
+    public function eventdetail($id){
+      $event=Event::find($id);
+      return view('event_detail',['event'=>$event]);           
+  
+      }
 }

@@ -104,10 +104,11 @@ Route::get('/isRegister', function () {
 
 Route::resource('events', 'EventController');
 
-
 Route::get('/addevent', function () {
     return view('addevent');
 });
+
+Route::get('/eventdetail/{id}', 'EventController@eventdetail');
 
 //Articles Route
 
