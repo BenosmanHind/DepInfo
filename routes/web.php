@@ -109,6 +109,7 @@ Route::get('/addevent', function () {
 });
 
 Route::get('/eventdetail/{id}', 'EventController@eventdetail');
+Route::get('/eventspage', 'EventController@eventpage');
 
 //Articles Route
 

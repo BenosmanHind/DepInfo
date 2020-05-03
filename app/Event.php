@@ -15,7 +15,7 @@ class Event extends Model
 
     public function media()
 {
-    return $this->hasMany('APP\Media');
+    return $this->hasMany('App\Media');
 }
 
 

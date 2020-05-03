@@ -81,7 +81,7 @@
                                             <ul id="navigation">
                                                 <li ><a  href="index.html" >Acceueil</a></li>
                                                 <li><a href="Courses.html">Bourses</a></li>
-                                                <li><a href="Courses.html">Evenments</a></li>
+                                                <li><a href="{{url('/eventspage')}}">Evenments</a></li>
                                                 <li><a href="Courses.html">Articles</a></li>
                                                 <li><a href="contact.html">Contact</a></li>
                                             </ul>
