@@ -205,5 +205,45 @@
     </div>
 
     <!-- recent_news_area_end  -->
+     
+    <!-- available_scholarships_area_start  -->
+     <!--<div class="recent_events_area section__padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+
+                    
+                    <div class="section_title text-center mb-70">
+                        <h3 class="mb-45">Les Bourses</h3>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                     
+                    <div class="single__news">
+                        <div class="thumb">
+                            <a href="single-blog.html">
+                                <img src="img/news/1.png" alt="">
+                            </a>
+
+                            <span class="badge ">Bourse</span>
+                        </div>
+                        <div class="news_info">
+                            <a href="single-blog.html">
+                                <h4>  </h4>
+                            </a>
+                           
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+-->
+    <!-- recent_news_area_end  --> 
 
     @endsection

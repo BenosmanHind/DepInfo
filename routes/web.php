@@ -127,6 +127,6 @@ Route::get('/','AccueilController@index');
 
 Route::resource('bourses', 'BourseController');
 
-Route::get('/addbourses',function(){
+Route::get('/addbourse',function(){
     return view('addbourse');
 });
