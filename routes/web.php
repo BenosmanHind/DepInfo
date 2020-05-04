@@ -120,6 +120,8 @@ Route::get('/addarticles', function () {
     return view('addarticles');
 });
 
+Route::get('/articlesdetail/{id}', 'ArticleController@articlesdetail');
+Route::get('/articlespage', 'ArticleController@articlespage');
 
 //Aceuil Route 
 
