@@ -1,4 +1,4 @@
-@extends('layouts.accueil')
+ @extends('layouts.accueil')
 
 @section('content')
 
@@ -55,7 +55,9 @@
                         </div>
                         <div class="service_info">
                           
-                            <a href="{{url('/eventspage')}}">Evenements</a>
+                            <a href="{{url('/eventspage')}}">
+                            <h4>Evenements</h4>
+                        </a>
                             <p>A venir</p>
                         </div>
                     </div>
