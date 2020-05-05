@@ -197,7 +197,9 @@
                         </div>
                         <div class="news_info">
                             <a href="single-blog.html">
-                                <h4> {{$article->title}} </h4>
+                                <a href="{{url('/articlesdetail/'.$article->id)}}">
+                                <h4>{{$article->title}}</h4>
+                             </a>
                             </a>
                            
                         </div>
