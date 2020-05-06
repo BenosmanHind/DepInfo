@@ -20,7 +20,7 @@
             <div class="col-lg-12">
                 <div class="single_event d-flex align-items-center">
                     <div class="thumb">
-                        <img src="{{asset('accueil/img/event/1.png')}}" alt="">
+                        <img src="{{$medias[0]->lien}}" alt="">
                         <div class="date text-center">
                             <h4>02</h4>
                             <span>Dec, 2020</span>

@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Event;
 use App\Http\Requests\EventRequest;
-
+ use Illuminate\Support\Facades\Storage;
+ use App\Media;
 class EventController extends Controller
 {
    
@@ -22,6 +23,19 @@ class EventController extends Controller
 
 
       public function store(EventRequest $request){
+
+        
+        $hasFile = $request->hasFile('picture');
+
+  
+        if($hasFile){
+          $file =  $request ->file('picture');
+          $name = $file->store('eventPicture');
+          $lien = Storage::url($name);
+
+        }
+
+
         $event = new Event();
 
         $event->title = $request->input('title');
@@ -31,12 +45,16 @@ class EventController extends Controller
         $event->date = $request->input('date');
         $event->save();
 
+        $media = new Media;
+        $media->lien = $lien;
+        $media->type = "img";
+
+        $event->medias()->save($media);
 
         return redirect()->route('events.index')
 
         ->with('success','Evenement ajouté avec success!');
         
-
 
       }
 
@@ -73,7 +91,8 @@ class EventController extends Controller
 
     public function eventdetail($id){
       $event=Event::find($id);
-      return view('event_detail',['event'=>$event]);           
+      $medias = $event->medias; 
+      return view('event_detail',['event'=>$event , 'medias' =>$medias]);           
     }
 
     public function eventpage(){

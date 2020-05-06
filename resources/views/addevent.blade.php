@@ -27,7 +27,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-            <form role="form"  method="POST" action="{{route('events.store')}} ">
+            <form role="form"  method="POST" action="{{route('events.store')}} "  enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
 
@@ -111,16 +111,13 @@
 
                   
                   <div class="form-group">
-                    <label for="exampleInputFile">Image Slider</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile" multiple>
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text" id="">Upload</span>
-                      </div>
-                    </div>
+                    <label for="picture">Image de l'event</label>
+
+                        <input name="picture" id="picture" type="file" class="form-control-file" >
+                        
+                  </div>
+                    
+                    
                   </div>
                   
                 </div>

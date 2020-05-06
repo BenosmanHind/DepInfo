@@ -17,11 +17,10 @@ class CreateMediaTable extends Migration
             $table->id();
             $table->string('lien');
             $table->string('type');
-
-          /*  $table->unsignedBigInteger('User_id')->unique();
-            $table->foreign('User_id')->references('id')->on('User');*/
-
+            $table->bigInteger('event_id')->unsigned();
             $table->timestamps();
+            $table->foreign('event_id')->references('id')->on('events');
+           
         });
     }
 
