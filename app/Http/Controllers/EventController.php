@@ -32,6 +32,7 @@ class EventController extends Controller
           $file =  $request ->file('picture');
           $name = $file->store('eventPicture');
           $lien = Storage::url($name);
+          
 
         }
 
