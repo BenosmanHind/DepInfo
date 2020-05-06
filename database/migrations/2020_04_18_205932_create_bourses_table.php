@@ -19,10 +19,12 @@ class CreateBoursesTable extends Migration
             $table->mediumText('description');
             $table->string('lieu');
             $table->string('spécialité');
-            $table->date('année_universitaire');
+            $table->year('année_universitaire');
           
             $table->timestamps();
-             });
+            $table->timestamp('deleted_at')->nullable();
+            
+       });
     }
 
     /**

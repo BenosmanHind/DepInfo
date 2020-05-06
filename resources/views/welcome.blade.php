@@ -1,4 +1,4 @@
-@extends('layouts.accueil')
+ @extends('layouts.accueil')
 
 @section('content')
 
@@ -47,12 +47,17 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
+                    
                     <div class="single_service d-flex align-items-center ">
+
                         <div class="icon">
                             <i class="flaticon-error"></i>
                         </div>
                         <div class="service_info">
+                          
+                            <a href="{{url('/eventspage')}}">
                             <h4>Evenements</h4>
+                        </a>
                             <p>A venir</p>
                         </div>
                     </div>
@@ -192,7 +197,9 @@
                         </div>
                         <div class="news_info">
                             <a href="single-blog.html">
-                                <h4> {{$article->title}} </h4>
+                                <a href="{{url('/articlesdetail/'.$article->id)}}">
+                                <h4>{{$article->title}}</h4>
+                             </a>
                             </a>
                            
                         </div>
@@ -204,6 +211,6 @@
         </div>
     </div>
 
-    <!-- recent_news_area_end  -->
+    
 
     @endsection

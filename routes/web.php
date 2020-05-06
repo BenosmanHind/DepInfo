@@ -120,6 +120,8 @@ Route::get('/addarticles', function () {
     return view('addarticles');
 });
 
+Route::get('/articlesdetail/{id}', 'ArticleController@articlesdetail');
+Route::get('/articlespage', 'ArticleController@articlespage');
 
 //Aceuil Route 
 
@@ -127,6 +129,6 @@ Route::get('/','AccueilController@index');
 
 Route::resource('bourses', 'BourseController');
 
-Route::get('/addbourses',function(){
+Route::get('/addbourse',function(){
     return view('addbourse');
 });

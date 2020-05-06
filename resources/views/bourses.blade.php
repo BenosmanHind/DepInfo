@@ -21,7 +21,7 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Vous trouverez ci-joint la table des bourses</h3>
-
+                <a class="btn btn-success float-right" href="{{url('addbourse')}}"> <i class="fas fa-plus mr-2"></i> Ajouter</a>
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
                     <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
@@ -60,7 +60,7 @@
                           {{method_field('DELETE')}}
                             
                      
-                          <a href="{{url('validate/'.$bourse->id)}}"  class="btn btn-warning btn-circle ">
+                          <a href="{{route('bourses.edit' ,['bourse' => $bourse->id])}}"  class="btn btn-warning btn-circle ">
                             <i class="fas fa-edit"> </i>
                           </a> 
                             
