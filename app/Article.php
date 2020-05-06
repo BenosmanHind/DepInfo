@@ -11,4 +11,11 @@ class Article extends Model
     use SoftDeletes;
 
     protected $dates =['deleted_at'];
+
+
+      public function medias()
+{
+    return $this->hasMany(Media::class);
+}
+
 }

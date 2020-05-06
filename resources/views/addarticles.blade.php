@@ -27,7 +27,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-            <form role="form"  method="POST" action="{{route('articles.store')}} ">
+            <form role="form"  method="POST" action="{{route('articles.store')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
 
@@ -71,18 +71,12 @@
 
                   
                   <div class="form-group">
-                    <label for="exampleInputFile">Image</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text" id="">Upload</span>
-                      </div>
-                    </div>
+                    <label for="picture">Image d'Article</label>
+
+                        <input name="picture" id="picture" type="file" class="form-control-file" >
+                        
                   </div>
-                  
+                    
                 </div>
                 <!-- /.card-body -->
 
