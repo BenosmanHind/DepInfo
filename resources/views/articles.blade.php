@@ -50,7 +50,7 @@
                       <td>{{$article->title}}</td>
                       
                       <td class="">
-                          <form action="{{url('/article'.$article->id)}}" method="post">
+                          <form action="{{url('articles/'.$article->id)}}" method="post">
                           {{csrf_field()}}
                           {{method_field('DELETE')}}
                             

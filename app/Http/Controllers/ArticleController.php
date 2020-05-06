@@ -76,6 +76,7 @@ class ArticleController extends Controller
     return redirect ('articles');           
 
     }
+    
      public function articlesdetail($id){
       $article=Article::find($id);
       return view('articles_detail',['article'=>$article]);           
