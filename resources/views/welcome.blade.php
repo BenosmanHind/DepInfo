@@ -68,7 +68,10 @@
                             <i class="flaticon-book"></i>
                         </div>
                         <div class="service_info">
+                            
+                            <a href="{{url('articlespage')}}">
                             <h4>Articles</h4>
+                        </a>
                             <p>Nouveautés</p>
                         </div>
                     </div>
@@ -185,8 +188,9 @@
                 </div>
             </div>
             <div class="row">
+                 @foreach ($articles as $article)
                 <div class="col-md-6">
-                     @foreach ($articles as $article)
+                    
                     <div class="single__news">
                         <div class="thumb">
                             <a href="single-blog.html">
