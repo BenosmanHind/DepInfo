@@ -133,3 +133,8 @@ Route::resource('bourses', 'BourseController');
 Route::get('/addbourse',function(){
     return view('addbourse');
 });
+
+
+
+
+
