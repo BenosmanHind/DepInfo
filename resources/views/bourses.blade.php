@@ -55,7 +55,7 @@
                       <td>{{$bourse->année_universitaire}}</td>
 
                       <td class="">
-                          <form action="{{url('bourse/'.$bourse->id)}}" method="post">
+                          <form action="{{url('bourses/'.$bourse->id)}}" method="post">
                           {{csrf_field()}}
                           {{method_field('DELETE')}}
                             

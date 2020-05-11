@@ -29,7 +29,7 @@ class EventController extends Controller
 
   
         if($hasFile){
-          $file =  $request ->file('picture');
+          $file =  $request->file('picture');
           $name = $file->store('eventPicture');
           $lien = Storage::url($name);
 
@@ -48,6 +48,7 @@ class EventController extends Controller
         $media = new Media;
         $media->lien = $lien;
         $media->type = "img";
+        
 
         $event->medias()->save($media);
 
@@ -76,6 +77,8 @@ class EventController extends Controller
         $event->date = $request->input('date');
         $event->save();
         return redirect('events');
+
+        //$media = Media::find($id);
 
       }
 
