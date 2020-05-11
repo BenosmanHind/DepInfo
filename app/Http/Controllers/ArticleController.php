@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Article;
 use App\Http\Requests\ArticleRequest;
+use Illuminate\Support\Facades\Storage;
+use App\Media;
+
 
 
 class ArticleController extends Controller
@@ -27,6 +30,17 @@ class ArticleController extends Controller
 
 
        public function store(ArticleRequest $request){
+
+        $hasFile = $request->hasFile('picture');
+
+  
+          if($hasFile){
+          $file =  $request ->file('picture');
+          $name = $file->store('articlePicture');
+          $lien = Storage::url($name);
+          
+
+        }
         $article = new Article();
 
         $article->title = $request->input('title');
@@ -34,6 +48,12 @@ class ArticleController extends Controller
         $article->description = $request->input('description');
         
         $article->save();
+
+        $media = new Media;
+        $media->lien = $lien;
+        $media->type = "img";
+
+        $article->medias()->save($media);
 
 
         return redirect()->route('articles.index')
@@ -79,7 +99,8 @@ class ArticleController extends Controller
     
      public function articlesdetail($id){
       $article=Article::find($id);
-      return view('articles_detail',['article'=>$article]);           
+      $medias = $article->medias; 
+      return view('articles_detail',['article'=>$article,'medias' =>$medias]);           
     }
 
     public function articlespage(){

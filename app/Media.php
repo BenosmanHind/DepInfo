@@ -12,4 +12,9 @@ class Media extends Model
     {
         return $this->belongsTo(Event::class);
     }
+
+    public function article()
+    {
+        return $this->belongsTo(Article::class);
+    }
 }

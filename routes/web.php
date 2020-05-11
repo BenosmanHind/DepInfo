@@ -127,8 +127,14 @@ Route::get('/articlespage', 'ArticleController@articlespage');
 
 Route::get('/','AccueilController@index');
 
+//Bourses Route
 Route::resource('bourses', 'BourseController');
 
 Route::get('/addbourse',function(){
     return view('addbourse');
 });
+
+
+
+
+
