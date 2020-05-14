@@ -69,5 +69,8 @@ class BourseController extends Controller
         return redirect ('bourses');           
         }
 
-
+        public function boursepage(){
+          
+          return view('boursepage',['bourses'=>$bourse]);           
+        }
 }

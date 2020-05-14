@@ -134,7 +134,9 @@ Route::get('/addbourse',function(){
     return view('addbourse');
 });
 
-
-
+Route::get('/boursepage',function(){
+    return view('boursepage');
+});
+   
 
 
