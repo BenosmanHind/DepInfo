@@ -139,4 +139,9 @@ Route::get('/boursepage',function(){
 });
    
 
+//Modules Route
 
+Route::resource('modules', 'ModuleController');
+Route::get('/addmodules',function(){
+    return view('addmodules');
+});
