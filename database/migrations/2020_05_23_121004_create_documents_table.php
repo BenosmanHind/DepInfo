@@ -14,13 +14,16 @@ class CreateDocumentsTable extends Migration
     public function up()
     {
         Schema::create('documents', function (Blueprint $table) {
-            $table->id();
+           $table->bigIncrements('id');
             $table->string('title');
             $table->mediumText('description');
             $table->string('promo');
-            $table->integer('doc');
+            $table->string('doc');
+            $table->integer('user_id');
+            $table->bigInteger('module_id')->unsigned()->nullable();
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
+            $table->foreign('module_id')->references('id')->on('modules');
         });
     }
 
