@@ -48,7 +48,7 @@ class AdminController extends Controller
            
         ]);
 
-        return redirect('admins');
+        return redirect('admin/users');
     
 
          

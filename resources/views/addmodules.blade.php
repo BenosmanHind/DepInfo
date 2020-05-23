@@ -47,47 +47,57 @@
                     </div>
                   </div>
 
-                  <div class="form-group">
+                  <div class="form-group" id="promo1">
                     <label for="exampleInputTitre">Promo</label>
-                    <div >
-                        
-                        <input id="promo" placeholder="Promo" type="text"  class="form-control @error('promo') is-invalid @enderror" name="promo"  required>
-
-                        @error('promo')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+                    <div class="form-group">
+                          <select name="promo" id="promo" class="form-control" >
+                              <option value="">Select</option>
+                              <option value="L2">L2</option>
+                              <option value="L3">L3</option>
+                              <option value="M1">M1</option>
+                              <option value="M2">M2</option>
+                          </select>
+                          @error('promo')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                          @enderror
                     </div>
                   </div>
 
 
 
-                  <div class="form-group">
-                    <label for="exampleInputTitre">Spécialité</label>
-                    <div >
-                        
-                        <input id="spécialité" placeholder="Spécialité"  type="text"  class="form-control @error('spécialité') is-invalid @enderror" name="spécialité"  required>
-
-                        @error('spécialité')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+                  <div class="form-group" id="specialite1">
+                    <label for="exampleInputTitre">Specilaité</label>
+                    <div class="form-group">
+                          <select name="specialite" id="specialite" class="form-control" >
+                              <option value="">Select</option>
+                              <option value="SIC">SIC</option>
+                              <option value="RSD">RSD</option>
+                              <option value="GL">GL</option>
+                              <option value="MID">MID</option>
+                          </select>
+                          @error('specialite')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                          @enderror
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label for="exampleInputTitre">Semestre</label>
-                    <div >
-                        
-                        <input id="semestre" placeholder="Semestre" type="text"   class="form-control @error('semestre') is-invalid @enderror" name="semestre"  required>
-
-                        @error('semestre')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+                    <div class="form-group">
+                          <select name="semestre" id="semestre" class="form-control" >
+                              <option value="">Select</option>
+                              <option value="S1">S1</option>
+                              <option value="S2">S2</option>
+                          </select>
+                          @error('semestre')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                          @enderror
                     </div>
                   </div>
 
@@ -116,3 +126,5 @@
     </section>
 
 @endsection
+
+

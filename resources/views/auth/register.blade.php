@@ -53,21 +53,48 @@
                             </div>
                         </div>
 
-              
-
-                        <div class="form-group row">
-                            <label for="specialite" class="col-md-4 col-form-label text-md-right">{{ __('Promo') }}</label>
-
+                        <div class="form-group row" id="promo1">
+                            <label for="exampleInputTitre" class="col-md-4 col-form-label text-md-right">Promo</label>
                             <div class="col-md-6">
-                                <input id="specialite" type="text" class="form-control @error('specialite') is-invalid @enderror" name="specialite" value="{{ old('specialite') }}" required autocomplete="specialite" >
-
-                                @error('specialite')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                            <div class="form-group">
+                                  <select name="promo" id="promo" class="form-control" >
+                                      <option value="">Select</option>
+                                      <option value="L2">L2</option>
+                                      <option value="L3">L3</option>
+                                      <option value="M1">M1</option>
+                                      <option value="M2">M2</option>
+                                  </select>
+                                  @error('promo')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message }}</strong>
+                                  </span>
+                                  @enderror
                             </div>
                         </div>
+                          </div>
+
+                          <div class="form-group row" id="specialite1">
+                            <label for="exampleInputTitre" class="col-md-4 col-form-label text-md-right">Specilaité</label>
+                            <div class="col-md-6">
+                            <div class="form-group">
+                                  <select name="specialite" id="specialite" class="form-control" >
+                                      <option value="">Select</option>
+                                      <option value="SIC">SIC</option>
+                                      <option value="RSD">RSD</option>
+                                      <option value="GL">GL</option>
+                                      <option value="MID">MID</option>
+                                  </select>
+                                  @error('specialite')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message }}</strong>
+                                  </span>
+                                  @enderror
+                            </div>
+                        </div>
+                          </div>
+        
+
+                        
 
                         <div class="form-group row" v-show="seen">
                             <label for="nteacher" class="col-md-4 col-form-label text-md-right">{{ __('n teacher') }}</label>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Module;
-use App\Http\Requests\ModuleRequest;
+
 
 class ModuleController extends Controller
 {
@@ -16,25 +16,20 @@ class ModuleController extends Controller
        }
   
   
-  
       public function index(){
           $list_modules = Module::all();
           return view('modules',['mod'=>$list_modules]);
   
       }
 
-       public function store(ModuleRequest $request){
-        $mod = new Module();
-
-        $mod->nom = $request->input('nom');
-        
-        $mod->promo = $request->input('promo');
-
-        $mod->spécialité = $request->input('spécialité');
-
-        $mod->semestre = $request->input('semestre');
-        
-        $mod->save();
+       public function store(Request $request){
+           
+        $module = new Module();
+        $module->nom = $request->input('nom');
+        $module->promo = $request->input('promo');
+        $module->specialite = $request->input('specialite');
+        $module->semestre = $request->input('semestre');
+        $module->save();
 
 
         return redirect()->route('modules.index')

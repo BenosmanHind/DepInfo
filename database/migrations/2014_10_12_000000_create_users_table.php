@@ -19,16 +19,16 @@ class CreateUsersTable extends Migration
             $table->string('email');
             $table->string('nstudent');
             $table->string('nteacher');
-            $table->string('specialite');
+            $table->string('promo')->nullable();
+            $table->string('specialite')->nullable();
             $table->integer('role');
             $table->timestamp('deleted_at')->nullable();
             $table->string('accept')->default('0');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->bigInteger('module_id')->unsigned()->nullable();
             $table->rememberToken();
             $table->timestamps();
-            $table->foreign('module_id')->references('id')->on('modules');
+            
             
         });
     }

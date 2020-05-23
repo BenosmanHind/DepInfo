@@ -16,10 +16,10 @@ class CreateEnseignementTable extends Migration
         Schema::create('enseignement', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('module_id')->unsigned()->nullable();
-            $table->bigInteger('enseignant_id')->unsigned()->nullable();
+            $table->bigInteger('user_id')->unsigned()->nullable();
             $table->timestamps();
             $table->foreign('module_id')->references('id')->on('modules');
-            $table->foreign('enseignant_id')->references('id')->on('enseignants');
+            $table->foreign('user_id')->references('id')->on('users');
             
         });
     }

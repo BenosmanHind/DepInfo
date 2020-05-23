@@ -145,3 +145,7 @@ Route::resource('modules', 'ModuleController');
 Route::get('/addmodules',function(){
     return view('addmodules');
 });
+
+//Etudiant Mes modules route
+
+Route::get('/mes-modules', 'EtudiantController@mes_modules');

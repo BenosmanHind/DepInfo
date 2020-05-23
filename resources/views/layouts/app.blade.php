@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js') }}" ></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -76,5 +77,24 @@
             @yield('content')
         </main>
     </div>
+
+
+
+
+    <script>
+
+        $(document).ready(function(){
+        $("#specialite1").hide();
+        $('#promo').on('change',function(){
+          var promo = $(this).val();
+          if(promo == "M1" ||  promo == "M2"){
+            $("#specialite1").show();
+          }else{
+            $("#specialite1").hide(); 
+          }
+        });
+        });
+        
+ </script>
 </body>
 </html>

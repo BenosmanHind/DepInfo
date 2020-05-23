@@ -40,6 +40,7 @@
                   <thead>
                     <tr>
                       <th>ID</th>
+                      <th>Nom</th>
                       <th>Promo</th>
                       <th>Spécialité</th>
                       <th>Semestre</th>
@@ -54,8 +55,9 @@
                    @foreach ($mod as $mod)
                     <tr>
                       <td>{{$mod->id}}</td>
+                      <td>{{$mod->nom}}</td>
                       <td>{{$mod->promo}}</td>
-                      <td>{{$mod->spécialité}}</td>
+                      <td>{{$mod->specialite}}</td>
                       <td>{{$mod->semestre}}</td>
 
                      
