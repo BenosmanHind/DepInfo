@@ -100,7 +100,7 @@ class RegisterController extends Controller
             'nstudent' => ['string'],
             'nteacher' => ['string'],
             'role' => ['string'],
-            'specialite' => ['string'],
+          
         ]);
     }
 

@@ -85,6 +85,38 @@
                     </div>
                   </div>
 
+                  <div class="form-group" >
+                    <label for="exampleInputTitre">Type</label>
+                    <div class="form-group">
+                          <select name="type" id="type" class="form-control" >
+                              <option value="">Select</option>
+                              <option value="Fondamentale">Fondamentale</option>
+                              <option value="Méthodologie">Méthodologie</option>
+                              <option value="Découverte">Découverte</option>
+                              <option value="Transversale">Transversale</option>
+                          </select>
+                          @error('type')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                          @enderror
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label >Code</label>
+                    <div >
+                        
+                        <input id="code" placeholder="code" type="text" class="form-control @error('code') is-invalid @enderror" name="code" required >
+
+                        @error('code')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                  </div>
+
                   <div class="form-group">
                     <label for="exampleInputTitre">Semestre</label>
                     <div class="form-group">
