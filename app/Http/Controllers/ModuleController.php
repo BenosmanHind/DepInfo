@@ -29,6 +29,8 @@ class ModuleController extends Controller
         $module->promo = $request->input('promo');
         $module->specialite = $request->input('specialite');
         $module->semestre = $request->input('semestre');
+        $module->type = $request->input('type');
+        $module->code = $request->input('code');
         $module->save();
 
 

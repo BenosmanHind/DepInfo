@@ -19,6 +19,8 @@ class CreateModulesTable extends Migration
             $table->string('promo');
             $table->string('semestre');
             $table->string('specialite')->nullable();
+            $table->string('type');
+            $table->string('code');
             $table->timestamps();
         });
     }

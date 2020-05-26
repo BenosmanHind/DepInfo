@@ -43,6 +43,8 @@
                       <th>Nom</th>
                       <th>Promo</th>
                       <th>Spécialité</th>
+                      <th>Type</th>
+                      <th>Code</th>
                       <th>Semestre</th>
                     
                       
@@ -58,6 +60,8 @@
                       <td>{{$mod->nom}}</td>
                       <td>{{$mod->promo}}</td>
                       <td>{{$mod->specialite}}</td>
+                      <td>{{$mod->type}}</td>
+                      <td>{{$mod->code}}</td>
                       <td>{{$mod->semestre}}</td>
 
                      

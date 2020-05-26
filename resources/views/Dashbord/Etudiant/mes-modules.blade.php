@@ -25,26 +25,59 @@
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                    </div>
+                      
                   </div>
                 </div>
               </div>
               <!-- /.card-header -->
-              <div class="card-body table-responsive p-0">
-                S1 </br>
-                
-                @foreach($modulesS1  as $moduleS1 )
+              <div class="card-body table-responsive p-0" style="overflow: hidden;" >
+
+                <div class="row p-4">
+
+                    <div class="col-lg-6">
+                        <h4><span class="badge badge-warning">Semeste 1</span></h4>
+
+                        <div class="p-3 mb-2 mt-2 bg-primary text-white">Fondamentale</div>
+                            <div class="p-1 ml-4" >RSD 211 : Algrithmique des système</div>
+                            <div class="p-1 ml-4" >RSD 213 : Algrithmique des système</div>
+                        <div class="p-3 mb-2 mt-2 bg-primary text-white">Méthodologie</div>
+                            <div class="p-1 ml-4" >RSD 211 : Algrithmique des système</div>
+                            <div class="p-1 ml-4" >RSD 213 : Algrithmique des système</div>
+                        <div class="p-3 mb-2 mt-2 bg-primary text-white">Découverte</div>
+                            <div class="p-1 ml-4" >RSD 211 : Algrithmique des système</div>
+                            <div class="p-1 ml-4" >RSD 213 : Algrithmique des système</div>
+                        <div class="p-3 mb-2 mt-2 bg-primary text-white">Transversale</div>
+                            <div class="p-1 ml-4" >RSD 211 : Algrithmique des système</div>
+                            <div class="p-1 ml-4" >RSD 213 : Algrithmique des système</div>
+
+
+    
+                    </div>
+                    <div class="col-lg-6">
+                        <h4><span class="badge badge-warning">Semeste 2</span></h4>
+
+                        <div class="p-3 mb-2 mt-2 bg-primary text-white">Fondamentale</div>
+                            <div class="p-1 ml-4" >RSD 211 : Algrithmique des système</div>
+                            <div class="p-1 ml-4" >RSD 213 : Algrithmique des système</div>
+                        <div class="p-3 mb-2 mt-2 bg-primary text-white">Méthodologie</div>
+                            <div class="p-1 ml-4" >RSD 211 : Algrithmique des système</div>
+                            <div class="p-1 ml-4" >RSD 213 : Algrithmique des système</div>
+                        <div class="p-3 mb-2 mt-2 bg-primary text-white">Découverte</div>
+                            <div class="p-1 ml-4" >RSD 211 : Algrithmique des système</div>
+                            <div class="p-1 ml-4" >RSD 213 : Algrithmique des système</div>
+                        <div class="p-3 mb-2 mt-2 bg-primary text-white">Transversale</div>
+                            <div class="p-1 ml-4" >RSD 211 : Algrithmique des système</div>
+                            <div class="p-1 ml-4" >RSD 213 : Algrithmique des système</div>
+
+    
+                    </div>
+
+
+                </div>
                
-                    
-                {{$moduleS1->nom}}
-                   
-                
-                    
-                @endforeach
+               
+               
+
               </div>
               <!-- /.card-body -->
             </div>

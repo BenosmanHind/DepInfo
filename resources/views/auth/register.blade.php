@@ -8,6 +8,15 @@
                 <div class="card-header">{{ __('Inscription Etudiant') }}</div>
 
                 <div class="card-body" id="hiddens">
+                    @if (count($errors) > 0)
+                            <div class="error ">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                     @endif
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
