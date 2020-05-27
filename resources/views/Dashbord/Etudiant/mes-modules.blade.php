@@ -37,18 +37,41 @@
                     <div class="col-lg-6">
                         <h4><span class="badge badge-warning">Semeste 1</span></h4>
 
+
                         <div class="p-3 mb-2 mt-2 bg-primary text-white">Fondamentale</div>
-                            <div class="p-1 ml-4" >RSD 211 : Algrithmique des système</div>
-                            <div class="p-1 ml-4" >RSD 213 : Algrithmique des système</div>
+                        
+                         @foreach ($modulesS1 as $moduleS1)
+                            @if ($moduleS1->type == 'Fondamentale')
+                              <div class="p-1 ml-4" >{{$moduleS1->code}} : {{$moduleS1->description}}</div>
+
+                        
+                            @endif
+                         @endforeach
+                            
                         <div class="p-3 mb-2 mt-2 bg-primary text-white">Méthodologie</div>
-                            <div class="p-1 ml-4" >RSD 211 : Algrithmique des système</div>
-                            <div class="p-1 ml-4" >RSD 213 : Algrithmique des système</div>
+                            @foreach ($modulesS1 as $moduleS1)
+                              @if ($moduleS1->type == 'Méthodologie')
+                                <div class="p-1 ml-4" >{{$moduleS1->code}} : {{$moduleS1->description}}</div>
+                              
+                              @endif
+                          @endforeach
+                        
                         <div class="p-3 mb-2 mt-2 bg-primary text-white">Découverte</div>
-                            <div class="p-1 ml-4" >RSD 211 : Algrithmique des système</div>
-                            <div class="p-1 ml-4" >RSD 213 : Algrithmique des système</div>
+                          @foreach ($modulesS1 as $moduleS1)
+                              @if ($moduleS1->type == 'Découverte')
+                                <div class="p-1 ml-4" >{{$moduleS1->code}} : {{$moduleS1->description}}</div>
+                              
+                              @endif
+                          @endforeach
+                        
                         <div class="p-3 mb-2 mt-2 bg-primary text-white">Transversale</div>
-                            <div class="p-1 ml-4" >RSD 211 : Algrithmique des système</div>
-                            <div class="p-1 ml-4" >RSD 213 : Algrithmique des système</div>
+                              @foreach ($modulesS1 as $moduleS1)
+                                @if ($moduleS1->type == 'Transversale')
+                                  <div class="p-1 ml-4" >{{$moduleS1->code}} : {{$moduleS1->description}}</div>
+                                
+                                @endif
+                            @endforeach
+                        
 
 
     
@@ -56,19 +79,40 @@
                     <div class="col-lg-6">
                         <h4><span class="badge badge-warning">Semeste 2</span></h4>
 
-                        <div class="p-3 mb-2 mt-2 bg-primary text-white">Fondamentale</div>
-                            <div class="p-1 ml-4" >RSD 211 : Algrithmique des système</div>
-                            <div class="p-1 ml-4" >RSD 213 : Algrithmique des système</div>
+                        
+                        <div class="p-3 mb-2 mt-2 bg-primary text-white " id="fdn">Fondamentale</div>
+                        
+                         @foreach ($modulesS2 as $moduleS2)
+                            @if ($moduleS2->type == 'Fondamentale')
+                              <div class="p-1 ml-4" >{{$moduleS2->code}} : {{$moduleS2->description}}</div>
+                           
+                            @endif
+                         @endforeach
+                            
                         <div class="p-3 mb-2 mt-2 bg-primary text-white">Méthodologie</div>
-                            <div class="p-1 ml-4" >RSD 211 : Algrithmique des système</div>
-                            <div class="p-1 ml-4" >RSD 213 : Algrithmique des système</div>
+                            @foreach ($modulesS2 as $moduleS2)
+                              @if ($moduleS2->type == 'Méthodologie')
+                                <div class="p-1 ml-4" >{{$moduleS2->code}} : {{$moduleS2->description}}</div>
+                              
+                              @endif
+                          @endforeach
+                        
                         <div class="p-3 mb-2 mt-2 bg-primary text-white">Découverte</div>
-                            <div class="p-1 ml-4" >RSD 211 : Algrithmique des système</div>
-                            <div class="p-1 ml-4" >RSD 213 : Algrithmique des système</div>
+                          @foreach ($modulesS2 as $moduleS2)
+                              @if ($moduleS2->type == 'Découverte')
+                                <div class="p-1 ml-4" >{{$moduleS2->code}} : {{$moduleS2->description}}</div>
+                              
+                              @endif
+                          @endforeach
+                        
                         <div class="p-3 mb-2 mt-2 bg-primary text-white">Transversale</div>
-                            <div class="p-1 ml-4" >RSD 211 : Algrithmique des système</div>
-                            <div class="p-1 ml-4" >RSD 213 : Algrithmique des système</div>
-
+                              @foreach ($modulesS2 as $moduleS2)
+                                @if ($moduleS2->type == 'Transversale')
+                                  <div class="p-1 ml-4" >{{$moduleS2->code}} : {{$moduleS2->description}}</div>
+                                
+                                @endif
+                            @endforeach
+                        
     
                     </div>
 

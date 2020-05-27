@@ -40,21 +40,29 @@ class EtudiantController extends Controller
            
            
            
-        //   if( $specialite_etud){
+          if($specialite_etud){
+
             $modulesS1 = Module::where('promo','=', $promo_etud)
             ->where('specialite','=',$specialite_etud )->where('semestre','=','S1')->get();
-         //   $modulesS2 = Module::where('promo','=', $promo_etud && 'specialite','=',$specialite_etud && 'semestre','=','S2')->get();
-        //   }
-         /*  else {
-            $modulesS1 = Module::where('promo','=', $promo_etud && 'semestre','=','S1' );
-            $modulesS2 = Module::where('promo','=', $promo_etud && 'semestre','=','S2');
-           }*/
+            $modulesS2 = Module::where('promo','=', $promo_etud)
+            ->where('specialite','=',$specialite_etud )->where('semestre','=','S2')->get();
+           }
+          else {
+            $modulesS1 = Module::where('promo','=', $promo_etud)
+            ->where('semestre','=','S1')->get();
+            $modulesS2 = Module::where('promo','=', $promo_etud)
+            ->where('semestre','=','S2')->get();
+           
+           }
+
+
+          // dd( $modulesS2);
 
 
           
          
 
-          return view('Dashbord.Etudiant.mes-modules',['modulesS1'=>$modulesS1 ]);
+          return view('Dashbord.Etudiant.mes-modules',['modulesS1'=>$modulesS1 , 'modulesS2'=>$modulesS2]);
     }
 
 

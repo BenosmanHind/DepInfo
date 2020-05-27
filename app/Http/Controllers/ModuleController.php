@@ -31,6 +31,7 @@ class ModuleController extends Controller
         $module->semestre = $request->input('semestre');
         $module->type = $request->input('type');
         $module->code = $request->input('code');
+        $module->description = $request->input('description');
         $module->save();
 
 
