@@ -46,6 +46,7 @@
                       <th>Type</th>
                       <th>Code</th>
                       <th>Semestre</th>
+                      <th>Déscription</th>
                     
                       
                       <th>Action</th>
@@ -63,6 +64,7 @@
                       <td>{{$mod->type}}</td>
                       <td>{{$mod->code}}</td>
                       <td>{{$mod->semestre}}</td>
+                      <td>{{$mod->description}}</td>
 
                      
                       <td class="">

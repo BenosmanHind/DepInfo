@@ -21,6 +21,7 @@ class CreateModulesTable extends Migration
             $table->string('specialite')->nullable();
             $table->string('type');
             $table->string('code');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

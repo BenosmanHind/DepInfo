@@ -132,7 +132,20 @@
                           @enderror
                     </div>
                   </div>
+ 
+                  <div class="form-group">
+                    <label >Déscription</label>
+                    <div >
+                        
+                        <input id="description" placeholder="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" required >
 
+                        @error('description')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                  </div>
 
                   
                  
