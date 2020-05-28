@@ -55,27 +55,29 @@
                   <tbody>
                     
                    
-                   @foreach ($mod as $mod)
+                   @foreach ($module as $module)
                     <tr>
-                      <td>{{$mod->id}}</td>
-                      <td>{{$mod->nom}}</td>
-                      <td>{{$mod->promo}}</td>
-                      <td>{{$mod->specialite}}</td>
-                      <td>{{$mod->type}}</td>
-                      <td>{{$mod->code}}</td>
-                      <td>{{$mod->semestre}}</td>
-                      <td>{{$mod->description}}</td>
+                      <td>{{$module->id}}</td>
+                      <td>{{$module->nom}}</td>
+                      <td>{{$module->promo}}</td>
+                      <td>{{$module->specialite}}</td>
+                      <td>{{$module->type}}</td>
+                      <td>{{$module->code}}</td>
+                      <td>{{$module->semestre}}</td>
+                      <td>{{$module->description}}</td>
 
                      
                       <td class="">
 
-                          <form action="{{url('modules/'.$mod->id)}}" method="post">
+                          <form action="{{url('modules/'.$module->id)}}" method="post">
                           {{csrf_field()}}
                           {{method_field('DELETE')}} 
 
+                          <a href="{{route('modules.edit' ,['module' => $module->id])}}"  class="btn btn-warning btn-circle ">
+                            <i class="fas fa-edit"> </i>
+                          </a> 
                           
-                          
-                           <a href="{{url('modules/'.$mod->id)}}"  onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger btn-circle">
+                           <a href="{{url('modules/'.$module->id)}}"  onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger btn-circle">
                             <i class="fas fa-trash"> </i>
                           </a>
                           </form>
