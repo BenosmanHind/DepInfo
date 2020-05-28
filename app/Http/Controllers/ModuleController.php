@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Module;
+use App\Http\Requests\ModuleRequest;
+
 
 
 class ModuleController extends Controller
@@ -18,7 +20,7 @@ class ModuleController extends Controller
   
       public function index(){
           $list_modules = Module::all();
-          return view('modules',['mod'=>$list_modules]);
+          return view('modules',['module'=>$list_modules]);
   
       }
 
@@ -40,4 +42,45 @@ class ModuleController extends Controller
         ->with('success','Module ajouté avec success!');
 
 }
+
+      public function edit($id){
+        $module = Module::find($id);
+        return view('editModule',['module'=>$module]);
+
+      }
+
+      public function update(Request $request , $id){
+        $module = Event::find($id);
+
+      
+        $module->nom = $request->input('nom');
+        $module->promo = $request->input('promo');
+        $module->semestre = $request->input('semestre');
+        $module->specialite = $request->input('specialite');
+        $module->type = $request->input('type');
+        $module->code = $request->input('code');
+        $module->description = $request->input('description');
+        $module->save();
+        return redirect('modules');
+
+       
+      }
+
+
+  public function destroy($id){  
+    $module=Module::find($id);
+    $module->delete(); 
+    return redirect ('modules');           
+    }
+
+
+
+
+
+
+
+
+
+
+
 }
