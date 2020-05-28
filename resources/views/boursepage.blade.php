@@ -30,19 +30,32 @@
             </div>
         </div>
         <div class="row justify-content-center">
-
-            
-                
-            <div class="col-lg-10">
-                <div class="single_event d-flex align-items-center">
-                    <div class="date text-center">
-                        <span>02</span>
-                        <p>Dec, 2020</p>
+            @if (count($bourses) >= 0)
+            @foreach ($bourses as $bourse)
+            <div class="col-md-6">
+                <div class="single__news">
+                    <div class="thumb">
+                        
+                           <a href="single-blog.html">
+                            <img src="img/news/1.png" alt="">
+                        </a>
+                      
                     </div>
-                  
+                    <div class="news_info">
+                        <a href="single-blog.html">
+                            <h4>{{$bourse->title}}</h4>
+                        </a>
+                       
+                        <p class="event_info_text">{{$bourse->description}}
+                    </p> 
+                       
+                    </div>
                 </div>
-              
             </div>
+            @endforeach
+            @endif 
+                
+            
             
         </div>
     </div>

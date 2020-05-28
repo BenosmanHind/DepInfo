@@ -43,6 +43,8 @@ class BourseController extends Controller
 
 
       }
+    
+
       public function edit($id){
         $bourse = Bourse::find($id);
         return view('editBourse',['bourse'=>$bourse]);
@@ -69,8 +71,8 @@ class BourseController extends Controller
         return redirect ('bourses');           
         }
 
-        public function boursepage(){
-          
+        public function boursespage(){
+          $bourse=Bourse::all();
           return view('boursepage',['bourses'=>$bourse]);           
-        }
+        } 
 }
