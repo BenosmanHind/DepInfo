@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Bourse;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -135,8 +135,10 @@ Route::get('/addbourse',function(){
 });
 
 Route::get('/boursepage',function(){
-    return view('boursepage');
+    $bourse=Bourse::all();
+    return view('boursepage',['bourses'=>$bourse]);
 });
+
    
 
 //Modules Route
