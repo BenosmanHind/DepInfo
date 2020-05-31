@@ -49,8 +49,8 @@ class ModuleController extends Controller
 
       }
 
-      public function update(Request $request , $id){
-        $module = Event::find($id);
+      public function update(Request $request , $id){ 
+        $module = Module::find($id);
 
       
         $module->nom = $request->input('nom');
