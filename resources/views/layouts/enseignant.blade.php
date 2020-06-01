@@ -206,6 +206,18 @@
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="pages/gallery.html" class="nav-link">
+              <i class="nav-icon fas fa-chart-bar"></i>
+              <p>
+
+
+              Modules
+
+              </p>
+            </a>
+          </li>
          
           <li class="nav-item">
             <a href="pages/gallery.html" class="nav-link">
@@ -278,6 +290,30 @@
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
+
+<script>
+
+  $(document).ready(function(){
+  $("#specialite1").hide();
+  $('#promo').on('change',function(){
+    var promo = $(this).val();
+    if(promo == "M1" ||  promo == "M2"){
+      $("#specialite1").show();
+    }else{
+      $("#specialite1").hide(); 
+    }
+
+      $.get('#promo', function(data)){
+        console.log(data);
+
+      });
+
+
+
+  });
+  });
+  
+  </script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- ChartJS -->

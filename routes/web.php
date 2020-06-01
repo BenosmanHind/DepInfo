@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Bourse;
+use GuzzleHttp\Psr7\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -64,6 +66,17 @@ Route::get('/dashbord/enseignant/home', function () {
 Route::get('/enseignants', 'EnseignantController@index')->name('enseignants');
 Route::get('enseignants/validate/{id}','ValidateController@accept2');
 Route::get('enseignants/{id}','EnseignantController@destory');
+Route::resource('dashbord/enseignant/modules','ModuleEnsController');
+// ajx enseignant
+
+route::get('/getRequest', function(){
+    if(Request::ajax()){
+        return "Welcomeee";
+
+    }
+
+
+});
 
 
 
