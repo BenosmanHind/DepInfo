@@ -108,7 +108,19 @@
                   </div>
                 </div>
 
+                <div class="form-group">
+                  <label for="exampleInputTitre">Liens</label>
+                  <div >
+                      
+                      <input id="link" placeholder="Liens..." type="text" class="form-control @error('link') is-invalid @enderror" name="link"  required >
 
+                      @error('link')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                      @enderror
+                  </div>
+                </div>
                 
                 <div class="form-group">
                   <label for="exampleInputFile">Image</label>

@@ -32,7 +32,7 @@ class BourseController extends Controller
         $bourse->lieu = $request->input('lieu');
         $bourse->spécialité = $request->input('spécialité');
         $bourse->année_universitaire = $request->input('année_universitaire');
-        
+        $bourse->link=$request->input('link');
         $bourse->save();
 
 
@@ -59,7 +59,7 @@ class BourseController extends Controller
         $bourse->lieu = $request->input('lieu');
         $bourse->spécialité = $request->input('spécialité');
         $bourse->année_universitaire = $request->input('année_universitaire');
-        
+        $bourse->link=$request->input('link');
         $bourse->save();
         return redirect('bourses');
 

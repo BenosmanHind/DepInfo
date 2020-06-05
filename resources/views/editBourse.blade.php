@@ -55,7 +55,7 @@
                     <label for="exampleInputTitre">Lieu</label>
                     <div >
                         
-                        <input id="lieu" placeholder="Lieu de l'Event" type="text" value="{{$bourse->lieu}}" class="form-control @error('lieu') is-invalid @enderror" name="lieu"  required >
+                        <input id="lieu" placeholder="Lieu de bourse" type="text" value="{{$bourse->lieu}}" class="form-control @error('lieu') is-invalid @enderror" name="lieu"  required >
 
                         @error('lieu')
                             <span class="invalid-feedback" role="alert">
@@ -110,6 +110,19 @@
                     </div>
                   </div>
 
+                  <div class="form-group">
+                    <label for="exampleInputTitre">Liens</label>
+                    <div >
+                        
+                        <input id="link" placeholder="Lien " type="text" value="{{$bourse->link}}" class="form-control @error('link') is-invalid @enderror" name="link"  required >
+
+                        @error('link')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                  </div>
 
                   
                   <div class="form-group">
