@@ -27,8 +27,8 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-            <form role="form"  method="POST" action="{{route('articles.store')}}" form-datenctype="multipart/a">
-                @csrf enctype="multipart/
+            <form role="form"  method="POST" action="{{route('articles.store')}}" enctype="multipart/form-data">
+                @csrf 
                 <div class="card-body">
 
 
