@@ -164,3 +164,9 @@ Route::get('/addmodules',function(){
 //Etudiant Mes modules route
 
 Route::get('/mes-modules', 'EtudiantController@mes_modules');
+Route::get('/note',function(){
+   return view('dashbord.enseignant.note');
+});
+Route::get('/mesnotes',function(){
+    return view('dashbord.etudiant.mesnotes');
+ });
