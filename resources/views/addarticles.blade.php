@@ -27,7 +27,11 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
+<<<<<<< HEAD
             <form role="form"  method="POST" action="{{route('articles.store')}}" form-datenctype="multipart/a">
+=======
+            <form role="form"  method="POST" action="{{route('articles.store')}}" enctype="multipart/form-data">
+>>>>>>> 4c76db9de61caf341a64c57d51836b52167ed33c
                 @csrf 
                 <div class="card-body">
 
