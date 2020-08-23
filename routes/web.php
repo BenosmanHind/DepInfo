@@ -160,17 +160,8 @@ Route::get('/addmodules',function(){
 //Etudiant Mes modules route
 
 Route::get('/mes-modules', 'EtudiantController@mes_modules');
-<<<<<<< HEAD
 
 //Docuements
 
 Route::resource('/documents', 'DocumentController');
 
-=======
-Route::get('/note',function(){
-   return view('dashbord.enseignant.note');
-});
-Route::get('/mesnotes',function(){
-    return view('dashbord.etudiant.mesnotes');
- });
->>>>>>> 4c76db9de61caf341a64c57d51836b52167ed33c

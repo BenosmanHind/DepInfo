@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<<<<<<< HEAD
+
   <title>Dep-Info</title>
-=======
+
   <title>Dashbord</title>
->>>>>>> 4c76db9de61caf341a64c57d51836b52167ed33c
+
   <!-- Tell the browser to be responsive to screen width -->
    <meta name="viewport" content="width=device-width, initial-scale=1">
   
