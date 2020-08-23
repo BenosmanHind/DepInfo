@@ -3,9 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>Dep-Info</title>
   <!-- Tell the browser to be responsive to screen width -->
    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+ 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
   <!-- Ionicons -->
@@ -25,8 +27,13 @@
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.css') }}">
   <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">+
+
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  
 </head>
+
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
@@ -208,7 +215,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+            <a href="{{url('dashbord/enseignant/modules')}}" class="nav-link">
               <i class="nav-icon fas fa-chart-bar"></i>
               <p>
 
@@ -253,6 +260,7 @@
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
+    
   </aside>
 
           
@@ -293,6 +301,163 @@
 
 <script>
 
+$(document).ready(function(){
+ 
+  $('#promo').on('change',function(){
+    $("#moduleOpt").empty(); 
+    var promo = $(this).val();
+    if(promo == "M1" ||  promo == "M2"){
+      $('#specialite').prop('selectedIndex',0);
+      $('#divspecialite').show();
+            $('#specialite').on('change',function(){
+            $("#moduleOpt").empty(); 
+            var specialite = $(this).val();
+            $.ajax({
+            url: '/moduleAjax/'+promo + '/' + specialite ,
+            type:'GET',
+            success: function (response) { 
+              $("#moduleOpt").empty(); 
+                  for (var i = 0, len = response.length; i < len; i++) {                 
+                  $("#moduleOpt").append("<option value='"+ response[i] + "'>"+ response[i] + "</option>"); 
+                }
+                              
+              }
+          });
+          });
+      
+    }else{
+      $("#divspecialite").hide(); 
+
+      
+      $.ajax({
+        
+       url: '/moduleAjax/' + promo,
+       type:'GET',
+
+       success: function (response) { 
+            for (var i = 0, len = response.length; i < len; i++) {
+            $("#moduleOpt").append("<option value='"+ response[i] + "'>"+ response[i] + "</option>"); 
+           }
+                        
+        }
+     });
+    }
+  });
+
+  
+  });
+  
+</script>
+
+
+<script>
+
+  $.ajaxSetup({
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
+});
+
+$("#btn-mdl").click(function(e){
+e.preventDefault();
+module = $('#moduleOpt').val();
+
+$.ajax({
+
+   url:'/Mesmodules/',
+   method:'POST',
+   data:{
+            
+         module:module,
+            
+          },
+   
+   success:function(response){
+   
+    Swal.fire(
+              'Success',
+              'Module ajouté!',
+              'success'
+            );
+
+       $("#moduleAdd").append(
+        '<div class="row d-flex justify-content-center" id="MesModule"> <h3> <span class="badge badge-primary">'+ module 
+        +'</span></h3> <button class="btn btn-delete" data-id="'+response[2]+'"><i class="fas fa-times"></i></button>  </div>'
+       
+       ); 
+
+   },
+   error:function(error){
+      console.log(error)
+   }
+});
+});
+
+</script>
+
+<script>
+
+$.ajaxSetup({
+headers: {
+  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+}
+});
+
+
+$(".btn-delete").click("#btn_a",function(e){
+e.preventDefault();
+var id = $(this).data("id");
+
+Swal.fire({
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+
+  if (result.value) {
+
+       $.ajax({
+        url:'/Mesmodules/'+id,
+        method:'DELETE',
+        data:{         
+              id:id,        
+            },
+
+        success:function(response){
+              
+        },
+        error:function(error){
+            console.log(error)
+        }
+        });
+
+    Swal.fire(
+      'Deleted!',
+      'Your file has been deleted.',
+      'success',
+    )
+    location.reload();  
+
+  }
+
+ 
+
+
+
+
+});
+
+
+});
+
+</script>
+
+<script>
+
   $(document).ready(function(){
   $("#specialite1").hide();
   $('#promo').on('change',function(){
@@ -302,18 +467,13 @@
     }else{
       $("#specialite1").hide(); 
     }
-
-      $.get('#promo', function(data)){
-        console.log(data);
-
-      });
-
-
-
   });
   });
   
   </script>
+
+
+
 <!-- Bootstrap 4 -->
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- ChartJS -->

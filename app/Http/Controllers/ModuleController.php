@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enseignement;
 use Illuminate\Http\Request;
 use App\Module;
 use App\Http\Requests\ModuleRequest;
@@ -20,6 +21,8 @@ class ModuleController extends Controller
   
       public function index(){
           $list_modules = Module::all();
+          
+
           return view('modules',['module'=>$list_modules]);
   
       }

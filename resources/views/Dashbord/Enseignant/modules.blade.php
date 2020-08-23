@@ -1,6 +1,8 @@
 @extends('layouts.enseignant')
 
 @section('content')
+
+
 <section class="content-header m-4">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -24,11 +26,14 @@
             <div class="card card-success">
               <div class="card-header">
                 <h3 class="card-title">Merci de remplir les champs</h3>
+  
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="POST" action="{{ url('admins/add') }}" enctype="multipart/form-data" class="user">
+              <form id="addform"  class="user"  action="" enctype="multipart/form-data" >
                 @csrf
+            
+
                 <div class="card-body row" id="hiddens">
 
                     <div class="col-lg-6">
@@ -55,7 +60,7 @@
         
         
         
-                          <div class="form-group" id="specialite1">
+                          <div class="form-group" id="divspecialite" style="display:none;">
                             <label for="exampleInputTitre">Specilaité</label>
                             <div class="form-group">
                                   <select name="specialite" id="specialite" class="form-control" >
@@ -77,14 +82,11 @@
                           <div class="form-group" id="module">
                             <label for="exampleInputTitre">Module</label>
                             <div class="form-group">
-                                  <select name="specialite" id="specialite" class="form-control" >
-                                      <option value="">Select</option>
-                                      <option value="SIC">SIC</option>
-                                      <option value="RSD">RSD</option>
-                                      <option value="GL">GL</option>
-                                      <option value="MID">MID</option>
+                                  <select name="module" id="moduleOpt" class="form-control" >
+                                    
+                                      
                                   </select>
-                                  @error('specialite')
+                                  @error('module')
                                   <span class="invalid-feedback" role="alert">
                                       <strong>{{ $message }}</strong>
                                   </span>
@@ -95,13 +97,25 @@
 
                 
                    <div class="card-footer">
-                  <button type="submit" class="btn btn-success pl-4 pr-4">Ajouter</button>
+                 
                 </div>
+                <button type="submit" id="btn-mdl" class="btn btn-success pl-4 pr-4">Ajouter</button>
             </div>
               </form>
 
-              <div class="col-lg-6 text-center">
+                   <div class="col-lg-6 text-center " id="moduleAdd">
                   Mes Modules
+                  @foreach ($modules_persos as $module_perso)
+                     <div class="row d-flex justify-content-center" id="MesModule"> 
+                        <h3> <span class="badge badge-primary" >{{$module_perso->nom}}</span></h3>
+                       <button class="btn btn-delete" data-id="{{ $module_perso->id }}"><i class="fas fa-times"></i></button> 
+                        
+                     </div>
+                     @endforeach
+                        
+                          
+                    </div>
+                  </div>
               </div>
             </div>
                     

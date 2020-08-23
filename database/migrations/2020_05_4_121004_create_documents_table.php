@@ -15,6 +15,7 @@ class CreateDocumentsTable extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
            $table->bigIncrements('id');
+           
             $table->string('title');
             $table->mediumText('description');
             $table->string('promo');

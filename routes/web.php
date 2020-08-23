@@ -67,17 +67,13 @@ Route::get('/enseignants', 'EnseignantController@index')->name('enseignants');
 Route::get('enseignants/validate/{id}','ValidateController@accept2');
 Route::get('enseignants/{id}','EnseignantController@destory');
 Route::resource('dashbord/enseignant/modules','ModuleEnsController');
+
+
 // ajx enseignant
 
-route::get('/getRequest', function(){
-    if(Request::ajax()){
-        return "Welcomeee";
-
-    }
-
-
-});
-
+Route::get('/moduleAjax/{promo}','AjaxController@getModules');
+Route::get('/moduleAjax/{promo}/{specialite}','AjaxController@getModules2');
+Route::resource('/Mesmodules','EnseignementController');
 
 
 //routes Etudiants
@@ -164,3 +160,8 @@ Route::get('/addmodules',function(){
 //Etudiant Mes modules route
 
 Route::get('/mes-modules', 'EtudiantController@mes_modules');
+
+//Docuements
+
+Route::resource('/documents', 'DocumentController');
+

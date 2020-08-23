@@ -28,7 +28,7 @@
               <!-- /.card-header -->
               <!-- form start -->
             <form role="form"  method="POST" action="{{route('articles.store')}}" form-datenctype="multipart/a">
-                @csrf enctype="multipart/
+                @csrf 
                 <div class="card-body">
 
 

@@ -17,4 +17,9 @@ class Media extends Model
     {
         return $this->belongsTo(Article::class);
     }
+
+    public function document()
+    {
+        return $this->belongsTo(Document::class);
+    }
 }
