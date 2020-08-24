@@ -202,17 +202,7 @@
             </a>
           </li>
 
-          <li class="nav-item">
-          <a href="{{ url ('note') }}"  class="nav-link">
-              <i class="nav-icon fas fa-chart-bar"></i>
-              <p>
-
-
-              Les Notes
-
-              </p>
-            </a>
-          </li>
+         
 
           <li class="nav-item">
             <a href="{{url('dashbord/enseignant/modules')}}" class="nav-link">
