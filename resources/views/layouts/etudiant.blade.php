@@ -189,7 +189,7 @@
           </li>
 
           <li class="nav-item">
-          <a href="{{ url ('mesnotes')}}" class="nav-link">
+          <a href="{{url('mesnotes')}}" class="nav-link">
               <i class="nav-icon fas fa-chart-bar"></i>
               <p>
               Mes Notes
