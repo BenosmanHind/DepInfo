@@ -14,14 +14,14 @@ class CreateExamensTable extends Migration
     public function up()
     {
         Schema::create('examens', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
+            $table->bigIncrements('id');
             $table->date('date');
             $table->string('salle');
-            $table->string('module');
-            $table->string('promo');
+            $table->string('type');
+            $table->bigInteger('module_id')->unsigned()->nullable();
             $table->timestamps();
-             $table->timestamp('deleted_at')->nullable();
+            $table->foreign('module_id')->references('id')->on('modules');
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

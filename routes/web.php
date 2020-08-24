@@ -165,3 +165,7 @@ Route::get('/mes-modules', 'EtudiantController@mes_modules');
 
 Route::resource('/documents', 'DocumentController');
 
+
+//Examens
+
+Route::resource('/examens', 'ExamenController');

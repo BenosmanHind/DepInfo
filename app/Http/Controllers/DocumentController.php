@@ -52,7 +52,7 @@ class DocumentController extends Controller
 
         return redirect()->route('documents.index')
 
-        ->with('success','Evenement ajouté avec success!');
+        ->with('success','Document ajouté avec success!');
 
 
 

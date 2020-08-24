@@ -170,7 +170,7 @@
             </ul>
           </li>
           
-          <li class="nav-header">Focrionalités</li>
+          <li class="nav-header">Foctionalités</li>
  <li class="nav-item">
             <a href="pages/gallery.html" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
