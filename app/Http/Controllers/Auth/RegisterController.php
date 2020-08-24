@@ -119,7 +119,7 @@ class RegisterController extends Controller
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
-                'nstudent' => null,
+              
                 'nteacher' => $data['nteacher'],
                 'promo' => null,
                 'specialite' => null,
@@ -134,7 +134,7 @@ class RegisterController extends Controller
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
                 'nstudent' => $data['nstudent'],
-                'nteacher' => null,
+                
                 'promo' => $data['promo'],
                 'specialite' => $data['specialite'],
                 'role' => $data['role'],

@@ -21,6 +21,7 @@ class CreateEnseignementTable extends Migration
             $table->foreign('module_id')->references('id')->on('modules');
             $table->foreign('user_id')->references('id')->on('users');
             
+            
         });
     }
 
