@@ -13,6 +13,8 @@ class ModuleEnsController extends Controller
         
         $list_modules_perso = Enseignement::join('Modules', 'Modules.id', '=', 'Enseignements.module_id')
         ->where('user_id','=',Auth::user()->id)->get();
+
+       
         
         return view('dashbord.enseignant.modules',['modules_persos'=>$list_modules_perso]);
     }
