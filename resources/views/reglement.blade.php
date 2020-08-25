@@ -6,6 +6,7 @@
        h1{
            text-align: center;
            font-family: Georgia, 'Times New Roman', Times, serif;
+           padding-top: 25px
        }
        .stuff{
            display: block;
@@ -15,7 +16,7 @@
            display: flex;
            
            justify-content: center;
-           padding: 10%
+           padding: 5% 10% ;
            
        }
     </style>
