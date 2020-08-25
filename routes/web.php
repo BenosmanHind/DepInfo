@@ -75,6 +75,7 @@ Route::get('enseignants/validate/{id}','ValidateController@accept2');
 Route::get('enseignants/{id}','EnseignantController@destory');
 Route::resource('dashbord/enseignant/modules','ModuleEnsController');
 Route::resource('dashbord/enseignant/documents','DocumentController');
+Route::resource('dashbord/enseignant/examens','ExamenController');
 
 
 // ajx enseignant
@@ -175,3 +176,6 @@ Route::get('/mes-modules', 'EtudiantController@mes_modules');
 Route::resource('/documents', 'DocumentController');
 
 
+//Examens
+
+Route::resource('/examens', 'ExamenController');
