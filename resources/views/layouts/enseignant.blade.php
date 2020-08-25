@@ -217,7 +217,7 @@
           </li>
          
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+          <a href="{{url('dashbord/enseignant/reglement')}}" class="nav-link">
               <i class="nav-icon fas fa-exclamation-triangle"></i>
               <p>
               Le Réglement Intérieur

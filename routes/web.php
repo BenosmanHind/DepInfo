@@ -61,6 +61,13 @@ Route::get('/dashbord/enseignant/home', function () {
     return view('Dashbord.Enseignant.home');
 });
 
+Route::get('/dashbord/enseignant/reglement', function () {
+    return view('reglement');
+});
+
+Route::get('/dashbord/etudiant/reglement', function () {
+    return view('reglement');
+});
 
 //routes Enseignants
 Route::get('/enseignants', 'EnseignantController@index')->name('enseignants');
@@ -80,6 +87,7 @@ Route::resource('/Mesmodules','EnseignementController');
 //routes Etudiants
 Route::get('/etudiants', 'EtudiantController@index')->name('etudiants');
 Route::get('etudiants/{id}','EtudiantController@destory');
+Route::get('dashbord/etudiant/');
 
 
 
