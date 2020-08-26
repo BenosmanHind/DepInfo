@@ -171,7 +171,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/calendar.html" class="nav-link">
+            <a href="{{url('mes-documents')}}" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
               Mes Documents 
@@ -180,7 +180,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+             <a href="{{url('mes-examens')}}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Mes Examens
