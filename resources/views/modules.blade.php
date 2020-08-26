@@ -54,7 +54,7 @@
                   </thead>
                   <tbody>
                     
-                   
+                  
                    @foreach ($module as $module)
                     <tr>
                       <td>{{$module->id}}</td>
@@ -83,6 +83,8 @@
                           </form>
                       </td>
                     </tr>
+                    
+                   
                     @endforeach
                      
                     

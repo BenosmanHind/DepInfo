@@ -89,8 +89,6 @@ Route::resource('/Mesmodules','EnseignementController');
 Route::get('/etudiants', 'EtudiantController@index')->name('etudiants');
 Route::get('etudiants/{id}','EtudiantController@destory');
 Route::get('dashbord/etudiant/');
-Route::resource('dashbord/etudiant/mes-documents','DocumentController');
-Route::resource('dashbord/etudiant/mes-examens','ExamenController');
 
 
 
@@ -186,9 +184,7 @@ Route::resource('/examens', 'ExamenController');
 
 //Etudiant Mes documents route
 
-Route::get('/mes-documents', 'DocumentController');
 
 
 //Etudiant Mes examens route
 
-Route::get('/mes-examens', 'ExamenController');

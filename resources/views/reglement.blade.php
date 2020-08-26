@@ -1,4 +1,4 @@
-@extends('layouts.enseignant')
+@extends('layouts.etudiant')
 
 @section('content')
     <style media="screen">
