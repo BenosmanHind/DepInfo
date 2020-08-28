@@ -59,24 +59,20 @@
                 <div class="row p-4">
 
                   <div class="mr-2">
-                  <a href="{{url('documentView')}}"> <button type="button" class="btn btn-primary mdl">
-                     BDD 
-                  </button> </a>
+                  <a href="{{url('documentView')}}"> 
+                     @foreach ($modulesS1 as $moduleS1)
+                    <button type="button" class="btn btn-primary mdl">
+                    
+                     <div class="p-1 ml-8" >{{$moduleS1->nom}} </div>
+                     
+                  </button>
+                  @endforeach
+ 
+                  </a>
                   </div>
 
-                  <div class="mr-2">
-                    <a href=""> <button type="button" class="btn btn-primary mdl">
-                       BDD 
-                    </button> </a>
-                    </div>
-
-                    <div class="mr-2">
-                      <a href=""> <button type="button" class="btn btn-primary mdl">
-                         BDD 
-                      </button> </a>
-                      </div>
-
-                </div>
+                 
+                    
                   
               </div>
               <!-- /.card-body -->
@@ -100,23 +96,17 @@
                 <div class="row p-4">
 
                   <div class="mr-2">
-                  <a href=""> <button type="button" class="btn btn-primary mdl">
-                     BDD 
-                  </button> </a>
+                  <a href="">
+                   @foreach ($modulesS2 as $moduleS2)
+                   <button type="button" class="btn btn-primary mdl">
+                    <div class="p-1 ml-8" >{{$moduleS2->nom}} </div>
+                  </button>
+                     @endforeach
+ 
+                   </a>
                   </div>
 
-                  <div class="mr-2">
-                    <a href=""> <button type="button" class="btn btn-primary mdl">
-                       BDD 
-                    </button> </a>
-                    </div>
-
-                    <div class="mr-2">
-                      <a href=""> <button type="button" class="btn btn-primary mdl">
-                         BDD 
-                      </button> </a>
-                      </div>
-
+                  
                 </div>
                   
               </div>

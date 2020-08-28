@@ -1,12 +1,11 @@
 @extends('layouts.etudiant')
 
-
 @section('content')
 <section class="content-header m-4">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>I</h1>
+            <h1></h1>
           </div>
         </div>
       </div>
@@ -42,7 +41,19 @@
                     </div>
                   </div>
 
-                   
+                   <div class="form-group">
+                    <label for="exampleInputTitre">Email</label>
+                    <div >
+                        
+                        <input id="email" placeholder="Entrer l'email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"  required >
+
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                  </div>
                     <div class="form-group ">
                     <label for="exampleInputTitre">N° carte</label>
                     <div>
@@ -96,15 +107,39 @@
 
                            
 
-                       
+                        <div class="form-group row" v-show="seen">
+                            <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('role') }}</label>
 
-                       
-                       
+                            <div class="col-md-6">
+                                <input id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value=3 required autocomplete="role" >
+
+                                @error('role')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">{{ __('Password') }}</label>
+
+                            <div>
+                                <input id="password" placeholder="Saisir mot de passe" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        
 
 
                 
                    <div class="card-footer">
-                  <button type="submit" class="btn btn-success pl-4 pr-4">Créer</button>
+                  <button type="submit" class="btn btn-success pl-4 pr-4">Register</button>
                 </div>
               </form>
             </div>

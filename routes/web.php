@@ -188,5 +188,13 @@ Route::resource('/student-documents', 'StudentDocumentController');
 Route::get('/documentView', 'StudentDocumentController@documentView');
 
 
-//Etudiant Mes examens route
+//Etudiant  examens route
+
+Route::resource('/student-examens', 'StudentExamenController');
+
+
+// Profil route
+
+
+
 

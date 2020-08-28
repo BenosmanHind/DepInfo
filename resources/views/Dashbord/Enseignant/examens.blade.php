@@ -38,64 +38,13 @@
 
                     <div class="col-lg-6">
                         <div class="form-group" >
-                            <label for="exampleInputTitre">Vous voulez envoyer un ?</label>
+                            <label for="exampleInputTitre">Type</label>
                             <div class="form-group">
                                   <select name="type" class="form-control" >
                                       <option value="">Select</option>
-                                      <option value="cours">Cours</option>
-                                      <option value="td">TD</option>
-                                      <option value="tp">TP</option>
-                                      <option value="note">Note</option>
-                                  </select>
-                                  @error('promo')
-                                  <span class="invalid-feedback" role="alert">
-                                      <strong>{{ $message }}</strong>
-                                  </span>
-                                  @enderror
-                            </div>
-                          </div>
-
-                    
-
-                        <div class="form-group">
-                            <label for="exampleInputTitre">Titre</label>
-                            <div >
-                                
-                                <input id="titre" placeholder="Titre" type="text" class="form-control @error('titre') is-invalid @enderror" name="titre"  required >
-        
-                                @error('titre')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="exampleInputTitre">Description</label>
-                        <div >
-                            
-                            <textarea id="description" placeholder="Nom de module" type="text" class="form-control @error('description') is-invalid @enderror" name="description"  required >
-                            </textarea>
-                            @error('description')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                  </div>
-                  </div>
-      
-                  <div class="col-lg-6">
-                
-                          <div class="form-group" >
-                            <label for="exampleInputTitre">Module</label>
-                            <div class="form-group">
-                                  <select name="module" class="form-control" >
-                                      <option value="">Select</option>
-                                      @foreach ($modules as $module)
-                                      <option value="{{$module->id}}">{{$module->nom}}</option>
-                                      @endforeach
+                                      <option value="cours">Control</option>
+                                      <option value="td">Examen</option>
+                                      <option value="tp">Test TP</option>
                                       
                                   </select>
                                   @error('promo')
@@ -105,20 +54,41 @@
                                   @enderror
                             </div>
                           </div>
-        
-        
-        
-                       
 
-                          <div class="form-group">
-                            <label for="picture">Uploder un fichier</label>
-        
-                                <input name="fichier" id="fichier" type="file" class="form-control-file" >
+                         <div class="form-group">
+                         <label for="exampleInputTitre">Date</label>
+                         <div >
+                        
+                        <input id="date" placeholder="date d'examen" type="date" class="form-control @error('date') is-invalid @enderror" name="date"  required >
+
+                        @error('date')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                  </div>
+                    
+
+                        <div class="form-group">
+                            <label for="exampleInputTitre">Salle</label>
+                            <div >
                                 
-                          </div>
-                 </div>
-
+                                <input id="titre" placeholder="Salle" type="text" class="form-control @error('titre') is-invalid @enderror" name="titre"  required >
         
+                                @error('titre')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                      </div>
+
+                    
+                  </div>
+      
+                 
+                         
                 
                    
                  

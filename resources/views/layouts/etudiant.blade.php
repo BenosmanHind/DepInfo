@@ -185,7 +185,7 @@
             </a>
           </li>
           <li class="nav-item">
-             <a href="{{url('mes-examens')}}" class="nav-link">
+             <a href="{{url('/student-examens')}}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Mes Examens
