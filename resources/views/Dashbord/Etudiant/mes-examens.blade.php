@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Les Articles</h1>
+            <h1>Mes Examens</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Articles</li>
+              <li class="breadcrumb-item active">Examens</li>
             </ol>
           </div>
         </div>
@@ -22,7 +22,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Vous trouverez ci-joint la table des articles</h3>
+                <h3 class="card-title">Vous trouverez ci-joint la table des Examens</h3>
                 <a class="btn btn-success float-right" href="{{url('addarticles')}}"> <i class="fas fa-plus mr-2"></i> Ajouter</a>
 
                 <div class="card-tools">
@@ -40,34 +40,13 @@
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                      <th>ID</th>
-                      <th>Titre</th>
+                      <th></th>
+                      <th></th>
                       
                     </tr>
                   </thead>
                   <tbody>
-                   @foreach ($articles as $article)
-                    <tr>
-                      <td>{{$article->id}}</td>
-                      <td>{{$article->title}}</td>
-                      
-                      <td class="">
-                          <form action="{{url('articles/'.$article->id)}}" method="post">
-                          {{csrf_field()}}
-                          {{method_field('DELETE')}}
-                            
-                     
-                             <a href="{{route('articles.edit' ,['article' => $article->id])}}"  class="btn btn-warning btn-circle ">
-                            <i class="fas fa-edit"> </i>
-                          </a> 
-                            
-                          <button type="submit" class="btn btn-danger btn-circle" onclick="return confirm('Vous voulez vraiment supprimer?')"> 
-                            <i class="fas fa-trash"> </i>
-                        </a></button>
-                          </form>
-                      </td>
-                    </tr>
-                    @endforeach
+                  
                     
                    
                   </tbody>
