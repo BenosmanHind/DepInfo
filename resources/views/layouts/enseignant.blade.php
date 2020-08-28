@@ -382,7 +382,7 @@ $.ajax({
 
        $("#moduleAdd").append(
         '<div class="row d-flex justify-content-center" id="MesModule"> <h3> <span class="badge badge-primary">'+ module 
-        +'</span></h3> <button class="btn btn-delete" data-id="'+response[2]+'"><i class="fas fa-times"></i></button>  </div>'
+        +'</span></h3> <button type="button" class="btn btn-delete" data-id="'+response[2]+'"><i class="fas fa-times"></i></button>  </div>'
        
        ); 
 

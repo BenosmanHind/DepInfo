@@ -108,7 +108,7 @@
                   @foreach ($modules_persos as $module_perso)
                      <div class="row d-flex justify-content-center" id="MesModule"> 
                         <h3> <span class="badge badge-primary" >{{$module_perso->nom}}</span></h3>
-                       <button class="btn btn-delete" data-id="{{ $module_perso->id }}"><i class="fas fa-times"></i></button> 
+                       <button type="button" class="btn btn-delete" data-id="{{ $module_perso->id }}"><i class="fas fa-times"></i></button> 
                         
                      </div>
                      @endforeach
