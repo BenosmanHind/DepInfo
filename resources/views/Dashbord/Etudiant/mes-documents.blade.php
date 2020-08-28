@@ -2,12 +2,34 @@
 
 @section('content')
 
+<style>
+
+
+.mdl{
+    height: 100px;
+    width: 100px;
+    font-size: 20px;
+
+ }
+ 
+  .badge-info{
+    border-radius: 0;
+    background-color: coral;
+  }
+ 
+
+ .card-header{
+   background-color: #343a40;
+   color: aliceblue;
+ }
+</style>
+
 
 <section class="content-header m-4">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Les Articles</h1>
+            <h1>Choisir un module</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -22,56 +44,81 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Vous trouverez ci-joint la table des articles</h3>
-                <a class="btn btn-success float-right" href="{{url('addarticles')}}"> <i class="fas fa-plus mr-2"></i> Ajouter</a>
+                <h3 class="card-title">Les modules du <span class="badge badge-pill badge-info ml-2">semestre 1</span> </h3>
+               
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                    </div>
+                 
                   </div>
                 </div>
               </div>
               <!-- /.card-header -->
-              <div class="card-body table-responsive p-0">
-                <table class="table table-hover text-nowrap">
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Titre</th>
-                      
-                    </tr>
-                  </thead>
-                  <tbody>
-                   @foreach ($articles as $article)
-                    <tr>
-                      <td>{{$article->id}}</td>
-                      <td>{{$article->title}}</td>
-                      
-                      <td class="">
-                          <form action="{{url('articles/'.$article->id)}}" method="post">
-                          {{csrf_field()}}
-                          {{method_field('DELETE')}}
-                            
-                     
-                             <a href="{{route('articles.edit' ,['article' => $article->id])}}"  class="btn btn-warning btn-circle ">
-                            <i class="fas fa-edit"> </i>
-                          </a> 
-                            
-                          <button type="submit" class="btn btn-danger btn-circle" onclick="return confirm('Vous voulez vraiment supprimer?')"> 
-                            <i class="fas fa-trash"> </i>
-                        </a></button>
-                          </form>
-                      </td>
-                    </tr>
-                    @endforeach
-                    
-                   
-                  </tbody>
-                </table>
+              <div class="card-body table-responsive p-0 " style="overflow: hidden;">
+
+                <div class="row p-4">
+
+                  <div class="mr-2">
+                  <a href="{{url('documentView')}}"> <button type="button" class="btn btn-primary mdl">
+                     BDD 
+                  </button> </a>
+                  </div>
+
+                  <div class="mr-2">
+                    <a href=""> <button type="button" class="btn btn-primary mdl">
+                       BDD 
+                    </button> </a>
+                    </div>
+
+                    <div class="mr-2">
+                      <a href=""> <button type="button" class="btn btn-primary mdl">
+                         BDD 
+                      </button> </a>
+                      </div>
+
+                </div>
+                  
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Les modules du <span class="badge badge-pill badge-info ml-2">semestre 2</span> </h3>
+               
+
+                <div class="card-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                 
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0 " style="overflow: hidden;">
+
+                <div class="row p-4">
+
+                  <div class="mr-2">
+                  <a href=""> <button type="button" class="btn btn-primary mdl">
+                     BDD 
+                  </button> </a>
+                  </div>
+
+                  <div class="mr-2">
+                    <a href=""> <button type="button" class="btn btn-primary mdl">
+                       BDD 
+                    </button> </a>
+                    </div>
+
+                    <div class="mr-2">
+                      <a href=""> <button type="button" class="btn btn-primary mdl">
+                         BDD 
+                      </button> </a>
+                      </div>
+
+                </div>
+                  
               </div>
               <!-- /.card-body -->
             </div>

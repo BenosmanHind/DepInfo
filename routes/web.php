@@ -174,7 +174,6 @@ Route::get('/addmodules',function(){
 Route::get('/mes-modules', 'EtudiantController@mes_modules');
 
 //Docuements
-
 Route::resource('/documents', 'DocumentController');
 
 
@@ -182,8 +181,11 @@ Route::resource('/documents', 'DocumentController');
 
 Route::resource('/examens', 'ExamenController');
 
-//Etudiant Mes documents route
 
+
+//Etudiant documents route
+Route::resource('/student-documents', 'StudentDocumentController');
+Route::get('/documentView', 'StudentDocumentController@documentView');
 
 
 //Etudiant Mes examens route
