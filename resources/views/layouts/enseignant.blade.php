@@ -170,7 +170,7 @@
             </ul>
           </li>
           
-          <li class="nav-header">Focrionalités</li>
+          <li class="nav-header">Foctionalités</li>
  <li class="nav-item">
             <a href="pages/gallery.html" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
@@ -180,7 +180,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/calendar.html" class="nav-link">
+            <a href="{{url('dashbord/enseignant/documents')}}" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
               Gérer Documents 
@@ -192,7 +192,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+            <a href="{{url('dashbord/enseignant/examens')}}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
 
@@ -202,17 +202,7 @@
             </a>
           </li>
 
-          <li class="nav-item">
-          <a href="{{ url ('note') }}"  class="nav-link">
-              <i class="nav-icon fas fa-chart-bar"></i>
-              <p>
-
-
-              Les Notes
-
-              </p>
-            </a>
-          </li>
+         
 
           <li class="nav-item">
             <a href="{{url('dashbord/enseignant/modules')}}" class="nav-link">
@@ -227,7 +217,7 @@
           </li>
          
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+          <a href="{{url('dashbord/enseignant/reglement')}}" class="nav-link">
               <i class="nav-icon fas fa-exclamation-triangle"></i>
               <p>
               Le Réglement Intérieur

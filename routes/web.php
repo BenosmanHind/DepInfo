@@ -61,12 +61,21 @@ Route::get('/dashbord/enseignant/home', function () {
     return view('Dashbord.Enseignant.home');
 });
 
+Route::get('/dashbord/enseignant/reglement', function () {
+    return view('reglement');
+});
+
+Route::get('/dashbord/etudiant/reglement', function () {
+    return view('reglement');
+});
 
 //routes Enseignants
 Route::get('/enseignants', 'EnseignantController@index')->name('enseignants');
 Route::get('enseignants/validate/{id}','ValidateController@accept2');
 Route::get('enseignants/{id}','EnseignantController@destory');
 Route::resource('dashbord/enseignant/modules','ModuleEnsController');
+Route::resource('dashbord/enseignant/documents','DocumentController');
+Route::resource('dashbord/enseignant/examens','ExamenController');
 
 
 // ajx enseignant
@@ -79,6 +88,9 @@ Route::resource('/Mesmodules','EnseignementController');
 //routes Etudiants
 Route::get('/etudiants', 'EtudiantController@index')->name('etudiants');
 Route::get('etudiants/{id}','EtudiantController@destory');
+Route::get('dashbord/etudiant/');
+
+
 
 
 
@@ -164,4 +176,15 @@ Route::get('/mes-modules', 'EtudiantController@mes_modules');
 //Docuements
 
 Route::resource('/documents', 'DocumentController');
+
+
+//Examens
+
+Route::resource('/examens', 'ExamenController');
+
+//Etudiant Mes documents route
+
+
+
+//Etudiant Mes examens route
 

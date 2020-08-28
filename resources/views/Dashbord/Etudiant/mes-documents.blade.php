@@ -1,16 +1,18 @@
-@extends('layouts.admin')
+@extends('layouts.etudiant')
 
 @section('content')
+
+
 <section class="content-header m-4">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Les Modules </h1>
+            <h1>Les Articles</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Modules</li>
+              <li class="breadcrumb-item active">Articles</li>
             </ol>
           </div>
         </div>
@@ -20,9 +22,8 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Vous trouverez ci-joint la table des modules</h3>
-                 <a class="btn btn-success float-right" href="{{url('addmodules')}}"> <i class="fas fa-plus mr-2"></i> Ajouter</a>
-
+                <h3 class="card-title">Vous trouverez ci-joint la table des articles</h3>
+                <a class="btn btn-success float-right" href="{{url('addarticles')}}"> <i class="fas fa-plus mr-2"></i> Ajouter</a>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -40,54 +41,35 @@
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>Nom</th>
-                      <th>Promo</th>
-                      <th>Spécialité</th>
-                      <th>Type</th>
-                      <th>Code</th>
-                      <th>Semestre</th>
-                      <th>Déscription</th>
-                    
+                      <th>Titre</th>
                       
-                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    
-                  
-                   @foreach ($module as $module)
+                   @foreach ($articles as $article)
                     <tr>
-                      <td>{{$module->id}}</td>
-                      <td>{{$module->nom}}</td>
-                      <td>{{$module->promo}}</td>
-                      <td>{{$module->specialite}}</td>
-                      <td>{{$module->type}}</td>
-                      <td>{{$module->code}}</td>
-                      <td>{{$module->semestre}}</td>
-                      <td>{{$module->description}}</td>
-
-                     
+                      <td>{{$article->id}}</td>
+                      <td>{{$article->title}}</td>
+                      
                       <td class="">
-
-                          <form action="{{url('modules/'.$module->id)}}" method="post">
+                          <form action="{{url('articles/'.$article->id)}}" method="post">
                           {{csrf_field()}}
-                          {{method_field('DELETE')}} 
-
-                          <a href="{{route('modules.edit' ,['module' => $module->id])}}"  class="btn btn-warning btn-circle ">
+                          {{method_field('DELETE')}}
+                            
+                     
+                             <a href="{{route('articles.edit' ,['article' => $article->id])}}"  class="btn btn-warning btn-circle ">
                             <i class="fas fa-edit"> </i>
                           </a> 
-                          
-                           <a href="{{url('modules/'.$module->id)}}"  onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger btn-circle">
+                            
+                          <button type="submit" class="btn btn-danger btn-circle" onclick="return confirm('Vous voulez vraiment supprimer?')"> 
                             <i class="fas fa-trash"> </i>
-                          </a>
+                        </a></button>
                           </form>
                       </td>
                     </tr>
+                    @endforeach
                     
                    
-                    @endforeach
-                     
-                    
                   </tbody>
                 </table>
               </div>
