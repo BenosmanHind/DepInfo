@@ -196,5 +196,8 @@ Route::resource('/student-examens', 'StudentExamenController');
 // Profil route
 
 
-
+// Task route
+Route::get('/dashbord/enseignant/home', 'TaskController@index');
+Route::post('/dashbord/enseignant/home', 'TaskController@store');
+Route::delete('/task/{task}', 'TaskController@destroy');
 
