@@ -14,7 +14,7 @@ class TaskController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(Request $request)
+  public function index(Request $request)
 {
     $tasks = $request->user()->tasks()->get();
     $role = Auth::user()->role;
@@ -31,7 +31,6 @@ class TaskController extends Controller
             break;
         
     }
-
     
 }
 

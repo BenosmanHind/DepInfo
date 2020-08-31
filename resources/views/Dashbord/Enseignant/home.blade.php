@@ -106,10 +106,10 @@
                 
               </div>
               <!-- /.card-header -->
-              @if (count($tasks) > 0)
+             
               <div class="card-body">
                 <ul class="todo-list" data-widget="todo-list">
-                  @foreach ($tasks as $task)
+                 
                   <li>
                     <!-- drag handle -->
                     <span class="handle">
@@ -122,7 +122,7 @@
                       <label for="todoCheck1"></label>
                     </div>
                     <!-- todo text -->
-                    <span class="text">{{ $task->name }}</span>
+                    <span class="text">cxvxcv</span>
                     <!-- Emphasis label -->
                     <small class="badge badge-danger"><i class="far fa-clock"></i> 2 mins</small>
                     <!-- General tools such as edit or delete-->
@@ -131,12 +131,12 @@
                       <i class="fas fa-trash-o"></i>
                     </div>
                   </li>
-                  @endforeach
+                  
                  
                  
                 </ul>
               </div>
-              @endif
+              
               <!-- /.card-body -->
               
               <!-- New Task Form -->

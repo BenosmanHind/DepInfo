@@ -15,7 +15,7 @@ class EnseignantController extends Controller
 }
     public function index(){
         $list_enseignants = User::where('role', 2)->get();
-        return view('enseignants',['ensg'=>$list_enseignants]);
+        return view('enseignants',['ensg'=>$list_enseignants,]);
 
     }
     
@@ -23,7 +23,6 @@ class EnseignantController extends Controller
 
     public function destory($id){
 
-           
            $ensg= User::find($id);
            $ensg->delete();
 
