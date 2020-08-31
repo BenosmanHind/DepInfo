@@ -71,14 +71,17 @@
                   </a>
                   </div>
 
-                 
-                    
-                  
               </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
 
+          
+          </div>
+        </div>
+
+       
+          <div class="col-12">
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Les modules du <span class="badge badge-pill badge-info ml-2">semestre 2</span> </h3>
@@ -96,24 +99,31 @@
                 <div class="row p-4">
 
                   <div class="mr-2">
-                  <a href="">
-                   @foreach ($modulesS2 as $moduleS2)
-                   <button type="button" class="btn btn-primary mdl">
-                    <div class="p-1 ml-8" >{{$moduleS2->nom}} </div>
+                  <a href="{{url('documentView')}}"> 
+                     @foreach ($modulesS2 as $moduleS2)
+                    <button type="button" class="btn btn-primary mdl">
+                    
+                     <div class="p-1 ml-8" >{{$moduleS2->nom}} </div>
+                     
                   </button>
-                     @endforeach
+                  @endforeach
  
-                   </a>
+                  </a>
                   </div>
 
-                  
-                </div>
-                  
               </div>
-            </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
+
+          
+         
+        </div>
+
+
+ 
+
+          
           </div>
         </div>
       
