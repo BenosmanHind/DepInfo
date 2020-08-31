@@ -106,10 +106,7 @@
                 
               </div>
               <!-- /.card-header -->
-             
-              <div class="card-body">
-                <ul class="todo-list" data-widget="todo-list">
-                 
+
                   <li>
                     <!-- drag handle -->
                     <span class="handle">
@@ -118,8 +115,8 @@
                     </span>
                     <!-- checkbox -->
                     <div  class="icheck-primary d-inline ml-2">
-                      <input type="checkbox" value="" name="todo1" id="todoCheck1">
-                      <label for="todoCheck1"></label>
+                      <input type="checkbox" value="" name="todo1" >
+                      <label for=></label>
                     </div>
                     <!-- todo text -->
                     <span class="text">cxvxcv</span>
@@ -140,7 +137,7 @@
               <!-- /.card-body -->
               
               <!-- New Task Form -->
-        <form action="{{ url('task') }}" method="POST" class="form-horizontal">
+        <form action="{{ url('/dashbord/enseignant/home') }}" method="POST" class="form-horizontal">
           {{ csrf_field() }}
 
           <!-- Task Name -->
