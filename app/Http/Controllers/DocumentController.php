@@ -12,11 +12,10 @@ class DocumentController extends Controller
 {
     public function index(){
         
-
+        $documents = Document::where('user_id','=',Auth::user()->id)->get(); 
         $modules = Enseignement::join('Modules', 'Modules.id', '=', 'Enseignements.module_id')
         ->where('user_id','=',Auth::user()->id)->get();
-
-        return view('Dashbord/Enseignant/documents',['modules'=>$modules]);
+        return view('Dashbord/Enseignant/documents',['modules'=>$modules , 'documents'=>$documents]);
     }
 
     public function store(Request $request ){
@@ -27,10 +26,12 @@ class DocumentController extends Controller
         if($hasFile){
           $file =  $request->file('fichier');
           $name = $file->store('Document');
+       
           $lien = Storage::url($name);
           
         }
-
+        
+       
 
         $document = new Document();
         $document->title = $request->input('titre');
@@ -46,9 +47,8 @@ class DocumentController extends Controller
         $media = new Media;
         $media->lien = $lien;
         $media->type = "document";
-        
-
-        $document->media()->save($media);
+        $media->name =  $request->file('fichier')->getClientOriginalName();
+        $document->medias()->save($media);
 
         return redirect()->route('documents.index')
 

@@ -17,6 +17,7 @@ class CreateMediaTable extends Migration
             $table->id();
             $table->string('lien');
             $table->string('type');
+            $table->string('name')->nullable();
             $table->bigInteger('event_id')->unsigned()->nullable();
             $table->bigInteger('article_id')->unsigned()->nullable();
             $table->bigInteger('document_id')->unsigned()->nullable();

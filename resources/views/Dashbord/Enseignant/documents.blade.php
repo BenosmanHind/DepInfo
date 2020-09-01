@@ -116,23 +116,93 @@
                                 <input name="fichier" id="fichier" type="file" class="form-control-file" >
                                 
                           </div>
+
+                          <button type="submit" class="btn btn-success pl-4 pr-4 ">Envoyer aux étudiants</button>
                  </div>
 
-        
-                
-                   
-                 
-                
-                       <div class="card-footer">
-                        <button type="submit" class="btn btn-success pl-4 pr-4">Créer</button>
-                      </div>
+
             </div>
               </form>
 
                   
                   </div>
+ 
+
+                  <!-- general form elements -->
+            <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">Vos Documents</h3>
+  
               </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <table class="table table-hover text-nowrap">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Titre</th>
+                  
+                    <th>Module</th>
+                    <th>Type</th>
+                   
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  @foreach ($documents as $document)
+              
+                  <tr>
+                    <td>{{$document->id}}</td>
+                    <td>{{$document->title}}</td>
+
+                    <td>{{$document->returnModule()->nom}}</td>
+                    <td>{{$document->doc}}</td>
+              
+                  
+
+                    <td class="">
+                      
+                        <form action="" method="post">
+                        {{csrf_field()}}
+                        {{method_field('DELETE')}}
+                          
+                   
+                        <a href=""  class="btn btn-warning btn-circle ">
+                          <i class="fas fa-edit"> </i>
+                        </a> 
+                          
+                        <button type="submit" class="btn btn-danger btn-circle" onclick="return confirm('Vous voulez vraiment supprimer?')"> 
+                          <i class="fas fa-trash"> </i>
+                      </a></button>
+                        </form>
+                    </td>
+                  </tr>
+                  @endforeach
+                  
+                 
+                </tbody>
+              </table>
+                  
+                  </div>
+
+                  
+              </div>
+              
+              
+              
+
+
             </div>
+
+
+
+            
+
+
+
+
+            
                     
 </section>      
     

@@ -59,16 +59,18 @@
                 <div class="row p-4">
 
                   <div class="mr-2">
-                  <a href="{{url('documentView')}}"> 
-                     @foreach ($modulesS1 as $moduleS1)
-                    <button type="button" class="btn btn-primary mdl">
-                    
-                     <div class="p-1 ml-8" >{{$moduleS1->nom}} </div>
-                     
-                  </button>
+                    @foreach ($modulesS1 as $moduleS1)
+                      <a href="{{url('documentView/'.$moduleS1->id)}}"> 
+                      
+                      <button type="button" class="btn btn-primary mdl">
+                      
+                      <div class="p-1 ml-8" >{{$moduleS1->nom}} </div>
+                      
+                    </button>
+                    </a>
                   @endforeach
  
-                  </a>
+                  
                   </div>
 
               </div>
@@ -99,16 +101,18 @@
                 <div class="row p-4">
 
                   <div class="mr-2">
-                  <a href="{{url('documentView')}}"> 
-                     @foreach ($modulesS2 as $moduleS2)
+                  
+                 @foreach ($modulesS2 as $moduleS2)
+                     <a href="{{url('documentView/'.$moduleS2->id)}}"> 
                     <button type="button" class="btn btn-primary mdl">
                     
                      <div class="p-1 ml-8" >{{$moduleS2->nom}} </div>
                      
                   </button>
+                   </a>
                   @endforeach
  
-                  </a>
+                  
                   </div>
 
               </div>

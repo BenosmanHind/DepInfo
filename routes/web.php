@@ -185,7 +185,7 @@ Route::resource('/examens', 'ExamenController');
 
 //Etudiant documents route
 Route::resource('/student-documents', 'StudentDocumentController');
-Route::get('/documentView', 'StudentDocumentController@documentView');
+Route::get('/documentView/{id}', 'StudentDocumentController@documentView');
 
 
 //Etudiant  examens route

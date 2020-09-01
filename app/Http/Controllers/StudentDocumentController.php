@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Document;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Module;
@@ -35,9 +36,17 @@ class StudentDocumentController extends Controller
     }
 
 
-    public function documentView(){
+    public function documentView($id){
 
-        return  view('dashbord.etudiant.document-view');
+        $cours = Document::where('module_id','=',$id)->where('doc','=','cours')->get();
+        $tds = Document::where('module_id','=',$id)->where('doc','=','td')->get();
+        $tps = Document::where('module_id','=',$id)->where('doc','=','tp')->get();
+
+        return  view('dashbord.etudiant.document-view',[
+          'cours'=>$cours,
+          'tds'=>$tds,
+          'tps'=>$tps,
+        ]);
 
     }
 }

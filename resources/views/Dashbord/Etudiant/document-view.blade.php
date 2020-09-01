@@ -25,7 +25,7 @@
 
  .document-content-title{
 
-    background-color: #DEDFE0;
+    background-color: #E6E9EF;
     width: 300px;
 
  }
@@ -33,8 +33,14 @@
 
    background-color: #F4F6F9;;
     width: 300px;
+    
 
  }
+ .document-content p{
+
+font-size: 15px;
+
+}
 </style>
 
 
@@ -72,16 +78,29 @@
               <div class="card-body table-responsive p-0 " style="overflow: hidden;">
  
                 <div class="row p-4">
-                    <div class="document-content-title p-2">
-                        <b> Chapitre 1 </b>
-                    </div>
 
-                    <div class="document-content p-2">
-                       <p> Ce chapitre est pour vous, Ce chapitre est pour vous </p>
-                    </div>
-                   
-                   
+                       @foreach ($cours->reverse()  as $cour)
 
+                        <div class="item pb-2">
+                          <div class="document-content-title p-2 ">
+                              <b> {{$cour->title}}</b>
+                          </div>
+
+                          <div class="document-content pt-1 pl-3 pr-3 pb-2">
+                            <p >{{$cour->description}} </p>
+                            
+                             @foreach ($cour->medias as $media)
+
+                            <a href="{{$media->lien}}"> <i class="far fa-file-alt pr-1"></i>   {{$media->name}}</a></br>
+                       
+                            @endforeach
+                            
+                          </div>
+
+                        </div>
+                        @endforeach
+
+  
                 </div>
                   
               </div>
@@ -106,6 +125,28 @@
               <div class="card-body table-responsive p-0 " style="overflow: hidden;">
 
                 <div class="row p-4">
+
+                  @foreach ($tds->reverse()  as $td)
+
+                  <div class="item pb-2">
+                    <div class="document-content-title p-2 ">
+                        <b> {{$td->title}}</b>
+                    </div>
+
+                    <div class="document-content pt-1 pl-3 pr-3 pb-2">
+                      <p >{{$td->description}} </p>
+                      
+                       @foreach ($td->medias as $media)
+
+                      <a href="{{$media->lien}}"> <i class="far fa-file-alt pr-1"></i>  {{$media->name}}</a></br>
+                 
+                      @endforeach
+                      
+                    </div>
+
+                  </div>
+                  @endforeach
+
                    
 
                 </div>
@@ -132,6 +173,27 @@
               <div class="card-body table-responsive p-0 " style="overflow: hidden;">
 
                 <div class="row p-4">
+
+                  @foreach ($tps->reverse()  as $tp)
+
+                  <div class="item pb-2">
+                    <div class="document-content-title p-2 ">
+                        <b> {{$tp->title}}</b>
+                    </div>
+
+                    <div class="document-content pt-1 pl-3 pr-3 pb-2">
+                      <p >{{$tp->description}} </p>
+                      
+                       @foreach ($tp->medias as $media)
+
+                      <a href="{{$media->lien}}"> <i class="far fa-file-alt pr-1"></i>  {{$media->name}}</a></br>
+                 
+                      @endforeach
+                      
+                    </div>
+
+                  </div>
+                  @endforeach
                    
 
                 </div>
