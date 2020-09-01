@@ -24,7 +24,7 @@ class CreateMediaTable extends Migration
             $table->timestamps();
             $table->foreign('event_id')->references('id')->on('events');
             $table->foreign('article_id')->references('id')->on('articles');
-            $table->foreign('document_id')->references('id')->on('documents');
+            $table->foreign('document_id')->references('id')->on('documents')->onDelete('cascade');
            
         });
     }

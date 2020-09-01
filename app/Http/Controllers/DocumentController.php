@@ -59,5 +59,44 @@ class DocumentController extends Controller
     }
 
 
+      public function edit($id){
+        $document = Document::find($id);
+        return view('dashbord/enseignant/documents',['document'=>$document]);
+
+      }
+
+     
+
+
+
+   public function update(Request $request , $id){
+
+    $document = Document::find($id);
+    
+    $document->titre = $request->input('titre');
+    $document->description=$request->input('description');
+   }
+
+
+
+
+
+
+
+
+
+
+       public function destroy($id){
+
+
+    
+    $document=Document::find($id);
+    $document->delete();
+    
+    return redirect ('dashbord/enseignant/documents');           
+
+    }
+
+
 
 }
