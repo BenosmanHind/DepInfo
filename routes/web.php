@@ -164,7 +164,8 @@ Route::get('/boursepage',function(){
 
 //Modules Route
 
-Route::resource('modules', 'ModuleController');
+Route::resource('/modules', 'ModuleController');
+
 Route::get('/addmodules',function(){
     return view('addmodules');
 });
@@ -180,7 +181,6 @@ Route::resource('/documents', 'DocumentController');
 //Examens
 
 Route::resource('/examens', 'ExamenController');
-
 
 
 //Etudiant documents route

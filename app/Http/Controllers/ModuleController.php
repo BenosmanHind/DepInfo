@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Enseignement;
+
 use Illuminate\Http\Request;
 use App\Module;
-use App\Http\Requests\ModuleRequest;
 
 
 

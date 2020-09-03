@@ -266,6 +266,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ url('gerer-examen') }}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+              Gérer Examens
+              </p>
+            </a>
+          </li>
 
           <li class="nav-item">
             <a href="pages/gallery.html" class="nav-link">

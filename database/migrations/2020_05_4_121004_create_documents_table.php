@@ -20,11 +20,12 @@ class CreateDocumentsTable extends Migration
             $table->mediumText('description');
             $table->string('promo');
             $table->string('doc');
-            $table->integer('user_id');
+            $table->bigInteger('user_id')->unsigned()->nullable();
             $table->bigInteger('module_id')->unsigned()->nullable();
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
             $table->foreign('module_id')->references('id')->on('modules');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
