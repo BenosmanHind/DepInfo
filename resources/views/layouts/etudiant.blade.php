@@ -229,7 +229,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                <a href="{{url('dashbord/etudiant/profil_etudiant')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Mon Profile</p>
                 </a>
@@ -306,6 +306,25 @@
 <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('dist/js/demo.js') }}"></script>
+
+
+
+<script>
+
+  $(document).ready(function(){
+  $("#specialite1").hide();
+  $('#promo').on('change',function(){
+    var promo = $(this).val();
+    if(promo == "M1" ||  promo == "M2"){
+      $("#specialite1").show();
+    }else{
+      $("#specialite1").hide(); 
+    }
+  });
+  });
+  
+  </script>
+
 
 </body>
 </html>

@@ -70,38 +70,8 @@
                                 @enderror
                            
                         </div>
-                        <div class="form-group row" v-show="seen"> 
-                            
-                                <input id="nstudent" type="text" class="form-control @error('nstudent') is-invalid @enderror" name="nstudent" value="0" required autocomplete="nstudent" >
-     
-                        </div>
-
-                        <div class="form-group row" v-show="seen"> 
-                            
-                                <input id="specialite" type="text" class="form-control @error('specialite') is-invalid @enderror" name="specialite" value="0" required autocomplete="specialite" >
-     
-                        </div>
-                        <div class="form-group row" v-show="seen"> 
-                            
-                            <input id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value=2 required autocomplete="role" >
- 
-                        </div>
-                        <div class="form-group">
-                            <label for="password">{{ __('Password') }}</label>
-
-                            <div>
-                                <input id="password" placeholder="Saisir mot de passe" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                       
                         
-
-                
                    <div class="card-footer">
                   <button type="submit" class="btn btn-success pl-4 pr-4">Register</button>
                 </div>

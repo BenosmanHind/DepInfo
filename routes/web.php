@@ -195,6 +195,10 @@ Route::resource('/student-examens', 'StudentExamenController');
 
 // Profil route
 
+Route::resource('/dashbord/enseignant/profil_enseignant','ProfilController');
+Route::resource('/dashbord/etudiant/profil_etudiant','ProfilController');
+Route::resource('/profil_admin','ProfilController');
+
 
 // Task route
 //Route::get('/dashbord/enseignant/home', 'TaskController@index');

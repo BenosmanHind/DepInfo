@@ -236,9 +236,9 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                <a href="{{url('dashbord/enseignant/profil_enseignant')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Mon Profile</p>
+                  <p>Mon Profil</p>
                 </a>
               </li>
               
