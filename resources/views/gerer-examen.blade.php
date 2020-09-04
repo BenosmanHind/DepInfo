@@ -5,12 +5,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Planifier un examen</h1>
+            <h1>Planning Examens / Controles</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">AddExamen</li>
+              <li class="breadcrumb-item active">Planning examens</li>
             </ol>
           </div>
         </div>
@@ -92,9 +92,8 @@
                             <div class="form-group">
                                   <select name="type" class="form-control" >
                                       <option value="">Select</option>
-                                      <option value="Controle">Controle</option>
-                                      <option value="Test">Test</option>
-                                      <option value="Examen">Examen</option>
+                                      <option value="controle">Controles</option>
+                                      <option value="examen">Examens</option>
                                      
                                   </select>
                                   @error('type')
@@ -103,55 +102,19 @@
                                   </span>
                                   @enderror
                             </div>
+
+                            <div class="form-group">
+                              <label for="picture">Uploder un fichier</label>
+          
+                                  <input name="fichier" id="fichier" type="file" class="form-control-file" >
+                                  
+                            </div>
+
                           </div>
-                   <div class="form-group">
-                    <label for="exampleInputTitre">Date</label>
-                    <div >
-                        
-                        <input id="date" placeholder="Date d'examen" type="date" class="form-control @error('date') is-invalid @enderror" name="date"  required >
-
-                        @error('date')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                  </div>
-                  
-                  <div class="form-group">
-                    <label for="exampleInputTitre">Heure</label>
-                    <div >
-                        
-                        <input id="heure" placeholder="L'heure d'examen" type="time" class="form-control @error('heure') is-invalid @enderror" name="heure"  required >
-
-                        @error('heure')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                  </div>
-
-
-                  <div class="form-group">
-                    <label for="exampleInputTitre">Salle</label>
-                    <div >
-                        
-                        <input id="salle" placeholder="Sale d'examen" type="salle" class="form-control @error('salle') is-invalid @enderror" name="salle"  required >
-
-                        @error('salle')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                  </div>
-                 
-
-              
-                  
-                 
+ 
+           
                 <!-- /.card-body -->
+                
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-success pl-4 pr-4">Planifier</button>

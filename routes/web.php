@@ -181,6 +181,7 @@ Route::resource('/documents', 'DocumentController');
 //Examens
 
 Route::resource('/examens', 'ExamenController');
+Route::resource('/gerer-examen', 'ExamenController');
 
 
 //Etudiant documents route

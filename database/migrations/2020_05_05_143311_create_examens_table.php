@@ -15,10 +15,10 @@ class CreateExamensTable extends Migration
     {
         Schema::create('examens', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date('date');
-            $table->string('salle');
-            $table->string('type');
-            $table->time('heure');
+            $table->string('date')->nullable();
+            $table->string('salle')->nullable();
+            $table->string('type')->nullable();
+            $table->string('heure')->nullable();
             $table->string('promo')->nullable();
             $table->string('specialite')->nullable();
             $table->string('semestre')->nullable();

@@ -12,7 +12,8 @@ class CreateEnseignementsTable extends Migration
      * @return void
      */
     public function up()
-    {
+    {  
+        
         Schema::create('enseignements', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('module_id')->unsigned()->nullable();
