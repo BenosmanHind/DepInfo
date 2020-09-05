@@ -5,12 +5,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Planning Examens / Controles</h1>
+            <h1>Ajouter un emploi du temps</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Planning examens</li>
+              <li class="breadcrumb-item active">Emploi du temps</li>
             </ol>
           </div>
         </div>
@@ -27,9 +27,22 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-            <form role="form"  method="POST" action="{{route('examens.store')}}" enctype="multipart/form-data">
+            <form role="form"  method="POST" action="{{route('emploi_du_temps_etudiant.store')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
+                   <div class="form-group">
+                            <label for="exampleInputTitre">Titre</label>
+                            <div >
+                                
+                                <input id="title" placeholder="Titre" type="text" class="form-control @error('title') is-invalid @enderror" name="title"  required >
+        
+                                @error('title')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                      </div>
                 <div class="form-group" id="promo1">
                     <label for="exampleInputTitre">Promo</label>
                     <div class="form-group">
@@ -86,25 +99,7 @@
                  
                            
 
-                    <div class="form-group">
-                        <div class="form-group" >
-                            <label for="exampleInputTitre">Type</label>
-                            <div class="form-group">
-                                  <select name="type" class="form-control" >
-                                      <option value="">Select</option>
-                                      <option value="controle">Controles</option>
-                                      <option value="examen">Examens</option>
-                                     
-                                  </select>
-                                  @error('type')
-                                  <span class="invalid-feedback" role="alert">
-                                      <strong>{{ $message }}</strong>
-                                  </span>
-                                  @enderror
-                            </div>
-                          </div>
-                        </div>
-
+                 
                             <div class="form-group">
                               <label for="picture">Uploder un fichier</label>
           
@@ -112,14 +107,14 @@
                                   
                             </div>
 
-                         
+                          
  
            
                 <!-- /.card-body -->
                 
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-success pl-4 pr-4">Planifier</button>
+                  <button type="submit" class="btn btn-success pl-4 pr-4">Envoyer</button>
                 </div>
               </form>
             </div>

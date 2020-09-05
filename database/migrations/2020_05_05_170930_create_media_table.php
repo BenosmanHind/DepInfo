@@ -22,11 +22,14 @@ class CreateMediaTable extends Migration
             $table->bigInteger('article_id')->unsigned()->nullable();
             $table->bigInteger('document_id')->unsigned()->nullable();
             $table->bigInteger('examen_id')->unsigned()->nullable();
+            $table->bigInteger('emploidutemp_id')->unsigned()->nullable();
             $table->timestamps();
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
             $table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade');
             $table->foreign('document_id')->references('id')->on('documents')->onDelete('cascade');
             $table->foreign('examen_id')->references('id')->on('examens')->onDelete('cascade');
+            $table->foreign('emploidutemp_id')->references('id')->on('emploidutemps')->onDelete('cascade');
+           
            
         });
     }
