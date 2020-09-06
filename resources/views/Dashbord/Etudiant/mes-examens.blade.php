@@ -18,46 +18,255 @@
         </div>
       </div><!-- /.container-fluid -->
 
-      <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Vous trouverez ci-joint la table des Examens</h3>
-                <a class="btn btn-success float-right" href="{{url('addarticles')}}"> <i class="fas fa-plus mr-2"></i> Ajouter</a>
+      <style>
 
-                <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+        
 
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+
+        .mdl{
+            height: 100px;
+            width: 100px;
+            font-size: 20px;
+        
+         }
+         
+          .badge-info{
+            border-radius: 0;
+            background-color: coral;
+          }
+         
+        
+         .card-header{
+           background-color: #343a40;
+           color: aliceblue;
+         }
+        
+         .document-content-title{
+        
+            background-color: #E6E9EF;
+            width: 100%;
+        
+         }
+         .document-content{
+        
+           background-color: #F4F6F9;;
+            width: 100%;
+            
+        
+         }
+         .document-content p{
+        
+        font-size: 15px;
+        
+        }
+        .item{
+          width: 100%;
+
+        }
+
+        .countdown{
+         font-size: 24px;
+         color : white;
+        }
+        .document-countdown{
+          background-color: #6998CC;;
+            width: 100%;
+        }
+
+        .fa-clock{
+          color: #Ffff;
+          font-size: 1.5em;
+           
+         
+
+        }
+
+
+        </style>
+        
+        
+      
+        
+              <div class="row">
+        
+        
+                  <div class="col-3">
+                    <div class="card">
+                      <div class="card-header">
+                        <h3 class="card-title">Examens<span class="badge badge-pill badge-info ml-2">individuels</span> </h3>
+                       
+        
+                        <div class="card-tools">
+                          <div class="input-group input-group-sm" style="width: 150px;">
+                         
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body table-responsive p-0 " style="overflow: hidden;">
+
+                        <div class="row d-flex justify-content-center p-4">
+        
+                     
+                          <div class="item pb-2">
+                            <div class="document-content-title p-2 ">
+                             
+                              <b> Prochain Examen:BDD</b>
+                            
+                            </div>
+        
+                            <div class="document-countdown d-flex justify-content-between pt-1 pl-3 pr-3 pb-2">
+                              <span  class="countdown" id="demo"></span> <i class="far fa-clock mt-2 "></i>
+                             
+
+
+                            </div>
+        
+                          </div>
+                   
+        
+                           
+        
+                        </div>
+         
+                    
+                          
+                      </div>
+                      <!-- /.card-body -->
                     </div>
                   </div>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body table-responsive p-0">
-                <table class="table table-hover text-nowrap">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th></th>
-                      
-                    </tr>
-                  </thead>
-                  <tbody>
-                  
+                  <!-- /.cend section one -->
+        
+                  <div class="col-3">
+                    <div class="card">
+                      <div class="card-header">
+                        <h3 class="card-title">Examens<span class="badge badge-pill badge-info ml-2">Finaux</span> </h3>
+                       
+        
+                        <div class="card-tools">
+                          <div class="input-group input-group-sm" style="width: 150px;">
+                         
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body table-responsive p-0 " style="overflow: hidden;">
+        
+                        <div class="row d-flex justify-content-center p-4">
+        
+                          @foreach ($examensS1 as $examen)
+        
+                          <div class="item pb-2">
+                            <div class="document-content-title p-2 ">
+                              @if($examen->type == 'examen')
+                              <b> Planning Examens : {{$examen->semestre}}</b>
+                              @else 
+                               <b> Planning Controls : {{$examen->semestre}}</b>
+                               @endif
+                            </div>
+        
+                            <div class="document-content pt-1 pl-3 pr-3 pb-2">
+                              
+                              
+                             
+        
+                              <a href="{{$examen->media->lien}}"> <i class="far fa-file-alt pr-1"></i>  {{$examen->media->name}}</a></br>
+                         
+                            </div>
+        
+                          </div>
+                          @endforeach
+        
+                           
+        
+                        </div>
+                          
+                      </div>
+                      <!-- /.card-body -->
+                    </div>
+                  </div>
+
+
+                  <!-- /.cend section one -->
+
+                  <div class="col-3">
+                    <div class="card">
+                      <div class="card-header">
+                        <h3 class="card-title">Examens<span class="badge badge-pill badge-info ml-2">individuels</span> </h3>
+                       
+        
+                        <div class="card-tools">
+                          <div class="input-group input-group-sm" style="width: 150px;">
+                         
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body table-responsive p-0 " style="overflow: hidden;">
+         
                     
-                   
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-        </div>
-      
-    </section>
+                          
+                      </div>
+                      <!-- /.card-body -->
+                    </div>
+                  </div>
+                  <!-- /.cend section one -->
+        
+                  <div class="col-3">
+                    <div class="card">
+                      <div class="card-header">
+                        <h3 class="card-title">Examens<span class="badge badge-pill badge-info ml-2">Finaux</span> </h3>
+                       
+        
+                        <div class="card-tools">
+                          <div class="input-group input-group-sm" style="width: 150px;">
+                         
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body table-responsive p-0 " style="overflow: hidden;">
+        
+                        <div class="row d-flex justify-content-center p-4">
+        
+                          @foreach ($examensS2 as $examen)
+        
+                          <div class="item pb-2">
+                            <div class="document-content-title p-2 ">
+                              @if($examen->type == 'examen')
+                              <b> Planning Examens : {{$examen->semestre}}</b>
+                              @else 
+                               <b> Planning Controls : {{$examen->semestre}}</b>
+                               @endif
+                            </div>
+        
+                            <div class="document-content pt-1 pl-3 pr-3 pb-2">
+                              
+                              
+                             
+        
+                              <a href="{{$examen->media->lien}}"> <i class="far fa-file-alt pr-1"></i>  {{$examen->media->name}}</a></br>
+                         
+                            </div>
+        
+                          </div>
+                          @endforeach
+        
+                           
+        
+                        </div>
+                          
+                      </div>
+                      <!-- /.card-body -->
+                    </div>
+                  </div>
+                  <!-- /.cend section one -->
+        
+                
+        
+        
+                </div>
+              
+            </section>
 
 @endsection

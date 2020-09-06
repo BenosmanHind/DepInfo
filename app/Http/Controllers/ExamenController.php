@@ -87,6 +87,7 @@ public function store(Request $request ){
 
         $media = new Media();
         $media->lien = $lien;
+        $media->name =  $request->file('fichier')->getClientOriginalName();
         $media->type = $request->input('type');
         
 

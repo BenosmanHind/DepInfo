@@ -22,4 +22,9 @@ class Media extends Model
     {
         return $this->belongsTo(Document::class);
     }
+    
+    public function examen()
+    {
+        return $this->belongsTo(Examen::class);
+    }
 }
