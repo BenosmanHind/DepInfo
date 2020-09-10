@@ -125,12 +125,78 @@
             </div>
             <!-- /.card -->
 
-            
-              <!-- /.card-body -->
+              </div>
+
+
+              <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">Vos Documents</h3>
+  
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <table class="table table-hover text-nowrap">
+                <thead>
+                  <tr>
+                    <th>Promo</th>
+                    <th>Spécialité</th>
+                  
+                    <th>Semestre</th>
+                    <th>Type</th>
+                  
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                @foreach ($examens as $examen)
+              
+                  <tr>
+                    <td>{{$examen->id}}</td>
+                    <td>{{$examen->promo}}</td>
+
+                    <td>{{$examen->specialite}}</td>
+                    <td>{{$examen->semestre}}</td>
+                    <td>{{$examen->type}}</td>
+                    
+
+                    <td class="">
+                      
+                        <form action="{{url('/gerer-examen'.$examen->id)}}" method="post">
+                        {{csrf_field()}}
+                        {{method_field('DELETE')}}
+                          
+                   
+                        <a href="{{}}"  class="btn btn-warning btn-circle ">
+                          <i class="fas fa-edit"> </i>
+                        </a> 
+                          
+                        <button type="submit" class="btn btn-danger btn-circle" onclick="return confirm('Vous voulez vraiment supprimer?')"> 
+                          <i class="fas fa-trash"> </i>
+                      </a></button>
+                        </form>
+                    </td>
+                  </tr>
+                @endforeach
+                  
+                 
+                </tbody>
+              </table>
+                  
+                  </div>
+
+                  
+              
             </div>
-            <!-- /.card -->
+              
+              
+              
+
+            
           
-          <!--/.col (right) -->
+           
+          
+          
         
        
       

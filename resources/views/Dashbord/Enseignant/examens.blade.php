@@ -129,12 +129,99 @@
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
-          
+          </div>
           <!--/.col (right) -->
+          
+          <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">Vos Documents</h3>
+  
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <table class="table table-hover text-nowrap">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Module</th>
+                  
+                    <th>Type</th>
+                    <th>Date</th>
+                    <th>Heure</th>
+                    <th>Salle</th>
+                  
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  @foreach ($examens as $examen)
+              
+                  <tr>
+                    <td>{{$examen->id}}</td>
+                    <td>{{$examen->returnModule()->nom}}</td>
+                    <td>{{$examen->type}}</td>
+                    <td>{{$examen->date}}</td>
+                    <td>{{$examen->heure}}</td>
+                    <td>{{$examen->salle}}</td>
+                    
+                   
+                    
+
+                    <td class="">
+                      
+                        <form action="{{url('dashbord/enseignant/examens/'.$examen->id)}}" method="post">
+                        {{csrf_field()}}
+                        {{method_field('DELETE')}}
+                          
+                   
+                        <a href="{{}}"  class="btn btn-warning btn-circle ">
+                          <i class="fas fa-edit"> </i>
+                        </a> 
+                          
+                        <button type="submit" class="btn btn-danger btn-circle" onclick="return confirm('Vous voulez vraiment supprimer?')"> 
+                          <i class="fas fa-trash"> </i>
+                      </a></button>
+                        </form>
+                    </td>
+                  </tr>
+                  @endforeach
+                  
+                 
+                </tbody>
+              </table>
+                  
+                  </div>
+
+                  
+              </div>
+              
+              
+              
+
+
+            </div>
+
+
+
+            
+
+
+
+
+            
+
+                  
+              
+           
+              
+              
+              
+
+            
+          
+              
         
-       
-      
-      
     </section>
 
 @endsection
