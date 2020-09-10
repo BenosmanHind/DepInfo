@@ -155,22 +155,22 @@
                 </thead>
                 <tbody>
 
-                  @foreach ($examens as $examen)
+                  @foreach ($examenenseignant as $examenenseignant)
               
                   <tr>
-                    <td>{{$examen->id}}</td>
-                    <td>{{$examen->returnModule()->nom}}</td>
-                    <td>{{$examen->type}}</td>
-                    <td>{{$examen->date}}</td>
-                    <td>{{$examen->heure}}</td>
-                    <td>{{$examen->salle}}</td>
+                    <td>{{$examenenseignant->id}}</td>
+                    <td>{{$examenenseignant->returnModule()->nom}}</td>
+                    <td>{{$examenenseignant->type}}</td>
+                    <td>{{$examenenseignant->date}}</td>
+                    <td>{{$examenenseignant->heure}}</td>
+                    <td>{{$examenenseignant->salle}}</td>
                     
                    
                     
 
                     <td class="">
                       
-                        <form action="{{url('dashbord/enseignant/examens/'.$examen->id)}}" method="post">
+                        <form action="{{url('dashbord/enseignant/examens/'.$examenenseignant->id)}}" method="post">
                         {{csrf_field()}}
                         {{method_field('DELETE')}}
                           
