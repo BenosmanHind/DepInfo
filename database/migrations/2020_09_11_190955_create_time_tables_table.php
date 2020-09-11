@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEmploidutempsTable extends Migration
+class CreateTimeTablesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,18 @@ class CreateEmploidutempsTable extends Migration
      */
     public function up()
     {
-        Schema::create('emploidutemps', function (Blueprint $table) {
-           $table->bigIncrements('id');
+        Schema::create('time_tables', function (Blueprint $table) {
+            $table->bigIncrements('id');
+           
             $table->string('title');
             $table->string('promo')->nullable();
             $table->string('specialite')->nullable();
             $table->string('semestre')->nullable();
-            $table->bigInteger('user_id')->unsigned()->nullable();  
-            $table->foreign('user_id')->references('id')->on('users');
-
-
+            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
+           
         });
     }
 
@@ -34,6 +35,6 @@ class CreateEmploidutempsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('emploidutemps');
+        Schema::dropIfExists('time_tables');
     }
 }
