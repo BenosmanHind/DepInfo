@@ -23,8 +23,8 @@ class Media extends Model
         return $this->belongsTo(Document::class);
     }
     
-    public function examen()
+    public function examenadmin()
     {
-        return $this->belongsTo(Examen::class);
+        return $this->belongsTo(Exam_admin::class);
     }
 }

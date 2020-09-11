@@ -168,9 +168,13 @@
                             <div class="document-content pt-1 pl-3 pr-3 pb-2">
                               
                               
+                              
+                               @foreach ($examen->media as $media)
                              
-        
-                              <a href="{{$examen->media->lien}}"> <i class="far fa-file-alt pr-1"></i>  {{$examen->media->name}}</a></br>
+                               <a href="{{$media->lien}}"> <i class="far fa-file-alt pr-1"></i>  {{$media->name}}</a></br>
+                                   
+                               @endforeach
+                             
                          
                             </div>
         
@@ -245,7 +249,10 @@
                               
                              
         
-                              <a href="{{$examen->media->lien}}"> <i class="far fa-file-alt pr-1"></i>  {{$examen->media->name}}</a></br>
+                              @foreach ($examen->media as $media)
+                               <a href="{{$media->lien}}"> <i class="far fa-file-alt pr-1"></i>  {{$media->name}}</a></br>
+                                   
+                               @endforeach
                          
                             </div>
         

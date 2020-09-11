@@ -180,8 +180,8 @@ Route::resource('/documents', 'DocumentController');
 
 //Examens
 
-Route::resource('/examens', 'ExamenEnseignantController');
-Route::resource('/gerer-examen', 'ExamenAdminController');
+Route::resource('/examens', 'ExamteacherController');
+Route::resource('/gerer-examen', 'ExamadminController');
 
 
 //Etudiant documents route
