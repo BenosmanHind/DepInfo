@@ -192,7 +192,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{url('dashbord/enseignant/examens')}}" class="nav-link">
+            <a href="{{url('/examens')}}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
 
