@@ -19,7 +19,6 @@ class CreateExamTeachersTable extends Migration
             $table->string('salle')->nullable();
             $table->string('type')->nullable();
             $table->string('heure')->nullable();
-            $table->string('semestre')->nullable();
             $table->bigInteger('module_id')->unsigned()->nullable();
             $table->bigInteger('user_id')->unsigned()->nullable();
             $table->timestamps();

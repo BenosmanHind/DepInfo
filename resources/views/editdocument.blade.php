@@ -29,7 +29,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{route('documents.store')}}" method="POST" class="user" enctype="multipart/form-data" >
+              <form action="{{}}" method="POST" class="user" enctype="multipart/form-data" >
                 @csrf
             
 
@@ -93,8 +93,9 @@
                             <div class="form-group">
                                   <select name="module" class="form-control" >
                                       <option value="">Select</option>
+
                                       @foreach ($modules as $module)
-                                      <option value="{{$module->id}}">{{$module->nom}}</option>
+                                      <option value="{{$module->id}}"> {{$module->nom}}</option>
                                       @endforeach
                                       
                                   </select>
