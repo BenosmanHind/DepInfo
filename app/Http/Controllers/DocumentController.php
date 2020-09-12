@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Document;
 use App\Media;
+use App\Module;
 use Illuminate\Support\Facades\Storage;
 
 class DocumentController extends Controller
@@ -61,7 +62,8 @@ class DocumentController extends Controller
 
       public function edit($id){
         $document = Document::find($id);
-        return view('dashbord/enseignant/documents',['document'=>$document]);
+        $module = module::all();
+        return view('dashbord/enseignant/documents',['document'=>$document , 'module' =>$module]);
 
       }
 
