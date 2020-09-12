@@ -20,15 +20,10 @@ class ExamadminController extends Controller
    
    
    public function store(Request $request ){
+
+
    
-   
-      $request->validate([
-                   'fichier' => 'required',
-                   'promo' => 'required',
-                   'specialite' => 'required',
-                   'semestre' => 'required',
-                 
-             ]);
+     
    
            $hasFile = $request->hasFile('fichier');
            if($hasFile){
