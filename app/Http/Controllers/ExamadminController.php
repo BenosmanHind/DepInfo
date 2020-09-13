@@ -50,7 +50,44 @@ class ExamadminController extends Controller
            $examenadmin->media()->save($media);
    
    
-   
+             return redirect()->route('gerer-examen.index')
+
+        ->with('success','Examen ajouté avec success!');
+
    
    }
+
+ public function edit($id){
+        $examen = Planning::find($id);
+       
+        return view('gerer-examen',['examen'=>$examen]);
+
+      }
+
+       public function update(Request $request , $id){ 
+        $examen = Planning::find($id);
+
+        $examen->promo = $request->input('promo');
+        $examen->semestre = $request->input('semestre');
+        $examen->specialite = $request->input('specialite');
+        $examen->type = $request->input('type');
+        $examen->save();
+        return redirect('gerer-examen');
+
+       
+      }
+
+
+
+    public function destroy($id){
+
+
+    
+    $examenadmin=Exam_admin::find($id);
+    $examenadmin->delete();
+    
+    return redirect ('gerer-examen');           
+
+    }
+
 }

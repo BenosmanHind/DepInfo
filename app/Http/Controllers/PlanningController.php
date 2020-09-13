@@ -49,8 +49,46 @@ class PlanningController extends Controller
            
    
            $emp->media()->save($media);
-   
+    
+             return redirect()->route('planning_student.index')
+
+        ->with('success','Emlpoi du temps ajouté avec success!');
+
   
 }
+      public function edit($id){
+        $emp = Planning::find($id);
+       
+        return view('planning_student',['emp'=>$emp]);
+
+      }
+
+       public function update(Request $request , $id){ 
+        $emp = Planning::find($id);
+
+      
+        $emp->title = $request->input('title');
+        $emp->promo = $request->input('promo');
+        $emp->semestre = $request->input('semestre');
+        $emp->specialite = $request->input('specialite');
+        
+        $emp->save();
+        return redirect('planning_student');
+
+       
+      }
+
+
+  public function destroy($id){
+
+
+    
+    $emp=Planning::find($id);
+    $emp->delete();
+    
+    return redirect ('planning_student');           
+
+    }
+
 
 }

@@ -21,7 +21,8 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="POST" action="{{ route('register') }}">
+              <form method="POST" action="{{url('/dashbord/etudiant/profil_etudiant'.Auth::user()->id)}}">
+                <input type="hidden" name="_methode" value="PUT">">
                 @csrf
                 <div class="card-body" id="hiddens">
 
@@ -31,7 +32,7 @@
                     <label for="exampleInputTitre">Nom</label>
                     <div >
                         
-                        <input id="name" placeholder="Entrer le nom" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  required >
+                        <input id="name" placeholder="Entrer le nom" type="text" value="{{$user->name}}" class="form-control @error('name') is-invalid @enderror" name="name"  required >
 
                         @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -45,7 +46,7 @@
                     <label for="exampleInputTitre">Email</label>
                     <div >
                         
-                        <input id="email" placeholder="Entrer l'email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"  required >
+                        <input id="email" placeholder="Entrer l'email" type="email" value="{{$user->email}}" class="form-control @error('email') is-invalid @enderror" name="email"  required >
 
                         @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -59,7 +60,7 @@
                     <div>
                     
                            
-                                <input id="nstudent" placeholder="Entrer N° carte"  type="text" class="form-control @error('nstudent') is-invalid @enderror" name="nstudent" value="{{ old('nstudent') }}" required autocomplete="nstudent" >
+                                <input id="nstudent" placeholder="Entrer N° carte"  type="text" value="{{$user->nstudent}}" class="form-control @error('nstudent') is-invalid @enderror" name="nstudent" value="{{ old('nstudent') }}" required autocomplete="nstudent" >
 
                                 @error('nstudent')
                                     <span class="invalid-feedback" role="alert">
@@ -69,42 +70,27 @@
                            
                         </div>
                       </div>
-                      <div class="form-group " id="promo1">
-                            <label for="exampleInputTitre" >Promo</label>
-                                  <select name="promo" id="promo" class="form-control" >
-                                      <option value="">Select</option>
-                                      <option value="L2">L2</option>
-                                      <option value="L3">L3</option>
-                                      <option value="M1">M1</option>
-                                      <option value="M2">M2</option>
-                                  </select>
-                                  @error('promo')
-                                  <span class="invalid-feedback" role="alert">
-                                      <strong>{{ $message }}</strong>
-                                  </span>
-                                  @enderror
-                           
-                     
-                        </div>
+                    
+                         <div class="form-group">
+                            <label for="password">{{ __('Password') }}</label>
 
-                        <div class="form-group " id="specialite1">
-                            <label for="exampleInputTitre" >Spécialité</label>
-                                  <select name="specialite" id="specialite" class="form-control" >
-                                      <option value="">Select</option>
-                                      <option value="SIC">SIC</option>
-                                      <option value="RSD">RSD</option>
-                                      <option value="GL">GL</option>
-                                      <option value="MID">MID</option>
-                                  </select>
-                                  @error('specialite')
-                                  <span class="invalid-feedback" role="alert">
-                                      <strong>{{ $message }}</strong>
-                                  </span>
-                                  @enderror
-                           
-                     
-                        </div>
+                            <div>
+                                <input id="password" placeholder="Saisir mot de passe" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password-confirm">{{ __('Confirm Password') }}</label>
+
+                            <div>
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
                            
 
                   

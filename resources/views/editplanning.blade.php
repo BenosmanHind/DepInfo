@@ -5,12 +5,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Ajouter un emploi du temps</h1>
+            <h1>Editer un emploi du temps</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Emploi du temps</li>
+              <li class="breadcrumb-item active">Plannings</li>
             </ol>
           </div>
         </div>
@@ -27,14 +27,15 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-            <form role="form"  method="POST" action="{{route('planning_student.store')}}" enctype="multipart/form-data">
+             <form role="form"  method="POST" action="">
                 @csrf
+                {{ method_field('PATCH') }}
                 <div class="card-body">
+
                    <div class="form-group">
                             <label for="exampleInputTitre">Titre</label>
                             <div >
-                                
-                                <input id="title" placeholder="Titre" type="text" class="form-control @error('title') is-invalid @enderror" name="title"  required >
+                              <input id="title" placeholder="title" type="text" value="{{$planning->title}}" class="form-control @error('title') is-invalid @enderror" name="title"  required >
         
                                 @error('title')
                                     <span class="invalid-feedback" role="alert">
@@ -43,7 +44,9 @@
                                 @enderror
                             </div>
                       </div>
-                <div class="form-group" id="promo1">
+                   
+               
+                  <div class="form-group" id="promo1">
                     <label for="exampleInputTitre">Promo</label>
                     <div class="form-group">
                           <select name="promo" id="promo" class="form-control" >
@@ -61,7 +64,9 @@
                     </div>
                   </div>
 
-                    <div class="form-group" id="specialite1">
+
+
+                  <div class="form-group" id="specialite1">
                     <label for="exampleInputTitre">Specilaité</label>
                     <div class="form-group">
                           <select name="specialite" id="specialite" class="form-control" >
@@ -78,7 +83,11 @@
                           @enderror
                     </div>
                   </div>
-                   <div class="form-group">
+
+                  
+                  
+
+                  <div class="form-group">
                     <label for="exampleInputTitre">Semestre</label>
                     <div class="form-group">
                           <select name="semestre" id="semestre" class="form-control" >
@@ -94,27 +103,12 @@
                     </div>
                   </div>
  
-
-                   
-                 
-                           
-
-                 
-                            <div class="form-group">
-                              <label for="picture">Uploder un fichier</label>
-          
-                                  <input name="fichier" id="fichier" type="file" class="form-control-file" >
-                                  
-                            </div>
-
-                          
- 
-           
-                <!-- /.card-body -->
                 
+                 
+                <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-success pl-4 pr-4">Envoyer</button>
+                  <button type="submit" class="btn btn-success pl-4 pr-4">Editer</button>
                 </div>
               </form>
             </div>
@@ -127,66 +121,11 @@
           
           <!--/.col (right) -->
         
-        <div class="card card-success">
-              <div class="card-header">
-                <h3 class="card-title">Emploi du temps</h3>
-  
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <table class="table table-hover text-nowrap">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Pomo</th>
-                  
-                    <th>Specialite</th>
-                    <th>Semestre</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-
-                @foreach ($emp as $emp)
-              
-                  <tr>
-                    <td>{{$emp->id}}</td>
-                    <td>{{$emp->promo}}</td>
-                    <td>{{$emp->specialite}}</td>
-                    <td>{{$emp->semestre}}</td>
-                 
-                       <td class="">
-                      
-                        <form action="{{url('planning_student/'.$emp->id)}}" method="post">
-                        {{csrf_field()}}
-                        {{method_field('DELETE')}}
-                          
-                   
-                        <a href=""  class="btn btn-warning btn-circle ">
-                          <i class="fas fa-edit"> </i>
-                        </a> 
-                          
-                        <button type="submit" class="btn btn-danger btn-circle" onclick="return confirm('Vous voulez vraiment supprimer?')"> 
-                          <i class="fas fa-trash"> </i>
-                      </a></button>
-                        </form>
-                    </td>
-                  </tr>
-                @endforeach
-                  
-                 
-                </tbody>
-              </table>
-                  
-                  </div>
-
-                  </div>
        
       
       
     </section>
 
 @endsection
-
 
 

@@ -138,12 +138,12 @@
               <table class="table table-hover text-nowrap">
                 <thead>
                   <tr>
-                    <th>Promo</th>
-                    <th>Spécialité</th>
+                    <th>ID</th>
+                    <th>Pomo</th>
                   
+                    <th>Specialite</th>
                     <th>Semestre</th>
                     <th>Type</th>
-                  
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -162,7 +162,7 @@
 
                     <td class="">
                       
-                        <form action="{{url('/gerer-examen'.$examen->id)}}" method="post">
+                        <form action="{{url('gerer-examen/'. $examen->id)}}" method="post">
                         {{csrf_field()}}
                         {{method_field('DELETE')}}
                           

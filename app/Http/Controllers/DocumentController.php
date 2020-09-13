@@ -77,18 +77,12 @@ class DocumentController extends Controller
     
     $document->titre = $request->input('titre');
     $document->description=$request->input('description');
+    
    }
 
 
 
-
-
-
-
-
-
-
-       public function destroy($id){
+     public function destroy($id){
 
 
     

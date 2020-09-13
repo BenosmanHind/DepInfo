@@ -21,7 +21,8 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="POST" action="{{ route('register') }}">
+              <form method="POST" action="{{url('/profil_admin'.Auth::user()->id)}}">
+                <input type="hidden" name="_methode" value="PUT">">
                 @csrf
                 <div class="card-body" id="hiddens">
 
@@ -31,7 +32,7 @@
                     <label for="exampleInputTitre">Nom</label>
                     <div >
                         
-                        <input id="name" placeholder="Entrer le nom" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  required >
+                        <input id="name" placeholder="Entrer le nom" type="text" value="{{$user->name}}" class="form-control @error('name') is-invalid @enderror" name="name"  required >
 
                         @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -45,7 +46,7 @@
                     <label for="exampleInputTitre">Email</label>
                     <div >
                         
-                        <input id="email" placeholder="Entrer l'email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"  required >
+                        <input id="email" placeholder="Entrer l'email" type="email" value="{{$user->email}}" class="form-control @error('email') is-invalid @enderror" name="email"  required >
 
                         @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -55,6 +56,28 @@
                     </div>
                   </div>
                     
+                    <div class="form-group">
+                            <label for="password">{{ __('Password') }}</label>
+
+                            <div>
+                                <input id="password" placeholder="Saisir mot de passe" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password-confirm">{{ __('Confirm Password') }}</label>
+
+                            <div>
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+                           
+
                      
                      
                        
