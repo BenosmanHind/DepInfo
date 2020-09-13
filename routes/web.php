@@ -201,7 +201,9 @@ Route::resource('/dashbord/etudiant/profil_etudiant','ProfilController');
 Route::resource('/profil_admin','ProfilController');
 
 // Emploi du temps route
-Route::resource('/emploi_du_temps_etudiant', 'TimeTableStudentController');
+Route::resource('/planning_student', 'PlanningController');
+
+Route::resource('/student-planning', 'PlanningStudentController');
 
 // Task route
 //Route::get('/dashbord/enseignant/home', 'TaskController@index');

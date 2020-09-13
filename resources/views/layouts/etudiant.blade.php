@@ -168,7 +168,7 @@
           <li class="nav-header">EXAMPLES</li>
 
            <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+            <a href="{{url('/student-planning')}}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Mon Emploi Du Temps

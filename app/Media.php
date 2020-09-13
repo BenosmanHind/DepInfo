@@ -27,4 +27,9 @@ class Media extends Model
     {
         return $this->belongsTo(Exam_admin::class);
     }
+
+    public function planning()
+    {
+        return $this->belongsTo(planning::class);
+    }
 }

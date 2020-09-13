@@ -1,48 +1,39 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\TimeTableStudent;
 use App\Media;
+use App\Planning;
 use Illuminate\Support\Facades\Storage;
 
-
-class TimeTableStudentController extends Controller
+class PlanningController extends Controller
 {
     //
-  public function index(){
+    public function index(){
 
-         $emp = TimeTableStudent::all();
-    	 return view('/emploi_du_temps_etudiant',['emp'=>$emp]);
+         $emp = Planning::all();
+    	 return view('/planning_student',['emp'=>$emp]);
     }
 
 
 
+     public function store(Request $request){
 
-
-public function store(Request $request){
-
-        $request->validate([
-                   'fichier' => 'required',
-                   'promo' => 'required',
-                   'specialite' => 'required',
-                   'semestre' => 'required',
-                 
-             ]);
 
    	  $hasFile = $request->hasFile('fichier');
 
          
         if($hasFile){
           $file =  $request->file('fichier');
-          $name = $file->store('EmploiDuTemp');
+          $name = $file->store('Planning');
        
           $lien = Storage::url($name);
           
         }
 
-           $emp = new TimeTableStudent();
+           $emp = new Planning();
            $emp->title = $request->input('title');
            $emp->promo =  $request->input('promo');
            $emp->specialite =  $request->input('specialite');
@@ -52,8 +43,9 @@ public function store(Request $request){
    
            $media = new Media();
            $media->lien = $lien;
+           $media->type = "emp";
            $media->name =  $request->file('fichier')->getClientOriginalName();
-           $media->type = $request->input('type');
+           
            
    
            $emp->media()->save($media);
@@ -61,4 +53,4 @@ public function store(Request $request){
   
 }
 
-  }
+}

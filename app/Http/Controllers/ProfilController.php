@@ -27,5 +27,7 @@ class ProfilController extends Controller
     			break;
     	}
     }
+
+    
      
 }

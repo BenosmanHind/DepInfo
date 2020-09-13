@@ -174,14 +174,9 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+             
               <li class="nav-item">
-                <a href="{{ url('emploi_du_temps_enseignant') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Enseignants</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ url('emploi_du_temps_etudiant') }}" class="nav-link">
+                <a href="{{ url('planning_student') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Etudiants</p>
                 </a>

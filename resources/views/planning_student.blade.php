@@ -27,7 +27,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-            <form role="form"  method="POST" action="{{route('emploi_du_temps_etudiant.store')}}" enctype="multipart/form-data">
+            <form role="form"  method="POST" action="{{route('planning_student.store')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                    <div class="form-group">
