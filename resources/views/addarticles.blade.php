@@ -27,11 +27,10 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-<<<<<<< HEAD
+
             <form role="form"  method="POST" action="{{route('articles.store')}}" form-datenctype="multipart/a">
-=======
+
             <form role="form"  method="POST" action="{{route('articles.store')}}" enctype="multipart/form-data">
->>>>>>> 4c76db9de61caf341a64c57d51836b52167ed33c
                 @csrf 
                 <div class="card-body">
 
@@ -80,13 +79,14 @@
                         <input name="picture" id="picture" type="file" class="form-control-file" >
                         
                   </div>
+                   <div class="card-footer">
+                  <button type="submit" class="btn btn-success pl-4 pr-4">Créer</button>
+                </div>
                     
                 </div>
                 <!-- /.card-body -->
 
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-success pl-4 pr-4">Créer</button>
-                </div>
+               
               </form>
             </div>
             <!-- /.card -->

@@ -40,7 +40,7 @@
                     <tr>
                       <th>ID</th>
                       <th>Titre</th>
-                      
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>

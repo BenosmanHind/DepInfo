@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Media;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class ProfilController extends Controller
 {
@@ -40,9 +42,22 @@ class ProfilController extends Controller
    
    
       $user = User::find($id);
+      
+   
+      $hasFile = $request->hasFile('fichier');
 
+         
+        if($hasFile){
+          $file =  $request->file('fichier');
+          $name = $file->store('Photo_de_profil');
        
-      if($user->role == 2){
+          $lien = Storage::url($name);
+          
+        }
+        
+       
+       
+       if($user->role == 2){
 
 
         $user->name = $request->input('name');
@@ -50,7 +65,14 @@ class ProfilController extends Controller
         if($request['password']){
           $user->password = Hash::make($request['password']);
         }
-        $user->save();
+          $user->save();
+        
+        $media = new Media;
+        $media->lien =  $request->input('lien');
+        $media->type = "photo";
+        $media->name =  $request->file('fichier')->getClientOriginalName();
+        $user->medias()->save($media);
+      
 
         return redirect()->route('profil.index')
 
@@ -65,6 +87,12 @@ class ProfilController extends Controller
           $user->password = Hash::make($request['password']);
         }
         $user->save();
+
+        $media = new Media;
+        $media->lien = $request->input('lien');
+        $media->type = "photo";
+        $media->name =  $request->file('fichier')->getClientOriginalName();
+        $user->medias()->save($media);
 
         return redirect()->route('profil.index')
 
@@ -81,6 +109,12 @@ class ProfilController extends Controller
         }
         $user->save();
 
+        $media = new Media;
+        $media->lien =  $request->input('lien');
+        $media->type = "profil";
+        $media->name =  $request->file('fichier')->getClientOriginalName();
+
+        $user->medias()->save($media);
         return redirect()->route('profil.index')
 
         ->with('success','Profile modifié avec success!');

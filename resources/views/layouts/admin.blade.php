@@ -150,12 +150,7 @@
                   <p>Aller au site</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Contacter L'admin</p>
-                </a>
-              </li>
+             
               
             </ul>
           </li>
@@ -289,7 +284,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url ('/profil_admin') }}" class="nav-link">
+                <a href="{{url('/profil')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Mon Profil</p>
                 </a>

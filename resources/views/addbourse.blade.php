@@ -123,24 +123,19 @@
                 </div>
                 
                 <div class="form-group">
-                  <label for="exampleInputFile">Image</label>
-                  <div class="input-group">
-                    <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="exampleInputFile">
-                      <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                    </div>
-                    <div class="input-group-append">
-                      <span class="input-group-text" id="">Upload</span>
-                    </div>
+                    <label for="picture"> Image </label>
+
+                        <input name="picture" id="picture" type="file" class="form-control-file" >
+                        
                   </div>
-                </div>
+                 <div class="card-footer">
+                <button type="submit" class="btn btn-success pl-4 pr-4">Créer</button>
+              </div>
                 
               </div>
               <!-- /.card-body -->
 
-              <div class="card-footer">
-                <button type="submit" class="btn btn-success pl-4 pr-4">Créer</button>
-              </div>
+             
             </form>
           </div>
           <!-- /.card -->

@@ -36,15 +36,15 @@
                 <div class="single__news">
                     <div class="thumb">
                         
-                           <a href="" >
-                            <img src="img/news/1.png" alt="">
-                        </a>
+                           <a href="single-blog.html">
+                                <img src="{{$medias[0]->lien}}" alt="">
+                            </a>
                       
                     </div>
                     <div class="news_info">
                         <a href="{{$bourse->link}}" target="_blank">
                             <h4>{{$bourse->title}}</h4>
-                        </a>
+                        </a> 
                        
                         <p class="event_info_text">{{$bourse->description}}
                     </p> 

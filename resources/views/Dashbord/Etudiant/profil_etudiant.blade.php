@@ -70,6 +70,8 @@
                            
                         </div>
                       </div>
+
+
                     
                          <div class="form-group">
                             <label for="password">Un nouveau mot de passe ? <p style="font-size: 15px; font-weight:450; margin-bottom : -2px;">(Laissez le champ vide si vous voulez garder l'ancien)</p></label>
@@ -84,7 +86,12 @@
                                 @enderror
                             </div>
                         </div>
-                 
+                         <div class="form-group">
+                         <label for="picture">Photo de profil</label>
+
+                        <input name="picture" id="picture" type="file" class="form-control-file" >
+                        
+                        </div>
                            
                 
                    <div class="card-footer">

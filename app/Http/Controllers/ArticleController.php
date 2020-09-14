@@ -32,7 +32,7 @@ class ArticleController extends Controller
        public function store(ArticleRequest $request){
 
         $hasFile = $request->hasFile('picture');
-
+ 
   
           if($hasFile){
           $file =  $request ->file('picture');

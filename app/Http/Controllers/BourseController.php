@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Bourse;
+use App\Media;
 use App\Http\Requests\BourseRequest;
 class BourseController extends Controller
 {
@@ -24,6 +25,18 @@ class BourseController extends Controller
       }
 
       public function store(BourseRequest $request){
+
+         $hasFile = $request->hasFile('picture');
+
+  
+          if($hasFile){
+          $file =  $request ->file('picture');
+          $name = $file->store('articlePicture');
+          $lien = Storage::url($name);
+          
+
+        }
+
         $bourse = new Bourse();
 
         $bourse->title = $request->input('title');
@@ -34,6 +47,14 @@ class BourseController extends Controller
         $bourse->année_universitaire = $request->input('année_universitaire');
         $bourse->link=$request->input('link');
         $bourse->save();
+
+
+        $media = new Media;
+        $media->lien = $lien;
+        $media->type = "img";
+
+        $bourse->medias()->save($media);
+
 
 
         return redirect()->route('bourses.index')

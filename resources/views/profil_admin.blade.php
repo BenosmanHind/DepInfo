@@ -32,7 +32,7 @@
                     <label for="exampleInputTitre">Nom</label>
                     <div >
                         
-                        <input id="name" placeholder="Entrer le nom" type="text" value="{{$user->name}}" class="form-control @error('name') is-invalid @enderror" name="name"  required >
+                        <input id="name" placeholder="Entrer le nom" type="text"  value="{{ old('name', Auth::user()->name) }}" class="form-control @error('name') is-invalid @enderror" name="name"  required >
 
                         @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -46,7 +46,7 @@
                     <label for="exampleInputTitre">Email</label>
                     <div >
                         
-                        <input id="email" placeholder="Entrer l'email" type="email" value="{{$user->email}}" class="form-control @error('email') is-invalid @enderror" name="email"  required >
+                        <input id="email" placeholder="Entrer l'email" type="email" value="{{ old('email', Auth::user()->email) }}" class="form-control @error('email') is-invalid @enderror" name="email"  required >
 
                         @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -55,10 +55,10 @@
                         @enderror
                     </div>
                   </div>
+
                     
                     <div class="form-group">
-                            <label for="password">Un nouveau mot de passe ?</label>
-
+                            <label for="password">Un nouveau mot de passe ? <p style="font-size: 15px; font-weight:450; margin-bottom : -2px;">(Laissez le champ vide si vous voulez garder l'ancien)</p></label>
                             <div>
                                 <input id="password" placeholder="Saisir le nouveau mot de passe" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
@@ -69,18 +69,21 @@
                                 @enderror
                             </div>
                         </div>
-                   
+
+
+                        <div class="form-group">
+                         <label for="picture">Photo de profil</label>
+
+                        <input name="picture" id="picture" type="file" class="form-control-file" >
+                        
+                        </div>
                            
 
                      
                      
-                       
-                        
-
-                        
-                
+                    
                    <div class="card-footer">
-                  <button type="submit" class="btn btn-success pl-4 pr-4">Register</button>
+                  <button type="submit" class="btn btn-success pl-4 pr-4">Save</button>
                 </div>
               </form>
             </div>

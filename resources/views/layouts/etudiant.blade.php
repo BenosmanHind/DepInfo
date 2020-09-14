@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>D-INFO | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
    <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -155,12 +155,7 @@
                   <p>Aller au site</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Contacter L'admin</p>
-                </a>
-              </li>
+             
               
             </ul>
           </li>
@@ -193,14 +188,8 @@
             </a>
           </li>
 
-          <li class="nav-item">
-          <a href="{{url('mesnotes')}}" class="nav-link">
-              <i class="nav-icon fas fa-chart-bar"></i>
-              <p>
-              Mes Notes
-              </p>
-            </a>
-          </li>
+        
+         
           <li class="nav-item">
             <a href="{{url('mes-modules')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>

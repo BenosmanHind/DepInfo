@@ -142,7 +142,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-success pl-4 pr-4">Créer</button>
+                  <button type="submit" class="btn btn-success pl-4 pr-4">Save</button>
                 </div>
               </form>
             </div>

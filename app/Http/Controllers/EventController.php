@@ -17,7 +17,7 @@ class EventController extends Controller
           $list_events = Event::all();
           return view('events',['events'=>$list_events]);
   
-      }
+      } 
 
     
 

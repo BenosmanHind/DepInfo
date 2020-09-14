@@ -17,6 +17,10 @@ class Media extends Model
     {
         return $this->belongsTo(Article::class);
     }
+     public function bourse()
+    {
+        return $this->belongsTo(Bourse::class);
+    }
 
     public function document()
     {

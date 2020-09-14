@@ -4,9 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Dep-Info</title>
-
-  <title>Dashbord</title>
+ <title>D-INFO | Dashboard</title>
 
   <!-- Tell the browser to be responsive to screen width -->
    <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -160,25 +158,24 @@
                   <p>Aller au site</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Contacter L'admin</p>
-                </a>
-              </li>
+             
               
             </ul>
           </li>
           
           <li class="nav-header">Foctionalités</li>
- <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
+           <li class="nav-item">
+            <a href="{{url('dashbord/enseignant/modules')}}" class="nav-link">
+              <i class="nav-icon fas fa-chart-bar"></i>
               <p>
-                Mon Emploi Du Temps
+
+
+              Modules
+
               </p>
             </a>
           </li>
+           
           <li class="nav-item">
             <a href="{{url('dashbord/enseignant/documents')}}" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
@@ -196,7 +193,7 @@
               <i class="nav-icon fas fa-table"></i>
               <p>
 
-                Les Examens
+                Planifier Examens
 
               </p>
             </a>
@@ -204,17 +201,7 @@
 
          
 
-          <li class="nav-item">
-            <a href="{{url('dashbord/enseignant/modules')}}" class="nav-link">
-              <i class="nav-icon fas fa-chart-bar"></i>
-              <p>
-
-
-              Modules
-
-              </p>
-            </a>
-          </li>
+        
          
           <li class="nav-item">
           <a href="{{url('dashbord/enseignant/reglement')}}" class="nav-link">
@@ -236,7 +223,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('dashbord/enseignant/profil_enseignant')}}" class="nav-link">
+                <a href="{{url('/profil')}} "class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Mon Profil</p>
                 </a>

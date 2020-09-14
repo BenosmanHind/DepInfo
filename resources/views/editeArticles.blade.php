@@ -84,13 +84,17 @@
                       </div>
                     </div>
                   </div>
+
+
+
+                   <div class="card-footer">
+                  <button type="submit" class="btn btn-success pl-4 pr-4">Save</button>
+                </div>
                   
                 </div>
                 <!-- /.card-body -->
 
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-success pl-4 pr-4">Modifier</button>
-                </div>
+               
               </form>
             </div>
             <!-- /.card -->
