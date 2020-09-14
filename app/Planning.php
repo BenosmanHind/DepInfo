@@ -8,7 +8,6 @@ class Planning extends Model
 {
     //
       public function media(){
-        
         return $this->hasOne('App\Media');   
     }
 }

@@ -72,10 +72,10 @@
                            
                         </div>
                          <div class="form-group">
-                            <label for="password">{{ __('Password') }}</label>
+                            <label for="password">Un nouveau mot de passe ?</label>
 
                             <div>
-                                <input id="password" placeholder="Saisir mot de passe" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" placeholder="Saisir le nouveau mot de passe" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -84,13 +84,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="password-confirm">{{ __('Confirm Password') }}</label>
-
-                            <div>
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
+                
                        
                         
                    <div class="card-footer">

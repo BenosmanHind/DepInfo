@@ -196,9 +196,8 @@ Route::resource('/student-examens', 'StudentExamenController');
 
 // Profil route
 
-Route::resource('/dashbord/enseignant/profil_enseignant','ProfilController');
-Route::resource('/dashbord/etudiant/profil_etudiant','ProfilController');
-Route::resource('/profil_admin','ProfilController');
+Route::resource('/profil','ProfilController');
+
 
 // Emploi du temps route
 Route::resource('/planning_student', 'PlanningController');

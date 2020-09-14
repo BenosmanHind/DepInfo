@@ -11,22 +11,25 @@ class PlanningStudentController extends Controller
 {
     //
     public function index(){
+
+      
     	
     if(Auth::user()->specialite ){
            
-            $planningS1 = Planning::where('specialite',Auth::user()->specialite)->where('promo',Auth::user()->promo)->where('semestre','S1')->get();
+            $planningS1 = Planning::where('specialite',Auth::user()->specialite)->where('promo',Auth::user()->promo)->where('semestre','S1')->first();
 
-            $planningS2 = Planning::where('specialite',Auth::user()->specialite)->where('promo',Auth::user()->promo)->where('semestre','S2')->get();
+            $planningS2 = Planning::where('specialite',Auth::user()->specialite)->where('promo',Auth::user()->promo)->where('semestre','S2')->firstOrNew();
 
 
            
         }
         else{
-          $planningS1 = Planning::where('promo',Auth::user()->promo)->where('semestre','S1')->get();
-          $planningS2 = Planning::where('promo',Auth::user()->promo)->where('semestre','S2')->get();
+          $planningS1 = Planning::where('promo',Auth::user()->promo)->where('semestre','S1')->first();
+          $planningS2 = Planning::where('promo',Auth::user()->promo)->where('semestre','S2')->firstOrNew();
         }
 
 
-    	return view('/dashbord/etudiant/planning',['planning'=>$planningS1,'planning'=>$planningS2]);
+      
+    	return view('/dashbord/etudiant/planning',['planningS1'=>$planningS1,'planningS2'=>$planningS2]);
     }
 }

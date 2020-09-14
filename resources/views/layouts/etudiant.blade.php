@@ -229,7 +229,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('dashbord/etudiant/profil_etudiant')}}" class="nav-link">
+                <a href="{{url('/profil')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Mon Profile</p>
                 </a>
@@ -253,6 +253,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
+    @include('flash-mesage')
    @yield('content')
   </div>
   <!-- /.content-wrapper -->

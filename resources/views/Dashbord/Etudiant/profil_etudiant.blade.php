@@ -21,8 +21,8 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="POST" action="{{url('/dashbord/etudiant/profil_etudiant'.Auth::user()->id)}}">
-                <input type="hidden" name="_methode" value="PUT">">
+              <form method="POST" action="{{url('/profil/'.Auth::user()->id)}}">
+                <input type="hidden" name="_method" value="PUT">
                 @csrf
                 <div class="card-body" id="hiddens">
 
@@ -32,7 +32,7 @@
                     <label for="exampleInputTitre">Nom</label>
                     <div >
                         
-                        <input id="name" placeholder="Entrer le nom" type="text" value="{{$user->name}}" class="form-control @error('name') is-invalid @enderror" name="name"  required >
+                        <input id="name" placeholder="Entrer le nom" type="text" value="{{ old('name', Auth::user()->name) }}" class="form-control @error('name') is-invalid @enderror" name="name"  required >
 
                         @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -46,7 +46,7 @@
                     <label for="exampleInputTitre">Email</label>
                     <div >
                         
-                        <input id="email" placeholder="Entrer l'email" type="email" value="{{$user->email}}" class="form-control @error('email') is-invalid @enderror" name="email"  required >
+                        <input id="email" placeholder="Entrer l'email" type="email" value="{{ old('email', Auth::user()->email) }}" class="form-control @error('email') is-invalid @enderror" name="email"  required >
 
                         @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -60,7 +60,7 @@
                     <div>
                     
                            
-                                <input id="nstudent" placeholder="Entrer N° carte"  type="text" value="{{$user->nstudent}}" class="form-control @error('nstudent') is-invalid @enderror" name="nstudent" value="{{ old('nstudent') }}" required autocomplete="nstudent" >
+                                <input disabled id="nstudent" placeholder="Entrer N° carte"  type="text" value="{{ old('nstudent', Auth::user()->nstudent) }}" class="form-control @error('nstudent') is-invalid @enderror" name="nstudent" value="{{ old('nstudent') }}" required autocomplete="nstudent" >
 
                                 @error('nstudent')
                                     <span class="invalid-feedback" role="alert">
@@ -72,10 +72,10 @@
                       </div>
                     
                          <div class="form-group">
-                            <label for="password">{{ __('Password') }}</label>
+                            <label for="password">Un nouveau mot de passe ? <p style="font-size: 15px; font-weight:450; margin-bottom : -2px;">(Laissez le champ vide si vous voulez garder l'ancien)</p></label>
 
                             <div>
-                                <input id="password" placeholder="Saisir mot de passe" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" placeholder="Saisir le nouveau mot de passe" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -84,21 +84,11 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="password-confirm">{{ __('Confirm Password') }}</label>
-
-                            <div>
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
+                 
                            
-
-                  
-
-
                 
                    <div class="card-footer">
-                  <button type="submit" class="btn btn-success pl-4 pr-4">Register</button>
+                  <button type="submit" class="btn btn-success pl-4 pr-4">Save</button>
                 </div>
               </form>
             </div>

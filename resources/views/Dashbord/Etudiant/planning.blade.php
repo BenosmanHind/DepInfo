@@ -100,7 +100,7 @@
     
               <div class="row " >
 
-              <div class="col-6 row pt-4 mr-3"  style="background-color:#E6EBF4;">
+             
 
               <div class="col-6">
                 <div class="card">
@@ -116,36 +116,33 @@
                       <div class="card-body table-responsive p-0 " style="overflow: hidden;">
 
                       <div class="row d-flex justify-content-center p-4">
-
+ 
 
                       <div class="item pb-2">
-                            <div class="document-content-title p-2 ">
 
-
-
-
-
-
+                        
                             <div class="document-content pt-1 pl-3 pr-3 pb-2">
 
+                              @if($planningS1->media)
 
+                              
+                              <a href="{{$planningS1->media->lien}} " > <i class="far fa-file-alt pr-1"></i>  {{$planningS1->media->name}}</a></br>
+                              @endif
+                            </div>    
+                            
+                 
+                            
+              
+                       </div>
 
-                         </div>     
-
-
-
-
-               </div>
-             </div>
-
-                      </div>
+                   </div>
 
                 </div>
 
                 </div>
                 </div>
-              </div>
-            </div>
+              
+           
 
 
 
@@ -155,12 +152,12 @@
 
 
 
-                 <div class="col-6 row pt-4 mr-3"  style="background-color:#E6EBF4;">
+                
 
               <div class="col-6">
                 <div class="card">
                     <div class="card-header">
-                      <h3 class="card-title">Planning <span class="badge badge-pill badge-info ml-2">semestre1</span> </h3>
+                      <h3 class="card-title">Planning <span class="badge badge-pill badge-info ml-2">semestre2</span> </h3>
 
                       <div class="card-tools">
                           <div class="input-group input-group-sm" style="width: 150px;">
@@ -174,20 +171,17 @@
 
 
                       <div class="item pb-2">
-                            <div class="document-content-title p-2 ">
+                 
+
+                  <div class="document-content pt-1 pl-3 pr-3 pb-2">
+                    @if($planningS2->media)
+                    <a href="{{$planningS2->media->lien}} " > <i class="far fa-file-alt pr-1"></i>  {{$planningS2->media->name}}</a></br>
+                    @endif
+                  </div>     
+            
+                    
 
 
-
-                   <div class="document-content pt-1 pl-3 pr-3 pb-2">
-
-
-
-                         </div>     
-
-
-
-
-               </div>
              </div>
 
                       </div>
@@ -200,7 +194,7 @@
             </div>
 
 
-              </div>
+          </div>
 
   
                      

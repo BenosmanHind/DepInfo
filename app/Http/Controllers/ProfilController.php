@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class ProfilController extends Controller
 {
@@ -12,47 +13,62 @@ class ProfilController extends Controller
     public function index(){
 
     	$role = Auth::user()->role;
-      $user = User::where('id','=',Auth::user()->id)->get();  
+     
 
     	switch ($role) {
     		case 2:
-                   return view('/dashbord/enseignant/profil_enseignant',['user'=>$user]);    			
+                   return view('/dashbord/enseignant/profil_enseignant');    			
    			break;
 
    			case 3:
-                   return view('/dashbord/etudiant/profil_etudiant',['user'=>$user]);    			
+                   return view('/dashbord/etudiant/profil_etudiant');    			
    			break;
     		
     		default:
-    			return view('/profil_admin',['user'=>$user]);
+    			return view('/profil_admin');
     			break;
     	}
     }
 
 
 
+
+
+
+
     public function update(Request $request , $id){
+   
+   
+      $user = User::find($id);
 
        
-      if(role == 2){
+      if($user->role == 2){
 
 
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-        $user->nteacher = $request->input('nteacher');
+        if($request['password']){
+          $user->password = Hash::make($request['password']);
+        }
         $user->save();
 
-        return redirect('/dashbord/enseignant/profil_enseignant');
+        return redirect()->route('profil.index')
+
+        ->with('success','Profile modifié avec success!');
       }
 
-      if(role == 3){
+      if($user->role  == 3){
 
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-        $user->nstudent = $request->input('nstudent');
+        if($request['password']){
+          $user->password = Hash::make($request['password']);
+        }
         $user->save();
 
-          return redirect('dashbord/etudiant/profil_etudiant');
+        return redirect()->route('profil.index')
+
+        ->with('success','Profile modifié avec success!');
          }
 
         else {
@@ -60,9 +76,14 @@ class ProfilController extends Controller
 
         $user->name = $request->input('name');
         $user->email = $request->input('email');
+        if($request['password']){
+          $user->password = Hash::make($request['password']);
+        }
         $user->save();
 
-          return redirect('/profil_admin');
+        return redirect()->route('profil.index')
+
+        ->with('success','Profile modifié avec success!');
         }
     }
 

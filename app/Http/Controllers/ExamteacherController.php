@@ -32,7 +32,6 @@ class ExamteacherController extends Controller
            $examenenseignant->salle = $request->input('salle');
            $examenenseignant->module_id = $request->input('module');
            $examenenseignant->user_id = Auth::user()->id;
-          
            $examenenseignant->save();
    
    
