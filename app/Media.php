@@ -36,5 +36,9 @@ class Media extends Model
     {
         return $this->belongsTo(Planning::class);
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
 }

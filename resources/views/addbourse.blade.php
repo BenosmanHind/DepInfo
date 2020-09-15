@@ -27,7 +27,7 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-          <form role="form"  method="POST" action="{{route('bourses.store')}} ">
+          <form role="form"  method="POST" action="{{route('bourses.store')}} " enctype="multipart/form-data">
               @csrf
               <div class="card-body">
 

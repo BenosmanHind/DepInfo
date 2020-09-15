@@ -22,7 +22,7 @@
               <!-- /.card-header -->
               <!-- form start -->
               <form method="POST" action="{{url('/profil_admin'.Auth::user()->id)}}">
-                <input type="hidden" name="_methode" value="PUT">">
+                <input type="hidden" name="_methode" value="PUT">
                 @csrf
                 <div class="card-body" id="hiddens">
 

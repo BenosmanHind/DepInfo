@@ -1,4 +1,32 @@
 @extends('layouts.etudiant')
+<style>
+
+  .image-preview{
+    
+    border : 1px solid #29324C !important;
+    margin: 10px 10px 10px 0px;
+    display : flex; 
+    align-items: center;
+    justify-content: center;
+    overflow:hidden;
+    border-radius:100px;
+      width:150px;
+      height:150px;
+     
+      
+  }
+  
+  .image-preview-image{
+  
+   width: 100%;
+   height: 100%;
+   border-radius:50px;
+   
+   border-radius:50px;
+
+     
+  }
+  </style>
 
 @section('content')
 <section class="content-header m-4">
@@ -21,12 +49,28 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="POST" action="{{url('/profil/'.Auth::user()->id)}}">
+              <form method="POST" action="{{url('/profil/'.Auth::user()->id)}}" enctype="multipart/form-data">
                 <input type="hidden" name="_method" value="PUT">
                 @csrf
                 <div class="card-body" id="hiddens">
 
+                 <div class="d-flex justify-content-center ">
+                  <div class="form-group ">
 
+                    <div class="image-preview " id="slider">
+                     @if(Auth::user()->media)
+                    <img id="blah" src="{{Auth::user()->media->lien}}" class="image-preview-image"lt="profile">
+                     @else <img id="blah" src="https://www.chanelrenovation.fr/wp-content/uploads/2019/08/neutre.jpg" class="image-preview-image"lt="profile">
+                     @endif
+                    </div>
+                      
+                        <input   id="imgInp" type="file"  name="fichier"   class="file-upload-default">
+
+                  </div>
+
+                 </div>
+
+                 
 
                   <div class="form-group">
                     <label for="exampleInputTitre">Nom</label>
@@ -86,12 +130,7 @@
                                 @enderror
                             </div>
                         </div>
-                         <div class="form-group">
-                         <label for="picture">Photo de profil</label>
-
-                        <input name="picture" id="picture" type="file" class="form-control-file" >
-                        
-                        </div>
+                         
                            
                 
                    <div class="card-footer">

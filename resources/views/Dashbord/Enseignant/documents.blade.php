@@ -167,7 +167,7 @@
                         {{method_field('DELETE')}}
                           
                    
-                        <a href=""  class="btn btn-warning btn-circle ">
+                        <a  href="{{url('/documents/'.$document->id.'/edit')}}"  class="btn btn-warning btn-circle ">
                           <i class="fas fa-edit"> </i>
                         </a> 
                           

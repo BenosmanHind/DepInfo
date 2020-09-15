@@ -32,19 +32,16 @@ class ArticleController extends Controller
        public function store(ArticleRequest $request){
 
         $hasFile = $request->hasFile('picture');
- 
+      
   
-          if($hasFile){
+        if($hasFile){
           $file =  $request ->file('picture');
           $name = $file->store('articlePicture');
           $lien = Storage::url($name);
-          
 
         }
         $article = new Article();
-
-        $article->title = $request->input('title');
-       
+        $article->title = $request->input('title');     
         $article->description = $request->input('description');
         
         $article->save();

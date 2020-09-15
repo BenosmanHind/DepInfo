@@ -28,7 +28,7 @@
               <!-- /.card-header -->
               <!-- form start -->
 
-            <form role="form"  method="POST" action="{{route('articles.store')}}" form-datenctype="multipart/a">
+           
 
             <form role="form"  method="POST" action="{{route('articles.store')}}" enctype="multipart/form-data">
                 @csrf 

@@ -57,5 +57,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Task::class);
     }
+    public function Media()
+    {
+        return $this->hasOne(Media::class);
+    }
 }
 

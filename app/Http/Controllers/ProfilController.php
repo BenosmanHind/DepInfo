@@ -67,11 +67,21 @@ class ProfilController extends Controller
         }
           $user->save();
         
-        $media = new Media;
-        $media->lien =  $request->input('lien');
+           //supprimer avant la photo quiexiste
+           $media = Media::where('user_id','=',Auth::user()->id)->count();
+
+           if($media != null){
+               $media = Media::where('user_id','=',Auth::user()->id)->first();
+               $media->delete();
+ 
+           }
+         
+        
+        $media = new Media();
+        $media->lien =  $lien;
         $media->type = "photo";
         $media->name =  $request->file('fichier')->getClientOriginalName();
-        $user->medias()->save($media);
+        $user->media()->save($media);
       
 
         return redirect()->route('profil.index')
@@ -80,7 +90,7 @@ class ProfilController extends Controller
       }
 
       if($user->role  == 3){
-
+      
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         if($request['password']){
@@ -88,15 +98,26 @@ class ProfilController extends Controller
         }
         $user->save();
 
-        $media = new Media;
-        $media->lien = $request->input('lien');
+         //supprimer avant la photo quiexiste
+         $media = Media::where('user_id','=',Auth::user()->id)->count();
+
+         if($media != null){
+             $media = Media::where('user_id','=',Auth::user()->id)->first();
+             $media->delete();
+
+         }
+
+        $media = new Media();
+        $media->lien = $lien;
         $media->type = "photo";
         $media->name =  $request->file('fichier')->getClientOriginalName();
-        $user->medias()->save($media);
+        $user->media()->save($media);
 
         return redirect()->route('profil.index')
 
         ->with('success','Profile modifié avec success!');
+
+
          }
 
         else {
@@ -109,12 +130,21 @@ class ProfilController extends Controller
         }
         $user->save();
 
-        $media = new Media;
-        $media->lien =  $request->input('lien');
+         //supprimer avant la photo quiexiste
+         $media = Media::where('user_id','=',Auth::user()->id)->count();
+
+         if($media != null){
+             $media = Media::where('user_id','=',Auth::user()->id)->first();
+             $media->delete();
+
+         }
+
+        $media = new Media();
+        $media->lien =  $lien;
         $media->type = "profil";
         $media->name =  $request->file('fichier')->getClientOriginalName();
 
-        $user->medias()->save($media);
+        $user->media()->save($media);
         return redirect()->route('profil.index')
 
         ->with('success','Profile modifié avec success!');

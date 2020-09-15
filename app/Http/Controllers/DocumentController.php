@@ -22,8 +22,6 @@ class DocumentController extends Controller
     public function store(Request $request ){
 
         $hasFile = $request->hasFile('fichier');
-
-         
         if($hasFile){
           $file =  $request->file('fichier');
           $name = $file->store('Document');
@@ -62,8 +60,9 @@ class DocumentController extends Controller
 
       public function edit($id){
         $document = Document::find($id);
-        $module = module::all();
-        return view('dashbord/enseignant/documents',['document'=>$document , 'module' =>$module]);
+        
+        $modules = module::all();
+        return view('/editdocument',['document'=>$document , 'modules' =>$modules]);
 
       }
 
@@ -74,9 +73,50 @@ class DocumentController extends Controller
    public function update(Request $request , $id){
 
     $document = Document::find($id);
+
+    $hasFile = $request->hasFile('fichier');
+        if($hasFile){
+          $file =  $request->file('fichier');
+          $name = $file->store('Document');
+       
+          $lien = Storage::url($name);
+          
+      
+        }
+
+        $document->title = $request->input('titre');
+        $document->description = $request->input('description');
+        $document->doc = $request->input('type');
+        $document->module_id = $request->input('module');
+        $document->user_id = Auth::user()->id;
+        $document->promo = "null";
+
+
+        $document->save();
+
+        //supprimer avant la photo quiexiste
+        $media = Media::where('document_id','=',$document->id)->count();
+
+        if($media != null){
+            $media = Media::where('document_id','=',$document->id)->first();
+            $media->delete();
+
+        }
+
+        if($hasFile){
+
+        $media = new Media;
+        $media->lien = $lien;
+        $media->type = "document";
+        $media->name =  $request->file('fichier')->getClientOriginalName();
+        $document->medias()->save($media);
+      }
+
+        return redirect()->route('documents.index')
+
+        ->with('success','Document ajouté avec success!');
     
-    $document->titre = $request->input('titre');
-    $document->description=$request->input('description');
+  
     
    }
 
@@ -84,8 +124,6 @@ class DocumentController extends Controller
 
      public function destroy($id){
 
-
-    
     $document=Document::find($id);
     $document->delete();
     

@@ -227,12 +227,14 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+              @if(Auth::user()->role == 0 )
               <li class="nav-item">
                 <a href="{{ url('admins') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Admins</p>
                 </a>
               </li>
+              @endif
               <li class="nav-item">
                 <a href="{{ url('enseignants') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>

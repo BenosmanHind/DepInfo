@@ -128,7 +128,12 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+       
+            @if(Auth::user()->media)
+           <img  src="{{Auth::user()->media->lien}}" class="image-preview-image" lt="profile">
+            @else <img "src="https://www.chanelrenovation.fr/wp-content/uploads/2019/08/neutre.jpg" class="img-circle elevation-2" alt="User Image">
+            @endif
+      
         </div>
         <div class="info">
           <a href="#" class="d-block">{{ Auth::user()->name }}</a>
@@ -367,11 +372,32 @@ if (distance < 0) {
 
 
   });
-  
-
-
-
   </script>
+
+
+
+<script>
+
+  function readURL(input) {
+
+      if (input.files && input.files[0]) {
+          var reader = new FileReader();
+        
+          reader.onload = function (e) {
+              $('#blah').attr('src', e.target.result);
+          }
+         
+          
+          reader.readAsDataURL(input.files[0]);
+      }
+  }
+  
+  $("#imgInp").change(function(){
+      readURL(this);
+  });
+  
+  
+</script>   
 
 
 
