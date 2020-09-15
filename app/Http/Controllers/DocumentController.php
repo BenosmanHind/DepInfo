@@ -66,6 +66,7 @@ class DocumentController extends Controller
 
       }
 
+
      
 
 
@@ -105,7 +106,7 @@ class DocumentController extends Controller
 
         if($hasFile){
 
-        $media = new Media;
+        $media = new Media();
         $media->lien = $lien;
         $media->type = "document";
         $media->name =  $request->file('fichier')->getClientOriginalName();
@@ -114,7 +115,7 @@ class DocumentController extends Controller
 
         return redirect()->route('documents.index')
 
-        ->with('success','Document ajouté avec success!');
+        ->with('success','Document modifié avec success!');
     
   
     

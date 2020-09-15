@@ -138,7 +138,7 @@
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Pomo</th>
+                    <th>Promo</th>
                   
                     <th>Specialite</th>
                     <th>Semestre</th>
@@ -162,7 +162,7 @@
                         {{method_field('DELETE')}}
                           
                    
-                        <a href=""  class="btn btn-warning btn-circle ">
+                        <a href="{{url('/planning_student/'.$emp->id.'/edit')}}"  class="btn btn-warning btn-circle ">
                           <i class="fas fa-edit"> </i>
                         </a> 
                           

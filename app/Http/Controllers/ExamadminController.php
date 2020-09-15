@@ -16,7 +16,7 @@ class ExamadminController extends Controller
          return view('gerer-examen',['examens'=>$examens]);
    
    
-    }
+     }
    
    
    public function store(Request $request ){
@@ -33,13 +33,12 @@ class ExamadminController extends Controller
                    
             }
    
-           $examenadmin = new Exam_admin();
-           $examenadmin->type = $request->input('type');
-           $examenadmin->promo =  $request->input('promo');
-           $examenadmin->specialite =  $request->input('specialite');
-           $examenadmin->semestre = $request->input('semestre');
-           $examenadmin->user_id = Auth::user()->id;
-           $examenadmin->save();
+           $examen = new Exam_admin();
+           $examen->type = $request->input('type');
+           $examen->promo =  $request->input('promo');
+           $examen->specialite =  $request->input('specialite');
+           $examen->semestre = $request->input('semestre');
+           $examen->save();
    
            $media = new Media();
            $media->lien = $lien;
@@ -47,7 +46,7 @@ class ExamadminController extends Controller
            $media->type = $request->input('type');
            
    
-           $examenadmin->media()->save($media);
+           $examen->media()->save($media);
    
    
              return redirect()->route('gerer-examen.index')
@@ -58,21 +57,53 @@ class ExamadminController extends Controller
    }
 
  public function edit($id){
-        $examen = Planning::find($id);
+        $examen = Exam_admin::find($id);
        
-        return view('gerer-examen',['examen'=>$examen]);
+        return view('/editexam',['examen'=>$examen]);
 
       }
 
        public function update(Request $request , $id){ 
-        $examen = Planning::find($id);
+        $examen = Exam_admin::find($id);
+
+        $hasFile = $request->hasFile('fichier');
+           if($hasFile){
+                   $file =  $request->file('fichier');
+                   $name = $file->store('Examens');
+                   $lien = Storage::url($name);
+                   
+            }
 
         $examen->promo = $request->input('promo');
         $examen->semestre = $request->input('semestre');
         $examen->specialite = $request->input('specialite');
         $examen->type = $request->input('type');
+        $examen->user_id = Auth::user()->id;
         $examen->save();
-        return redirect('gerer-examen');
+
+
+         $media = Media::where('exam_admin_id','=',$examen->id)->count();
+
+        if($media != null){
+            $media = Media::where('exam_admin_id','=',$examen->id)->first();
+            $media->delete();
+
+        }
+
+
+        if($hasFile){
+
+        $media = new Media();
+        $media->lien = $lien;
+        $media->type = "examen";
+        $media->name =  $request->file('fichier')->getClientOriginalName();
+        $examen->medias()->save($media);
+      }
+
+
+        return redirect()->route('gerer-examen.index')
+
+        ->with('success','Examen modifié avec success!');
 
        
       }

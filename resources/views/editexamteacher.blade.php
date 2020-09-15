@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Planifier un examen</h1>
+            <h1>Editer un examen</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -27,7 +27,8 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-            <form role="form"  method="POST" action="{{route('examens.store')}}" enctype="multipart/form-data">
+            <form role="form"  method="POST" action="{{url('/examens/'.$examen->id)}}" enctype="multipart/form-data">
+              <input type="hidden" name="_method" value="PUT">
                 @csrf
                 <div class="card-body">
 
@@ -39,7 +40,7 @@
                                   <select name="module" class="form-control" >
                                       <option value="">Select</option>
                                       @foreach ($modules as $module)
-                                      <option value="{{$module->id}}">{{$module->nom}}</option>
+                                      <option value="{{$module->id}}" @if($examen->module_id == $module->id) selected @endif>{{$module->nom}}</option>
                                       @endforeach
                                       
                                   </select>
@@ -51,29 +52,29 @@
                             </div>
                           </div>
 
-                    <div class="form-group">
-                        <div class="form-group" >
+                     <div class="form-group" >
                             <label for="exampleInputTitre">Type</label>
                             <div class="form-group">
                                   <select name="type" class="form-control" >
                                       <option value="">Select</option>
-                                      <option value="Controle">Controle</option>
-                                      <option value="Test">Test</option>
-                                      <option value="Examen">Examen</option>
-                                     
+                                      <option value="Control" @if($examen->type == 'Control') selected @endif> Control</option>
+                                      <option value="Test" @if($examen->type== 'Test') selected @endif>Test</option>
+                                      <option value="Examen" @if($examen->type== 'Examen') selected @endif>Examen</option>
+                    
                                   </select>
-                                  @error('type')
+                                  @error('promo')
                                   <span class="invalid-feedback" role="alert">
                                       <strong>{{ $message }}</strong>
                                   </span>
                                   @enderror
                             </div>
                           </div>
+                  
                    <div class="form-group">
                     <label for="exampleInputTitre">Date</label>
                     <div >
                         
-                        <input id="date" placeholder="Date d'examen" type="date" class="form-control @error('date') is-invalid @enderror" name="date"  required >
+                        <input id="date" placeholder="Date d'examen" type="date" value="{{ old('date', $examen->date) }}"class="form-control @error('date') is-invalid @enderror" name="date"  required >
 
                         @error('date')
                             <span class="invalid-feedback" role="alert">
@@ -87,7 +88,7 @@
                     <label for="exampleInputTitre">Heure</label>
                     <div >
                         
-                        <input id="heure" placeholder="L'heure d'examen" type="time" class="form-control @error('heure') is-invalid @enderror" name="heure"  required >
+                        <input id="heure" placeholder="L'heure d'examen" type="time" value="{{ old('heure', $examen->heure) }}" class="form-control @error('heure') is-invalid @enderror" name="heure"  required >
 
                         @error('heure')
                             <span class="invalid-feedback" role="alert">
@@ -102,7 +103,7 @@
                     <label for="exampleInputTitre">Salle</label>
                     <div >
                         
-                        <input id="salle" placeholder="Sale d'examen" type="salle" class="form-control @error('salle') is-invalid @enderror" name="salle"  required >
+                        <input id="salle" placeholder="Sale d'examen" type="salle" value="{{ old('salle', $examen->salle) }}" class="form-control @error('salle') is-invalid @enderror" name="salle"  required >
 
                         @error('salle')
                             <span class="invalid-feedback" role="alert">
@@ -119,7 +120,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-success pl-4 pr-4">Planifier</button>
+                  <button type="submit" class="btn btn-success pl-4 pr-4">Save</button>
                 </div>
               </form>
             </div>
@@ -132,74 +133,9 @@
           </div>
           <!--/.col (right) -->
           
-          <div class="card card-success">
-              <div class="card-header">
-                <h3 class="card-title">Vos Examens</h3>
-  
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <table class="table table-hover text-nowrap">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Module</th>
-                  
-                    <th>Type</th>
-                    <th>Date</th>
-                    <th>Heure</th>
-                    <th>Salle</th>
-                  
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-
-                  @foreach ($examens as $examen)
+         
               
-                  <tr>
-                    <td>{{$examen->id}}</td>
-                    <td>{{$examen->returnModule()->nom}}</td>
-                    <td>{{$examen->type}}</td>
-                    <td>{{$examen->date}}</td>
-                    <td>{{$examen->heure}}</td>
-                    <td>{{$examen->salle}}</td>
-                    
-                   
-                    
-
-                    <td class="">
-                      
-                        <form action="{{url('examens/'.$examen->id)}}" method="post">
-                        {{csrf_field()}}
-                        {{method_field('DELETE')}}
-                          
-                   
-                        <a href="{{url('/examens/'.$examen->id.'/edit')}}"  class="btn btn-warning btn-circle ">
-                          <i class="fas fa-edit"> </i>
-                        </a> 
-                          
-                        <button type="submit" class="btn btn-danger btn-circle" onclick="return confirm('Vous voulez vraiment supprimer?')"> 
-                          <i class="fas fa-trash"> </i>
-                      </a></button>
-                        </form>
-                    </td>
-                  </tr>
-                  @endforeach
-                  
-                 
-                </tbody>
-              </table>
-                  
-                  </div>
-
-                  
-              </div>
-              
-              
-              
-
-
+        
             </div>
 
 

@@ -79,7 +79,7 @@ class ProfilController extends Controller
         
         $media = new Media();
         $media->lien =  $lien;
-        $media->type = "photo";
+        $media->type = "profil";
         $media->name =  $request->file('fichier')->getClientOriginalName();
         $user->media()->save($media);
       
@@ -109,7 +109,7 @@ class ProfilController extends Controller
 
         $media = new Media();
         $media->lien = $lien;
-        $media->type = "photo";
+        $media->type = "profil";
         $media->name =  $request->file('fichier')->getClientOriginalName();
         $user->media()->save($media);
 

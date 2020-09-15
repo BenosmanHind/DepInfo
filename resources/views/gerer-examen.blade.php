@@ -130,7 +130,7 @@
 
               <div class="card card-success">
               <div class="card-header">
-                <h3 class="card-title">Vos Documents</h3>
+                <h3 class="card-title">Vos Examens</h3>
   
               </div>
               <!-- /.card-header -->
@@ -167,7 +167,7 @@
                         {{method_field('DELETE')}}
                           
                    
-                        <a href="{{}}"  class="btn btn-warning btn-circle ">
+                        <a href="{{url('/gerer-examen/'.$examen->id.'/edit')}}"  class="btn btn-warning btn-circle ">
                           <i class="fas fa-edit"> </i>
                         </a> 
                           

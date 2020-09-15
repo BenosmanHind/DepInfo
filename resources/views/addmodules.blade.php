@@ -133,21 +133,19 @@
                     </div>
                   </div>
  
-                  <div class="form-group">
-                    <label >Déscription</label>
-                    <div >
-                        
-                        <input id="description" placeholder="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" required >
-
-                        @error('description')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
+                 <div class="form-group">
+                        <label for="exampleInputTitre">Description</label>
+                        <div >
+                            
+                            <textarea id="description" placeholder="Nom de module" type="text" class="form-control @error('description') is-invalid @enderror" name="description"  required >
+                            </textarea>
+                            @error('description')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
                   </div>
-
-                  
                  
                 <!-- /.card-body -->
 

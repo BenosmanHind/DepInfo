@@ -27,7 +27,9 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-             <form role="form"  method="POST" action="{{route('gerer-examen.update',['examen' => $examen->id])}}">
+             <form role="form"  method="POST" action="{{url('/gerer-examen/'.$examen->id)}}" class="user" enctype="multipart/form-data" >
+                <input type="hidden" name="_method" value="PUT">
+
                 @csrf
                 {{ method_field('PATCH') }}
                 <div class="card-body">
@@ -41,10 +43,10 @@
                     <div class="form-group">
                           <select name="promo" id="promo" class="form-control" >
                               <option value="">Select</option>
-                              <option value="L2">L2</option>
-                              <option value="L3">L3</option>
-                              <option value="M1">M1</option>
-                              <option value="M2">M2</option>
+                              <option value="L2"@if($examen->promo == 'L2') selected @endif> L2</option>
+                              <option value="L3"@if($examen->promo == 'L3') selected @endif> L3</option>
+                              <option value="M1"@if($examen->promo == 'M1') selected @endif> M1</option>
+                              <option value="M2"@if($examen->promo == 'M2') selected @endif> M2</option>>L2</option>
                           </select>
                           @error('promo')
                           <span class="invalid-feedback" role="alert">
@@ -59,12 +61,12 @@
                   <div class="form-group" id="specialite1">
                     <label for="exampleInputTitre">Specilaité</label>
                     <div class="form-group">
-                          <select name="specialite" id="specialite" class="form-control" >
+                          <select name="specialite" id="specialite1" class="form-control" >
                               <option value="">Select</option>
-                              <option value="SIC">SIC</option>
-                              <option value="RSD">RSD</option>
-                              <option value="GL">GL</option>
-                              <option value="MID">MID</option>
+                              <option value="SIC"@if($examen->specialite == 'SIC') selected @endif> SIC</option>
+                              <option value="RSD"@if($examen->specialite == 'RSD') selected @endif> RSD</option>
+                              <option value="GL"@if($examen->specialite == 'GL') selected @endif> GL</option>
+                              <option value="MID"@if($examen->specialite == 'MID') selected @endif> MID</option>
                           </select>
                           @error('specialite')
                           <span class="invalid-feedback" role="alert">
@@ -79,8 +81,8 @@
                     <div class="form-group">
                           <select name="semestre" id="semestre" class="form-control" >
                               <option value="">Select</option>
-                              <option value="S1">S1</option>
-                              <option value="S2">S2</option>
+                              <option value="S1"@if($examen->semestre == 'S1') selected @endif> S1</option>
+                              <option value="S2"@if($examen->semestre == 'S2') selected @endif> S2</option>
                           </select>
                           @error('semestre')
                           <span class="invalid-feedback" role="alert">
@@ -90,29 +92,43 @@
                     </div>
                   </div>
 
-                  <div class="form-group" >
-                    <label for="exampleInputTitre">Type</label>
-                    <div class="form-group">
-                          <select name="type" id="type" class="form-control" >
-                              <option value="">Select</option>
-                              <option value="Fondamentale">Control</option>
-                              <option value="Méthodologie">Examen</option>
-                             
-                             
-                          </select>
-                          @error('type')
-                          <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                          </span>
-                          @enderror
-                    </div>
-                  </div>
+                   <div class="form-group" >
+                            <label for="exampleInputTitre">Type</label>
+                            <div class="form-group">
+                                  <select name="type" class="form-control" >
+                                      <option value="">Select</option>
+                                      <option value="Control" @if($examen->type == 'Control') selected @endif> Control</option>
+                                      <option value="Examen" @if($examen->type == 'Examen') selected @endif>Examen</option>
+                    
+                                  </select>
+                                  @error('promo')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message }}</strong>
+                                  </span>
+                                  @enderror
+                            </div>
+                          </div>
+                  
+                  
+                         <div class="form-group">
+                            <label for="picture">Uploder un fichier</label>
+                          @foreach ($examen->medias as $media)
+                              
+                         
+                          <div><a href="{{$media->lien}}">{{$media->name}}</a></div>
+                          @endforeach
+        
+                                <input name="fichier" id="fichier" type="file" class="form-control-file" multiple >
+                                
+                          </div>
+                         
+
 
                  
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-success pl-4 pr-4">Editer</button>
+                  <button type="submit" class="btn btn-success pl-4 pr-4">save</button>
                 </div>
               </form>
             </div>
