@@ -97,8 +97,8 @@
                             <div class="form-group">
                                   <select name="type" class="form-control" >
                                       <option value="">Select</option>
-                                      <option value="Control" @if($examen->type == 'Control') selected @endif> Control</option>
-                                      <option value="Examen" @if($examen->type == 'Examen') selected @endif>Examen</option>
+                                      <option value="control" @if($examen->type == 'control') selected @endif> Control</option>
+                                      <option value="examen" @if($examen->type == 'examen') selected @endif>Examen</option>
                     
                                   </select>
                                   @error('promo')
@@ -112,7 +112,7 @@
                   
                          <div class="form-group">
                             <label for="picture">Uploder un fichier</label>
-                          @foreach ($examen->medias as $media)
+                          @foreach ($examen->media as $media)
                               
                          
                           <div><a href="{{$media->lien}}">{{$media->name}}</a></div>

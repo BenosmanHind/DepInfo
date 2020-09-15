@@ -14,6 +14,7 @@ class PlanningController extends Controller
     public function index(){
 
          $emp = Planning::all();
+       
     	 return view('/planning_student',['emp'=>$emp]);
     }
 
@@ -58,8 +59,8 @@ class PlanningController extends Controller
 }
       public function edit($id){
         $emp = Planning::find($id);
-       
-        return view('planning_student',['emp'=>$emp]);
+     
+        return view('editplanning',['emp'=>$emp]);
 
       }
 

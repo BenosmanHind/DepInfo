@@ -28,7 +28,15 @@ class ModuleController extends Controller
       }
 
        public function store(Request $request){
-           
+        $this->validate($request,[
+
+         
+          'code' => ['required','unique:modules'],
+          
+
+      ]);
+
+
         $module = new Module();
         $module->nom = $request->input('nom');
         $module->promo = $request->input('promo');

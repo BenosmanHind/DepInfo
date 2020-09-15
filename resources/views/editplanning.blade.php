@@ -35,7 +35,7 @@
                    <div class="form-group">
                             <label for="exampleInputTitre">Titre</label>
                             <div >
-                              <input id="title" placeholder="title" type="text" value="{{$planning->title}}" class="form-control @error('title') is-invalid @enderror" name="title"  required >
+                              <input id="title" placeholder="title" type="text" value="{{$emp->title}}" class="form-control @error('title') is-invalid @enderror" name="title"  required >
         
                                 @error('title')
                                     <span class="invalid-feedback" role="alert">

@@ -347,7 +347,16 @@
 <script>
 
   $(document).ready(function(){
-  $("#specialite1").hide();
+
+    var promo =  $('#promo').val();
+    if(promo == "M1" ||  promo == "M2"){
+      $("#specialite1").show();
+    }else{
+      $("#specialite1").hide();
+    }
+
+
+  
   $('#promo').on('change',function(){
     var promo = $(this).val();
     if(promo == "M1" ||  promo == "M2"){

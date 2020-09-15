@@ -92,7 +92,7 @@
                             <div class="form-group">
                                   <select name="type" class="form-control" >
                                       <option value="">Select</option>
-                                      <option value="controle">Controles</option>
+                                      <option value="control">Controles</option>
                                       <option value="examen">Examens</option>
                                      
                                   </select>

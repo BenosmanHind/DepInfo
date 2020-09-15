@@ -42,7 +42,8 @@ class ExamteacherController extends Controller
 
    public function edit($id){
      $examen = Exam_teacher::find($id);
-     $modules = module::all();
+     $modules = Enseignement::join('Modules', 'Modules.id', '=', 'Enseignements.module_id')
+     ->where('user_id','=',Auth::user()->id)->get();
 
      return view('/editexamteacher',['examen' =>$examen , 'modules' =>$modules]);
 
@@ -50,8 +51,9 @@ class ExamteacherController extends Controller
 
    public function update(Request $request , $id){
 
+           $examen = Exam_teacher::find($id);
            $module = Module::where('id',$request->input('module'))->first();
-           $examen = new Exam_teacher();
+       
            $examen->date = $request->input('date');
            $examen->heure = $request->input('heure');
            $examen->type = $request->input('type');

@@ -26,13 +26,13 @@
  .document-content-title{
 
     background-color: #E6E9EF;
-    width: 300px;
+    width: auto;
 
  }
  .document-content{
 
    background-color: #F4F6F9;;
-    width: 300px;
+    width: auto;
     
 
  }

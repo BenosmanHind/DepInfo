@@ -61,7 +61,8 @@ class DocumentController extends Controller
       public function edit($id){
         $document = Document::find($id);
         
-        $modules = module::all();
+        $modules = Enseignement::join('Modules', 'Modules.id', '=', 'Enseignements.module_id')
+        ->where('user_id','=',Auth::user()->id)->get();
         return view('/editdocument',['document'=>$document , 'modules' =>$modules]);
 
       }

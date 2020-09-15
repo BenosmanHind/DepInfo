@@ -156,7 +156,7 @@
                 <tbody>
 
                   @foreach ($examens as $examen)
-              
+                  
                   <tr>
                     <td>{{$examen->id}}</td>
                     <td>{{$examen->returnModule()->nom}}</td>
