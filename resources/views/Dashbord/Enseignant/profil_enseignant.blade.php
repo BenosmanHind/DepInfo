@@ -109,7 +109,7 @@
                     <div>
                     
                            
-                                <input id="nteacher" placeholder="Entrer N° sécurité sociale"  type="text" value="{{ old('nstudent', Auth::user()->nsteacher) }}" class="form-control @error('nteacher') is-invalid @enderror" name="nteacher" value="{{ old('nteacher') }}" required autocomplete="nteacher" >
+                                <input id="nteacher" placeholder="Entrer N° sécurité sociale"  type="text" value="{{ old('nteacher', Auth::user()->nteacher) }}" class="form-control @error('nteacher') is-invalid @enderror" name="nteacher" value="{{ old('nteacher') }}" required autocomplete="nteacher" >
 
                                 @error('nteacher')
                                     <span class="invalid-feedback" role="alert">
