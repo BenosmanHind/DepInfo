@@ -10,12 +10,6 @@ class BourseController extends Controller
 {
     //
 
-    public function __construct(){
-
-        $this->middleware('auth');
-  
-       }
-  
   
   
       public function index(){
@@ -26,17 +20,7 @@ class BourseController extends Controller
 
       public function store(BourseRequest $request){
 
-         $hasFile = $request->hasFile('picture');
-
-  
-          if($hasFile){
-          $file =  $request ->file('picture');
-          $name = $file->store('articlePicture');
-          $lien = Storage::url($name);
-          
-
-        }
-
+         
         $bourse = new Bourse();
 
         $bourse->title = $request->input('title');
@@ -49,11 +33,6 @@ class BourseController extends Controller
         $bourse->save();
 
 
-        $media = new Media;
-        $media->lien = $lien;
-        $media->type = "img";
-
-        $bourse->medias()->save($media);
 
 
 
@@ -68,6 +47,7 @@ class BourseController extends Controller
 
       public function edit($id){
         $bourse = Bourse::find($id);
+         $this->authorize('update',$bourse);
         return view('editBourse',['bourse'=>$bourse]);
 
       }
@@ -88,6 +68,7 @@ class BourseController extends Controller
    
       public function destroy($id){  
         $bourse=Bourse::find($id);
+        $this->authorize('delete',$bourse);
         $bourse->delete(); 
         return redirect ('bourses');           
         }

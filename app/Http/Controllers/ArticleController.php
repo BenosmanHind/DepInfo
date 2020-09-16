@@ -13,16 +13,12 @@ use App\Media;
 
 class ArticleController extends Controller
 {
-    public function __construct(){
-
-        $this->middleware('auth');
-  
-       }
-  
-  
-  
+    
       public function index(){
           $list_articles = Article::all();
+
+         // $this->authorize('viewAny',$list_articles);
+
           return view('articles',['articles'=>$list_articles]);
   
       }
@@ -65,6 +61,9 @@ class ArticleController extends Controller
 
       public function edit($id){
         $article = Article::find($id);
+
+        $this->authorize('update',$article);
+
         return view('editeArticles',['article'=>$article]);
 
       }
@@ -88,6 +87,8 @@ class ArticleController extends Controller
 
     
     $article=Article::find($id);
+    $this->authorize('delete',$article);
+
     $article->delete();
     
     return redirect ('articles');           

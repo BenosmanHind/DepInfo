@@ -37,8 +37,8 @@
             <div class="col-lg-10">
                 <div class="single_event d-flex align-items-center">
                     <div class="date text-center">
-                        <span>15</span>
-                        <p>sep, 2020</p>
+                        <span>{{$event->heure}}</span>
+                        <p>{{$event->date}} </p>
                     </div>
                     <div class="event_info">
                         <a href="{{url('eventdetail/'.$event->id)}}">

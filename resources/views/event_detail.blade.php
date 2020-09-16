@@ -21,10 +21,7 @@
                 <div class="single_event d-flex align-items-center">
                     <div class="thumb">
                         <img src="{{$medias[0]->lien}}" alt="">
-                        <div class="date text-center">
-                            <h4>02</h4>
-                            <span>Dec, 2020</span>
-                        </div>
+                        
                     </div>
                     <div class="event_details_info">
                         <div class="event_info">
@@ -35,7 +32,7 @@
                         </div>
                         <p class="event_info_text">{{$event->description}}
                         </p>
-                        <a href="#" class="boxed-btn3">Book a seat</a>
+                       
                     </div>
                 </div>
             </div>

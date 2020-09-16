@@ -22,7 +22,7 @@ class CreateExamAdminsTable extends Migration
             $table->string('semestre')->nullable();
             $table->bigInteger('user_id')->unsigned()->nullable();
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamp('deleted_at')->nullable();
         });
     }

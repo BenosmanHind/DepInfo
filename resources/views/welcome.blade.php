@@ -105,8 +105,8 @@
                     
                     <div class="single_event d-flex align-items-center">
                         <div class="date text-center">
-                            <span>02</span>
-                            <p>Dec, 2020</p>
+                            <span>{{$event->heure}}</span>
+                            <p>{{$event->date}}</p>
                         </div>
                         <div class="event_info">
                         <a href="{{url('/eventdetail/'.$event->id)}}">

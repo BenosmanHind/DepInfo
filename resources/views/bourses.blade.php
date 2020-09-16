@@ -64,7 +64,7 @@
                             <i class="fas fa-edit"> </i>
                           </a> 
                             
-                           <a href="{{url('bourses/'.$bourse->id)}}"  onclick="return confirm('Vous voulez vraiment supprimer?') "class="btn btn-danger btn-circle">
+                           <button type="submit" onclick="return confirm('Vous voulez vraiment supprimer?') "class="btn btn-danger btn-circle">
                             <i class="fas fa-trash"> </i>
                           </a>
                           </form>

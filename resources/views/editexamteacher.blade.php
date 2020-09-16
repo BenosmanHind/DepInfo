@@ -52,14 +52,14 @@
                             </div>
                           </div>
 
-                     <div class="form-group" >
+                      <div class="form-group" >
                             <label for="exampleInputTitre">Type</label>
                             <div class="form-group">
                                   <select name="type" class="form-control" >
                                       <option value="">Select</option>
-                                      <option value="Control" @if($examen->type == 'Control') selected @endif> Control</option>
-                                      <option value="Test" @if($examen->type== 'Test') selected @endif>Test</option>
-                                      <option value="Examen" @if($examen->type== 'Examen') selected @endif>Examen</option>
+                                      <option value="control" @if($examen->type == 'control') selected @endif> Control</option>
+                                       <option value="test" @if($examen->type == 'test') selected @endif>Test</option>
+                                      <option value="examen" @if($examen->type == 'examen') selected @endif>Examen</option>
                     
                                   </select>
                                   @error('promo')
@@ -69,6 +69,7 @@
                                   @enderror
                             </div>
                           </div>
+                  
                   
                    <div class="form-group">
                     <label for="exampleInputTitre">Date</label>

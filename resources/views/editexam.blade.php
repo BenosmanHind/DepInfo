@@ -22,7 +22,7 @@
           
             <!-- general form elements -->
             <div class="card card-success">
-              <div class="card-header">
+              <div class="card-header"> 
                 <h3 class="card-title">Merci de remplir les champs</h3>
               </div>
               <!-- /.card-header -->

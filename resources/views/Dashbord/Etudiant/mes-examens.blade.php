@@ -125,9 +125,9 @@
 
                         <div class="row d-flex justify-content-center p-4">
 
-                          @foreach ($examsS1 as $examS1)
+                          
                               
-                         
+                         @foreach ($examsS1->reverse()  as $examS1)
         
                      
                           <div class="item pb-2">
@@ -237,8 +237,9 @@
                           <div class="row d-flex justify-content-center p-4">
           
                        
-                            @foreach ($examsS2 as $examS2)
+                           
                               
+                            @foreach ($examsS2->reverse()  as $examS2)
                          
         
                      

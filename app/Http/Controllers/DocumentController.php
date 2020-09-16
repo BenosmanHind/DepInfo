@@ -60,6 +60,8 @@ class DocumentController extends Controller
 
       public function edit($id){
         $document = Document::find($id);
+
+        // $this->authorize('update',$document);
         
         $modules = Enseignement::join('Modules', 'Modules.id', '=', 'Enseignements.module_id')
         ->where('user_id','=',Auth::user()->id)->get();
@@ -127,6 +129,7 @@ class DocumentController extends Controller
      public function destroy($id){
 
     $document=Document::find($id);
+    //$this->authorize('update',$document);
     $document->delete();
     
     return redirect ('dashbord/enseignant/documents');           

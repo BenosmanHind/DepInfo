@@ -17,6 +17,8 @@ class EtudiantController extends Controller
 }
     public function index(){
         $list_etudiants = User::where('role', 3)->get();
+         //$this->authorize('viewAny');
+
         return view('etudiants',['etuds'=>$list_etudiants]);
 
     }
@@ -28,6 +30,7 @@ class EtudiantController extends Controller
 
            
            $etud= User::find($id);
+           $this->authorize('delete',$etud);
            $etud->delete();
           return redirect('etudiants');
     }

@@ -85,10 +85,10 @@ class PlanningController extends Controller
         
         $emp->save();
 
-         $media = Media::where('planning_id','=',$planning->id)->count();
+         $media = Media::where('planning_id','=',$emp->id)->count();
 
          if($media != null){
-            $media = Media::where('planning_id','=',$planning->id)->first();
+            $media = Media::where('planning_id','=',$emp->id)->first();
             $media->delete();
 
         }
@@ -97,7 +97,7 @@ class PlanningController extends Controller
 
         $media = new Media();
         $media->lien = $lien;
-        $media->type = "document";
+        $media->type = "planning";
         $media->name =  $request->file('fichier')->getClientOriginalName();
         $emp->medias()->save($media);
       }

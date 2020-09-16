@@ -19,8 +19,8 @@ class CreateEnseignementsTable extends Migration
             $table->bigInteger('module_id')->unsigned()->nullable();
             $table->bigInteger('user_id')->unsigned()->nullable();
             $table->timestamps();
-            $table->foreign('module_id')->references('id')->on('modules');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('module_id')->references('id')->on('modules')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

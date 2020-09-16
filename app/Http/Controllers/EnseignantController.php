@@ -24,6 +24,7 @@ class EnseignantController extends Controller
     public function destory($id){
 
            $ensg= User::find($id);
+           $this->authorize('delete',$ensg);
            $ensg->delete();
 
           return redirect('enseignants');

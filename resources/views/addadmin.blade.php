@@ -27,7 +27,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="POST" action="{{ url('admins/add') }}" enctype="multipart/form-data" class="user">
+              <form role="form"  method="POST" action="{{route('admins')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body" id="hiddens">
 

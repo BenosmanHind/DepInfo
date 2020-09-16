@@ -24,11 +24,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Route::get('/student', 'StudentController@index')->name('student');
 
+Route::resource('/admins', 'AdminController');
 
 
-Route::get('/admins', function () {
-    return view('admins');
-});
 
 Route::get('/choose', function () {
     return view('choose');

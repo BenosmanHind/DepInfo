@@ -64,6 +64,8 @@ class EventController extends Controller
 
       public function edit($id){
         $event = Event::find($id);
+         $this->authorize('update',$event);
+
         return view('editEvent',['event'=>$event]);
 
       }
@@ -87,6 +89,8 @@ class EventController extends Controller
 
     public function destroy($id){  
     $event=Event::find($id);
+     $this->authorize('delete',$event);
+
     $event->delete(); 
     return redirect ('events');           
     }

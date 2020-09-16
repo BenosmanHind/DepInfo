@@ -150,9 +150,6 @@
               <p>
               Gérer Documents 
 
-              
-
-                <span class="badge badge-info right">2</span>
               </p>
             </a>
           </li>

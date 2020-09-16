@@ -25,7 +25,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header ">
-                <h3 class="card-title">Vous trouverez ci-joint la table des admin </h3>
+                <h3 class="card-title">Vous trouverez ci-joint la table des admins </h3>
                  <a class="btn btn-success float-right" href="{{url('addadmin')}}"> <i class="fas fa-plus mr-2"></i> Ajouter</a>
                 
               
@@ -78,13 +78,8 @@
                           {{csrf_field()}}
                           {{method_field('DELETE')}}
 
-                         
-
-                
-                          
-                           <a href="{{url('admins/'.$adm->id)}}" onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger btn-circle">
+                            <button type="submit" onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger btn-circle">
                             <i class="fas fa-trash"> </i>
-                          </a>
                           
                           </form>
                       </td>

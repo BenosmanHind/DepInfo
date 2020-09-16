@@ -37,7 +37,7 @@
                     <div class="thumb">
                         
                            <a href="single-blog.html">
-                                <img src="{{$medias[0]->lien}}" alt="">
+                                <img src="" alt="">
                             </a>
                       
                     </div>

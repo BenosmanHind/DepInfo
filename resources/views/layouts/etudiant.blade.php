@@ -136,7 +136,7 @@
             <a href="{{url('/student-planning')}}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Mon Emploi Du Temps
+                 Emploi Du Temps
               </p>
             </a>
           </li>
@@ -145,7 +145,7 @@
               <i class="nav-icon fas fa-copy"></i>
               <p>
               Mes Documents 
-                <span class="badge badge-info right">2</span>
+                
               </p>
             </a>
           </li>
