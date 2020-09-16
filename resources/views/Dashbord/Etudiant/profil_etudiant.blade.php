@@ -18,6 +18,7 @@
   
   .image-preview-image{
   
+
    width: 100%; 
    height: 100%;
    border-radius:50px;
@@ -104,7 +105,7 @@
                     <div>
                     
                            
-                                <input disabled id="nstudent" placeholder="Entrer N° carte"  type="text" value="{{ old('nstudent', Auth::user()->nstudent) }}" class="form-control @error('nstudent') is-invalid @enderror" name="nstudent" value="{{ old('nstudent') }}" required autocomplete="nstudent" >
+                                <input  id="nstudent" placeholder="Entrer N° carte"  type="text" value="{{ old('nstudent', Auth::user()->nstudent) }}" class="form-control @error('nstudent') is-invalid @enderror" name="nstudent" value="{{ old('nstudent') }}" required autocomplete="nstudent" >
 
                                 @error('nstudent')
                                     <span class="invalid-feedback" role="alert">

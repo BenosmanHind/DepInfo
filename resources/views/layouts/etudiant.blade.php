@@ -132,6 +132,16 @@
           
           <li class="nav-header">EXAMPLES</li>
 
+
+             <li class="nav-item">
+            <a href="{{url('mes-modules')}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Mes Modules
+              </p>
+            </a>
+          </li>
+
            <li class="nav-item">
             <a href="{{url('/student-planning')}}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
@@ -160,14 +170,7 @@
 
         
          
-          <li class="nav-item">
-            <a href="{{url('mes-modules')}}" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Mes Modules
-              </p>
-            </a>
-          </li>
+        
 
           <li class="nav-item">
           <a href="{{url('dashbord/etudiant/reglement')}}" class="nav-link">

@@ -129,27 +129,38 @@
 
 
       
-
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Emplois du temps
+                Comptes
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
-             
+              @if(Auth::user()->role == 0 )
               <li class="nav-item">
-                <a href="{{ url('planning_student') }}" class="nav-link">
+                <a href="{{ url('admins') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Admins</p>
+                </a>
+              </li>
+              @endif
+              <li class="nav-item">
+                <a href="{{ url('enseignants') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Enseignants</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('etudiants') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Etudiants</p>
                 </a>
               </li>
-             
               
             </ul>
-          </li>
+        
       
           
           <li class="nav-item has-treeview">
@@ -188,37 +199,7 @@
           </li>
           
 
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Comptes
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              @if(Auth::user()->role == 0 )
-              <li class="nav-item">
-                <a href="{{ url('admins') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Admins</p>
-                </a>
-              </li>
-              @endif
-              <li class="nav-item">
-                <a href="{{ url('enseignants') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Enseignants</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ url('etudiants') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Etudiants</p>
-                </a>
-              </li>
-              
-            </ul>
+          
           </li>
            <li class="nav-item">
             <a href="{{ url('modules') }}" class="nav-link">
@@ -237,14 +218,29 @@
             </a>
           </li>
 
-          <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
-              <i class="nav-icon fas fa-exclamation-triangle"></i>
+
+           <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
               <p>
-              Le Réglement Intérieur
+                Emplois du temps
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+             
+              <li class="nav-item">
+                <a href="{{ url('planning_student') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Etudiants</p>
+                </a>
+              </li>
+             
+              
+            </ul>
           </li>
+
+        
 
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
