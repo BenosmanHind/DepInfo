@@ -50,7 +50,6 @@ class ProfilController extends Controller
         if($hasFile){
           $file =  $request->file('fichier');
           $name = $file->store('Photo_de_profil');
-       
           $lien = Storage::url($name);
           
         }
@@ -70,6 +69,8 @@ class ProfilController extends Controller
            //supprimer avant la photo quiexiste
            $media = Media::where('user_id','=',Auth::user()->id)->count();
 
+           if($hasFile){
+
            if($media != null){
                $media = Media::where('user_id','=',Auth::user()->id)->first();
                $media->delete();
@@ -82,7 +83,7 @@ class ProfilController extends Controller
         $media->type = "profil";
         $media->name =  $request->file('fichier')->getClientOriginalName();
         $user->media()->save($media);
-      
+          }
 
         return redirect()->route('profil.index')
 
@@ -101,17 +102,22 @@ class ProfilController extends Controller
          //supprimer avant la photo quiexiste
          $media = Media::where('user_id','=',Auth::user()->id)->count();
 
+         if($hasFile){
+
          if($media != null){
              $media = Media::where('user_id','=',Auth::user()->id)->first();
              $media->delete();
 
          }
-
+         
         $media = new Media();
+        
         $media->lien = $lien;
+    
         $media->type = "profil";
         $media->name =  $request->file('fichier')->getClientOriginalName();
         $user->media()->save($media);
+      }
 
         return redirect()->route('profil.index')
 
@@ -133,6 +139,8 @@ class ProfilController extends Controller
          //supprimer avant la photo quiexiste
          $media = Media::where('user_id','=',Auth::user()->id)->count();
 
+         if($hasFile){
+
          if($media != null){
              $media = Media::where('user_id','=',Auth::user()->id)->first();
              $media->delete();
@@ -143,6 +151,7 @@ class ProfilController extends Controller
         $media->lien =  $lien;
         $media->type = "profil";
         $media->name =  $request->file('fichier')->getClientOriginalName();
+         }
 
         $user->media()->save($media);
         return redirect()->route('profil.index')

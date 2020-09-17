@@ -16,8 +16,7 @@
                                 <h3>Faculté des sciences, <br>
                                     Departement <br>
                                     d'informatique.</h3>
-                                <a href="#" class="boxed-btn3">Commencer</a>
-                               
+                              
                             </div>
                         </div>
                     </div>
@@ -132,31 +131,28 @@
                     <div class="col-lg-7">
                         <div class="admission_form">
                             <h3>Contactez-Nous</h3>
-                            <form action="#">
+                        <form action="{{url('/contact')}}" method="post">
+                            @csrf
                                 <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="single_input">
+                                            <input type="text" placeholder="Nom" name="name">
+                                        </div>
+                                    </div>
+                                   
                                     <div class="col-md-6">
                                         <div class="single_input">
-                                            <input type="text" placeholder="Nom" >
+                                            <input type="text" placeholder="Sujet" name="subject">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="single_input">
-                                            <input type="text" placeholder="Prenom" >
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="single_input">
-                                            <input type="text" placeholder="N° Telephone" >
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="single_input">
-                                            <input type="text" placeholder="Adresse Email" >
+                                            <input type="text" placeholder="Adresse Email" name="email">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="single_input">
-                                            <textarea cols="30" placeholder="Détails" rows="10"></textarea>
+                                            <textarea cols="30" placeholder="Détails" rows="10" name="message"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-12">

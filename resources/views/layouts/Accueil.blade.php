@@ -108,53 +108,7 @@
      <footer class="footer">
         <div class="footer_top">
             <div class="container">
-                <div class="newsLetter_wrap">
-                    <div class="row justify-content-between">
-                        <div class="col-md-7">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                    Newsletter
-                                </h3>
-                                <form action="#" class="newsletter_form">
-                                    <input type="text" placeholder="Email Address">
-                                    <button type="submit">S'inscrire</button>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-lg-5">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                    Suivez-nous
-                                </h3>
-                                <div class="socail_links">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ti-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-google-plus"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-linkedin"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-    
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="row">
                     <div class="col-xl-3 col-md-6 col-lg-3">
                         <div class="footer_widget">

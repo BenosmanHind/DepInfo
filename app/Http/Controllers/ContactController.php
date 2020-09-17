@@ -19,11 +19,14 @@ class ContactController extends Controller
        
         $data = array(
          'name'=> $request->name,
-         'email'=> $request->email
+         'email'=> $request->email,
+         'message'=> $request->message,
+         'subject'=> $request->subject
 
         );
+
         Mail::to('lahcenebenmouloud@gmail.com')->send(new ContactAdmin($data));
 
-        return view('contact');
+        return view('welcome');
     }
 }

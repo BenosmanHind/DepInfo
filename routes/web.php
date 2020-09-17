@@ -52,6 +52,8 @@ Route::get('/registerteacher', function () {
 
 
 Route::get('/dashbord/etudiant/home', function () {
+
+
     return view('Dashbord.Etudiant.home');
 });
 
