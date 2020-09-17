@@ -89,7 +89,9 @@
         <div class="row">
           <!-- Left col -->
      
-            
+         
+            <!-- Left col -->
+            <section class="col-lg-7 connectedSortable">
             <!-- Calendar -->
             <div class="card bg-gradient-success">
               <div class="card-header border-0">
