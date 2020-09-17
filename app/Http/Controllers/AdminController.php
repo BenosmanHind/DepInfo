@@ -10,16 +10,13 @@ use Illuminate\Support\Facades\Hash;
 class AdminController extends Controller
 {
     
-
-
-    
     public function __construct(){
 
       $this->middleware('auth');
 
      }
 
-     
+   
 
 
      public function store(Request $request){
@@ -59,11 +56,13 @@ class AdminController extends Controller
 
     public function index(){
         $list_admins = User::where('role', 1)->get();
-        return view('admins',['adms'=>$list_admins]);
+        $nbrAdmin = $list_admins->count();
+
+        return view('admins',['adms'=>$list_admins , 'nbrAdmin'=>$nbrAdmin]);
 
     }
     
-    public function destory($id){
+    public function destroy($id){
 
            
            $adm= User::find($id);

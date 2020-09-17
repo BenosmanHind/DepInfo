@@ -24,40 +24,42 @@
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-10">
                 <div class="section_title text-center mb-70">
-                    <h3 class="mb-45">Recent Scholarships</h3>
+                    <h3 class="mb-45">Liste Des Bourses</h3>
                    
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            @if (count($bourses) >= 0)
-            @foreach ($bourses as $bourse)
-            <div class="col-md-6">
-                <div class="single__news">
-                    <div class="thumb">
-                        
-                           <a href="single-blog.html">
+        <div class="recent_news_area section__padding">
+        <div class="container">
+            
+             <div class="row">
+                @if (count($bourses) >= 0)
+                @foreach ($bourses as $bourse)
+                <div class="col-md-6">
+                    <div class="single__news">
+                        <div class="thumb">
+                            
+                               <a href="single-blog.html">
                                 <img src="" alt="">
                             </a>
-                      
-                    </div>
-                    <div class="news_info">
-                        <a href="{{$bourse->link}}" target="_blank">
+                          <span class="badge ">Group Study</span>
+                        </div>
+                        <div class="news_info">
+                            <a href="{{$bourse->link}}" target="_blank">
                             <h4>{{$bourse->title}}</h4>
                         </a> 
-                       
-                        <p class="event_info_text">{{$bourse->description}}
-                    </p> 
-                       
+                           
+                            <p class="event_info_text">{{$bourse->description}}
+                        </p> 
+                           
+                        </div>
                     </div>
                 </div>
+                @endforeach
+                 @endif 
             </div>
-            @endforeach
-            @endif 
-                
-            
-            
         </div>
+    </div>
     </div>
 </div>
 <!-- recent_event_area_end  -->

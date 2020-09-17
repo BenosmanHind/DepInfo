@@ -22,6 +22,7 @@ class PlanningStudentController extends Controller
 
 
            
+           
         }
         else{
           $planningS1 = Planning::where('promo',Auth::user()->promo)->where('semestre','S1')->first();

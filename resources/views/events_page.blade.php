@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="bradcam_text">
-                    <h3>Tous les evenments </h3>
+                    <h3>Tous les evenements </h3>
                 </div>
             </div>
         </div>
@@ -25,7 +25,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-10">
                 <div class="section_title text-center mb-70">
-                    <h3 class="mb-45">Recent Event</h3>
+                    <h3 class="mb-45">Liste Des Evenements</h3>
                    
                 </div>
             </div>

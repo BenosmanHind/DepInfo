@@ -58,7 +58,9 @@ class PlanningController extends Controller
   
 }
       public function edit($id){
-        $emp = Planning::find($id);
+
+        $emp = Planning::find($id)->first();
+       // dd($emp->media->lien);
      
         return view('editplanning',['emp'=>$emp]);
 
@@ -68,11 +70,13 @@ class PlanningController extends Controller
         $emp = Planning::find($id);
 
         $hasFile = $request->hasFile('fichier');
-        if($hasFile){
-          $file =  $request->file('fichier');
-          $name =  $file->store('Planning');
+
+
+           if($hasFile){
+              $file =  $request->file('fichier');
+              $name =  $file->store('Planning');
        
-          $lien = Storage::url($name);
+              $lien = Storage::url($name);
           
       
         }
@@ -87,19 +91,22 @@ class PlanningController extends Controller
 
          $media = Media::where('planning_id','=',$emp->id)->count();
 
-         if($media != null){
-            $media = Media::where('planning_id','=',$emp->id)->first();
-            $media->delete();
 
-        }
+         if($hasFile){
+ 
+             if($media != null){
+               $media = Media::where('planning_id','=',$emp->id)->first();
+               $media->delete();
 
-        if($hasFile){
+               }
+
+        
 
         $media = new Media();
         $media->lien = $lien;
         $media->type = "planning";
         $media->name =  $request->file('fichier')->getClientOriginalName();
-        $emp->medias()->save($media);
+        $emp->media()->save($media);
       }
 
         return redirect('planning_student.index');

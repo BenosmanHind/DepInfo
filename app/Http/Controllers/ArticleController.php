@@ -69,14 +69,21 @@ class ArticleController extends Controller
       }
 
       public function update(Request $request , $id){
-        $article = Article::find($id);
 
+        $article = Article::find($id);
+       
+        
         $article->title = $request->input('title');
        
         $article->description = $request->input('description');
       
         $article->save();
-        return redirect('articles');
+       
+    
+       return redirect()->route('articles.index')
+
+        ->with('success','Article modifié avec success!');
+    
 
       }
 

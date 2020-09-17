@@ -4,6 +4,6 @@
 
 <p>------------------------------------------</p>
 
-<p>email : {{$data['message']}}</p>
+<p>message : {{$data['message']}}</p>
 
 

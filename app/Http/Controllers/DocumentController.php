@@ -16,7 +16,10 @@ class DocumentController extends Controller
         $documents = Document::where('user_id','=',Auth::user()->id)->get(); 
         $modules = Enseignement::join('Modules', 'Modules.id', '=', 'Enseignements.module_id')
         ->where('user_id','=',Auth::user()->id)->get();
-        return view('Dashbord/Enseignant/documents',['modules'=>$modules , 'documents'=>$documents]);
+
+        $nbrdocument = Document::where('doc','=',Auth::user()->doc)->count();
+
+        return view('Dashbord/Enseignant/documents',['modules'=>$modules , 'documents'=>$documents , 'nbrdocument' => $nbrdocument]);
     }
 
     public function store(Request $request ){
@@ -121,6 +124,7 @@ class DocumentController extends Controller
         ->with('success','Document modifié avec success!');
     
   
+
     
    }
 

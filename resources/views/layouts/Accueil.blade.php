@@ -47,7 +47,7 @@
                                     
                                     @auth
                                      
-                                     @if (Auth::user()->role == 1)
+                                     @if (Auth::user()->role == 1 || Auth::user()->role == 0 )
                                     <p><a href="{{ url('home') }}"> <i class="ti-user"></i> Dashbord</a>  </p>
                                      @elseif (Auth::user()->role == 2)
                                      <p><a href="{{ url('dashbord/enseignant/home') }}"> <i class="ti-user"></i> Dashbord</a>  </p>
@@ -70,7 +70,7 @@
                             <div class="header_wrap d-flex justify-content-between align-items-center">
                                 <div class="header_left">
                                     <div class="logo">
-                                        <a href="index.html">
+                                        <a href="{{url('/')}}">
                                             <img src="accueil/img/logo.png" alt="">
                                         </a>
                                     </div>
@@ -79,9 +79,9 @@
                                     <div class="main-menu  d-none d-lg-block">
                                         <nav>
                                             <ul id="navigation">
-                                                <li ><a  href="index.html" >Acceueil</a></li>
+                                                <li ><a  href="{{url('/')}}" >Acceueil</a></li>
                                                 <li><a href="{{url('/boursepage')}}">Bourses</a></li>
-                                                <li><a href="{{url('/eventspage')}}">Evenments</a></li>
+                                                <li><a href="{{url('/eventspage')}}">Evenements</a></li>
                                                 <li><a href="{{url('/articlespage')}}">Articles</a></li>
                                                 <li><a href="{{url('/contact')}}">Contact</a></li>
                                             </ul>
@@ -116,7 +116,7 @@
                                 A propos de nous
                             </h3>
                             <ul>
-                                <li><a href="#">Online Learning</a></li>
+                                <li>D-INFO</a></li>
                                 <li><a href="#">About Us</a></li>
                              
                             </ul>
@@ -128,8 +128,8 @@
                                 Campus
                             </h3>
                             <ul>
-                                <li><a href="#">Our Plans</a></li>
-                                <li><a href="#">Free Trial</a></li>
+                                <li><a href="{{url('/boursepage')}}">Bourses</a></li>
+                                <li><a href="{{url('/eventspage')}}">Events</a></li>
                               
                             </ul>
                         </div>
@@ -152,8 +152,9 @@
                                 Support
                             </h3>
                             <ul>
-                                <li><a href="#">Support</a></li>
-                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="{{url('/contact')}}">Contact </a></li>
+                                
+                                
                              
                             </ul>
                         </div>

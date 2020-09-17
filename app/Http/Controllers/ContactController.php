@@ -25,8 +25,8 @@ class ContactController extends Controller
 
         );
 
-        Mail::to('lahcenebenmouloud@gmail.com')->send(new ContactAdmin($data));
+        Mail::to('benosmanhind@gmail.com')->send(new ContactAdmin($data));
 
-        return view('welcome');
+        return redirect('/');
     }
 }
