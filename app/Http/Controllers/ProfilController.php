@@ -117,7 +117,7 @@ class ProfilController extends Controller
         $media->type = "profil";
         $media->name =  $request->file('fichier')->getClientOriginalName();
         $user->media()->save($media);
-      }
+          }
 
         return redirect()->route('profil.index')
 
@@ -151,9 +151,11 @@ class ProfilController extends Controller
         $media->lien =  $lien;
         $media->type = "profil";
         $media->name =  $request->file('fichier')->getClientOriginalName();
-         }
 
         $user->media()->save($media);
+         }
+
+        
         return redirect()->route('profil.index')
 
         ->with('success','Profile modifié avec success!');
