@@ -199,11 +199,20 @@ Route::resource('/profil','ProfilController');
 
 // Emploi du temps route
 Route::resource('/planning_student', 'PlanningController');
-
 Route::resource('/student-planning', 'PlanningStudentController');
+
+
+
+
+Route::resource('/contact', 'ContactController');
+
+
+
+
 
 // Task route
 //Route::get('/dashbord/enseignant/home', 'TaskController@index');
 //Route::post('/dashbord/enseignant/home', 'TaskController@store');
 //Route::delete('/task/{task}', 'TaskController@destroy');
+
 

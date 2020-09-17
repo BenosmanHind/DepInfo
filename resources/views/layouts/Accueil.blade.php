@@ -83,7 +83,7 @@
                                                 <li><a href="{{url('/boursepage')}}">Bourses</a></li>
                                                 <li><a href="{{url('/eventspage')}}">Evenments</a></li>
                                                 <li><a href="{{url('/articlespage')}}">Articles</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
+                                                <li><a href="{{url('/contact')}}">Contact</a></li>
                                             </ul>
                                         </nav>
                                     </div>
