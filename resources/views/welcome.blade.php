@@ -194,7 +194,7 @@
                                 <img src="img/news/1.png" alt="">
                             </a>
 
-                            <span class="badge ">Group Study</span>
+                            <span class="badge ">Article</span>
                         </div>
                         <div class="news_info">
                             <a href="single-blog.html">

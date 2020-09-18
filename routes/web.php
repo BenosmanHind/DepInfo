@@ -51,15 +51,11 @@ Route::get('/registerteacher', function () {
 });
 
 
-Route::get('/dashbord/etudiant/home', function () {
 
+Route::resource('/dashbord/etudiant/home','EtuddashboardController'); 
 
-    return view('Dashbord.Etudiant.home');
-});
+Route::resource('/dashbord/enseignant/home','EnsgdashboardController'); 
 
-Route::get('/dashbord/enseignant/home', function () {
-    return view('Dashbord.Enseignant.home');
-});
 
 Route::get('/dashbord/enseignant/reglement', function () {
     return view('reglement');

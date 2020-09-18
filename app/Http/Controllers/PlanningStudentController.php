@@ -16,7 +16,7 @@ class PlanningStudentController extends Controller
     	
     if(Auth::user()->specialite ){
            
-            $planningS1 = Planning::where('specialite',Auth::user()->specialite)->where('promo',Auth::user()->promo)->where('semestre','S1')->first();
+            $planningS1 = Planning::where('specialite',Auth::user()->specialite)->where('promo',Auth::user()->promo)->where('semestre','S1')->firstOrNew();
 
             $planningS2 = Planning::where('specialite',Auth::user()->specialite)->where('promo',Auth::user()->promo)->where('semestre','S2')->firstOrNew();
 
@@ -25,7 +25,7 @@ class PlanningStudentController extends Controller
            
         }
         else{
-          $planningS1 = Planning::where('promo',Auth::user()->promo)->where('semestre','S1')->first();
+          $planningS1 = Planning::where('promo',Auth::user()->promo)->where('semestre','S1')->firstOrNew();
           $planningS2 = Planning::where('promo',Auth::user()->promo)->where('semestre','S2')->firstOrNew();
         }
 

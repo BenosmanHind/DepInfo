@@ -33,7 +33,7 @@
         <![endif]-->
 
     <!-- header-start -->
-    <header>
+    <header> 
         <div class="header-area ">
             <div class="header-top_area">
                 <div class="container-fluid">

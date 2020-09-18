@@ -17,9 +17,9 @@ class DocumentController extends Controller
         $modules = Enseignement::join('Modules', 'Modules.id', '=', 'Enseignements.module_id')
         ->where('user_id','=',Auth::user()->id)->get();
 
-        $nbrdocument = Document::where('doc','=',Auth::user()->doc)->count();
+        
 
-        return view('Dashbord/Enseignant/documents',['modules'=>$modules , 'documents'=>$documents , 'nbrdocument' => $nbrdocument]);
+        return view('Dashbord/Enseignant/documents',['modules'=>$modules , 'documents'=>$documents]);
     }
 
     public function store(Request $request ){

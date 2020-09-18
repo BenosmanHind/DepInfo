@@ -29,7 +29,8 @@
               <!-- form start -->
 
               
-            <form role="form"  method="POST" action="{{route('articles.update',['article' => $article->id])}}">
+            <form role="form"  method="POST" class="user" action="{{route('articles.update',['article' => $article->id])}}">
+                <input type="hidden" name="_method" value="PUT">
                 @csrf
                 {{ method_field('PATCH') }}
                 <div class="card-body">
@@ -40,7 +41,7 @@
                     <label for="exampleInputTitre">Nom</label>
                     <div >
                         
-                    <input id="title" placeholder="Nom de l'Article" type="text" value="{{$article->title}}" class="form-control @error('title') is-invalid @enderror" name="title"  required >
+                    <input id="title" placeholder="Nom de l'Article" type="text" value="{{ old('title', $article->title) }}" class="form-control @error('title') is-invalid @enderror" name="title"  required >
 
                         @error('title')
                             <span class="invalid-feedback" role="alert">
@@ -60,7 +61,7 @@
                     <label for="exampleInputTitre">Description</label>
                     <div >
                         
-                        <textarea id="description" placeholder="un text ..."   class="form-control @error('description') is-invalid @enderror" name="description"  required>{{$article->description}}</textarea>
+                        <textarea id="description" placeholder="un text ..."   class="form-control @error('description') is-invalid @enderror" name="description"  required>{{ old('description', $article->description) }}</textarea>
 
                         @error('description')
                             <span class="invalid-feedback" role="alert">

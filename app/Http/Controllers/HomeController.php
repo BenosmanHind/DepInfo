@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Article;
 
 class HomeController extends Controller
 {
@@ -23,7 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
-        return view('home');
+        $nbrAdmin= User::where('role','=',1)->count();
+        $nbrEnsg= User::where('role','=',2)->count();
+        $nbrEtud= User::where('role','=',3)->count();
+        $nbrArticle=Article::count();
+
+        return view('home',['nbrAdmin' => $nbrAdmin , 'nbrEnsg' => $nbrEnsg , 'nbrEtud' => $nbrEtud ,'nbrArticle' => $nbrArticle]);
     }
 }

@@ -109,7 +109,8 @@ class PlanningController extends Controller
         $emp->media()->save($media);
       }
 
-        return redirect('planning_student.index');
+        return redirect()->route('planning_student.index')-> 
+        with('success','Emlpoi du temps modifié avec success!');
 
        
       }

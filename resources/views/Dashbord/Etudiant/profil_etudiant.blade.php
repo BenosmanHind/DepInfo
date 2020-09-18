@@ -105,7 +105,7 @@
                     <div>
                     
                            
-                                <input  id="nstudent" placeholder="Entrer N° carte"  type="text" value="{{ old('nstudent', Auth::user()->nstudent) }}" class="form-control @error('nstudent') is-invalid @enderror" name="nstudent" value="{{ old('nstudent') }}" required autocomplete="nstudent" >
+                                <input disabled id="nstudent" placeholder="Entrer N° carte"  type="text" value="{{ old('nstudent', Auth::user()->nstudent) }}" class="form-control @error('nstudent') is-invalid @enderror" name="nstudent" value="{{ old('nstudent') }}" required autocomplete="nstudent" >
 
                                 @error('nstudent')
                                     <span class="invalid-feedback" role="alert">

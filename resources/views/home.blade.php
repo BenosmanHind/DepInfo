@@ -27,7 +27,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3></h3>
+                <h3>{{$nbrAdmin}}</h3>
 
                 <p>Nombre total des admins </p>
               </div>
@@ -42,9 +42,9 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>20<sup style="font-size: 20px">%</sup></h3>
+                <h3>{{$nbrEnsg}}</h3>
 
-                <p>L'etat d'avancement S2</p>
+                <p>Nombre total des enseignants</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -57,9 +57,9 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
+                <h3>{{$nbrEtud}}</h3>
 
-                <p>Nombre total des enseignants</p>
+                <p>Nombre total des etudiants</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -72,7 +72,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+                <h3>{{$nbrArticle}}</h3>
 
                 <p>Articles</p>
               </div>

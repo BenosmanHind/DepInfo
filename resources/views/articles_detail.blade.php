@@ -24,7 +24,7 @@
                             <a href="single-blog.html">
                                 <img src="{{$medias[0]->lien}}" alt="">
                             </a>
-                            <span class="badge">Group Study</span>
+                            <span class="badge">Article</span>
                         </div>
                         <div class="news_info">
                             <a href="single-blog.html">

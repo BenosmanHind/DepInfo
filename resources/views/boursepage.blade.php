@@ -42,7 +42,7 @@
                                <a href="single-blog.html">
                                 <img src="" alt="">
                             </a>
-                          <span class="badge ">Group Study</span>
+                          <span class="badge ">Bourse</span>
                         </div>
                         <div class="news_info">
                             <a href="{{$bourse->link}}" target="_blank">

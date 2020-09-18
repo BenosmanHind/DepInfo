@@ -27,7 +27,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-             <form role="form"  method="POST" action="{{url('/Planning_student/'.$emp->id)}}">
+             <form role="form"  method="POST" action="{{url('/planning_student/'.$emp->id)}}">
                <input type="hidden" name="_method" value="PUT">
                 @csrf
                 {{ method_field('PATCH') }}
