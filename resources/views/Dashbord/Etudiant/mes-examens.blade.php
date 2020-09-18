@@ -133,7 +133,9 @@
                           <div class="item pb-2">
                             <div class="document-content-title p-2 ">
                              
-                              <b> Prochain Examen: {{$examS1->nom}}</b>
+                              <b> Prochain Examen: {{$examS1->nom}}</b></br>
+                              <b> Salle: {{$examS1->salle}}</b></br>
+                              <b> Heure : {{$examS1->heure}}</b>
                             
                             </div>
         
@@ -246,7 +248,9 @@
                             <div class="item pb-2">
                               <div class="document-content-title p-2 ">
                                
-                                <b> Prochain Examen: {{$examS2->nom}}</b>
+                                <b> Prochain Examen: {{$examS2->nom}}</b></br>
+                                <b> Salle: {{$examS2->salle}}</b></br>
+                                <b> Heure : {{$examS2->heure}}</b>
                               
                               </div>
           

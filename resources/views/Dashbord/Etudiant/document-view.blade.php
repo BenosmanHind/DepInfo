@@ -212,7 +212,7 @@ font-size: 15px;
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
-                 
+                  
                   </div>
                 </div>
               </div>
@@ -220,6 +220,26 @@ font-size: 15px;
               <div class="card-body table-responsive p-0 " style="overflow: hidden;">
 
                 <div class="row p-4">
+                  @foreach ($notes->reverse()  as $note)
+
+                  <div class="item pb-2">
+                    <div class="document-content-title p-2 ">
+                        <b> {{$note->title}}</b>
+                    </div>
+
+                    <div class="document-content pt-1 pl-3 pr-3 pb-2">
+                      <p >{{$note->description}} </p>
+                      
+                       @foreach ($note->medias as $media)
+
+                      <a href="{{$media->lien}}"> <i class="far fa-file-alt pr-1"></i>  {{$media->name}}</a></br>
+                 
+                      @endforeach
+                      
+                    </div>
+
+                  </div>
+                  @endforeach
                    
 
                 </div>

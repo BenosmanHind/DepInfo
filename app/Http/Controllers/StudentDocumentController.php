@@ -41,11 +41,13 @@ class StudentDocumentController extends Controller
         $cours = Document::where('module_id','=',$id)->where('doc','=','cours')->get();
         $tds = Document::where('module_id','=',$id)->where('doc','=','td')->get();
         $tps = Document::where('module_id','=',$id)->where('doc','=','tp')->get();
+        $notes = Document::where('module_id','=',$id)->where('doc','=','note')->get();
 
         return  view('dashbord.etudiant.document-view',[
           'cours'=>$cours,
           'tds'=>$tds,
           'tps'=>$tps,
+          'notes'=>$notes
         ]);
 
     }
