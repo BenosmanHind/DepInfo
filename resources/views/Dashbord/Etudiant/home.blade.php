@@ -42,7 +42,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>{{$cours}}</h3>
+                <h3>1</h3>
 
                 <p>Cours</p>
               </div>
@@ -57,9 +57,9 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>{{$tds}}</h3>
+                <h3>1</h3>
 
-                <p>Tds</p>
+                <p>1</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -72,7 +72,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>{{$tps}}</h3>
+                <h3>1</h3>
 
                 <p>Tps</p>
               </div>

@@ -30,7 +30,7 @@ class EtuddashboardController extends Controller
             
            }
 
-          if($specialite_etud){
+         /* if($specialite_etud){
             $tds = Document::join('Modules', 'Modules.id', '=', 'Documents.module_id')->where('promo','=', $promo_etud)->where('specialite','=', $specialite_etud)->where('doc' ,'=','td')->count();
             $tps = Document::join('Modules', 'Modules.id', '=', 'Documents.module_id')->where('promo','=', $promo_etud)->where('specialite','=', $specialite_etud)->where('doc' ,'=','tp')->count();
             $cours = Document::join('Modules', 'Modules.id', '=', 'Documents.module_id')->where('promo','=', $promo_etud)->where('specialite','=', $specialite_etud)->where('doc' ,'=','cours')->count();
@@ -46,10 +46,10 @@ class EtuddashboardController extends Controller
             $cours = Document::join('Modules', 'Modules.id', '=', 'Documents.module_id')->where('promo','=', $promo_etud)->where('doc' ,'=','cours')->count();
 
          
-          
           }
+          */
 
-             return  view('dashbord/etudiant/home',['nbrModules' => $nbrModules , 'cours' => $cours , 'tds' => $tds , 'tps' => $tps]);
+             return  view('dashbord/etudiant/home',['nbrModules' => $nbrModules]);
 
     
 

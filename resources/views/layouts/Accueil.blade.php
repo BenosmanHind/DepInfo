@@ -79,7 +79,7 @@
                                     <div class="main-menu  d-none d-lg-block">
                                         <nav>
                                             <ul id="navigation">
-                                                <li ><a  href="{{url('/')}}" >Acceueil</a></li>
+                                                <li ><a  href="{{url('/')}}" >Accueil</a></li>
                                                 <li><a href="{{url('/boursepage')}}">Bourses</a></li>
                                                 <li><a href="{{url('/eventspage')}}">Evenements</a></li>
                                                 <li><a href="{{url('/articlespage')}}">Articles</a></li>
