@@ -122,12 +122,7 @@
                   </div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="picture"> Image </label>
-
-                        <input name="picture" id="picture" type="file" class="form-control-file" >
-                        
-                  </div>
+              
                  <div class="card-footer">
                 <button type="submit" class="btn btn-success pl-4 pr-4">Créer</button>
               </div>

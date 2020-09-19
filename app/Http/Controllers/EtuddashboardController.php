@@ -30,10 +30,25 @@ class EtuddashboardController extends Controller
             
            }
 
-          $cours = Document::where('user_id','=',Auth::user()->id)->where('doc' ,'=','cours')->count();
-          $tds = Document::where('user_id','=',Auth::user()->id)->where('doc' ,'=','TD')->count();
-          $tps = Document::where('user_id','=',Auth::user()->id)->where('doc' ,'=','TP')->count();
+          if($specialite_etud){
+          $cours = Document::where('user_id','=',Auth::user()->id)->where('promo','=', $promo_etud)
+            ->where('specialite','=',$specialite_etud )->where('doc' ,'=','cours')->count();
 
+          $tds = Document::where('user_id','=',Auth::user()->id)->where('promo','=', $promo_etud)
+            ->where('specialite','=',$specialite_etud )->where('doc' ,'=','td')->count();
+
+          $tps = Document::where('user_id','=',Auth::user()->id)->where('promo','=', $promo_etud)
+            ->where('specialite','=',$specialite_etud )->where('doc' ,'=','tp')->count();
+          }
+
+      else{
+
+           $cours = Document::where('user_id','=',Auth::user()->id)->where('promo','=', $promo_etud)->where('doc' ,'=','cours')->count();
+
+           $tds = Document::where('user_id','=',Auth::user()->id)->where('promo','=', $promo_etud)->where('doc' ,'=','td')->count();
+           $tps = Document::where('user_id','=',Auth::user()->id)->where('promo','=', $promo_etud)->where('doc' ,'=','tp')->count();
+           //dd( $tds);
+          }
 
              return  view('dashbord/etudiant/home',['nbrModules' => $nbrModules , 'cours' => $cours , 'tds' => $tds , 'tps' => $tps]);
 
