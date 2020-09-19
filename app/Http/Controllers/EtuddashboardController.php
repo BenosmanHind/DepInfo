@@ -31,23 +31,22 @@ class EtuddashboardController extends Controller
            }
 
           if($specialite_etud){
-          $cours = Document::where('user_id','=',Auth::user()->id)->where('promo','=', $promo_etud)
-            ->where('specialite','=',$specialite_etud )->where('doc' ,'=','cours')->count();
-
-          $tds = Document::where('user_id','=',Auth::user()->id)->where('promo','=', $promo_etud)
-            ->where('specialite','=',$specialite_etud )->where('doc' ,'=','td')->count();
-
-          $tps = Document::where('user_id','=',Auth::user()->id)->where('promo','=', $promo_etud)
-            ->where('specialite','=',$specialite_etud )->where('doc' ,'=','tp')->count();
+            $tds = Document::join('Modules', 'Modules.id', '=', 'Documents.module_id')->where('promo','=', $promo_etud)->where('specialite','=', $specialite_etud)->where('doc' ,'=','td')->count();
+            $tps = Document::join('Modules', 'Modules.id', '=', 'Documents.module_id')->where('promo','=', $promo_etud)->where('specialite','=', $specialite_etud)->where('doc' ,'=','tp')->count();
+            $cours = Document::join('Modules', 'Modules.id', '=', 'Documents.module_id')->where('promo','=', $promo_etud)->where('specialite','=', $specialite_etud)->where('doc' ,'=','cours')->count();
+         
           }
 
       else{
 
-           $cours = Document::where('user_id','=',Auth::user()->id)->where('promo','=', $promo_etud)->where('doc' ,'=','cours')->count();
+          
 
-           $tds = Document::where('user_id','=',Auth::user()->id)->where('promo','=', $promo_etud)->where('doc' ,'=','td')->count();
-           $tps = Document::where('user_id','=',Auth::user()->id)->where('promo','=', $promo_etud)->where('doc' ,'=','tp')->count();
-           //dd( $tds);
+           $tds = Document::join('Modules', 'Modules.id', '=', 'Documents.module_id')->where('promo','=', $promo_etud)->where('doc' ,'=','td')->count();
+            $tps = Document::join('Modules', 'Modules.id', '=', 'Documents.module_id')->where('promo','=', $promo_etud)->where('doc' ,'=','tp')->count();
+            $cours = Document::join('Modules', 'Modules.id', '=', 'Documents.module_id')->where('promo','=', $promo_etud)->where('doc' ,'=','cours')->count();
+
+         
+          
           }
 
              return  view('dashbord/etudiant/home',['nbrModules' => $nbrModules , 'cours' => $cours , 'tds' => $tds , 'tps' => $tps]);
